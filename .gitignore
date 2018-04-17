@@ -1,0 +1,7 @@
+bower_components
+node_modules
+build
+.svn
+.idea
+generator-aio-angular-master
+matrix-admin

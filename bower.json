@@ -1,0 +1,91 @@
+{
+  "name": "fosun",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~2.3.2",
+    "angular": "angularjs#~1.4.8",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "restangular": "~1.5.1",
+    "angular-smart-table": "~2.1.5",
+    "angular-validation": "~1.4.1",
+    "angular-translate": "~2.8.1",
+    "angular-sanitize": "~1.4.8",
+    "angular-scroll": "~1.0.0",
+    "angular-animate": "~1.4.8",
+    "angular-ui-sortable": "~0.13.4",
+    "ui-select": "angular-ui-select#~0.13.2",
+    "angular-ui-select2": "~0.0.5",
+    "angular-ui-tree": "~2.11.0",
+    "angular-ui-event": "~1.0.0",
+    "angular-bootstrap": "0.8.0",
+    "angular-bootstrap-checkbox": "~0.3.1",
+    "angular-tooltips": "~1.0.6",
+    "angular-tooltip": "ng-modal#*",
+    "angular-chart.js": "~0.8.8",
+    "angular-slick": "~0.2.1",
+    "slick-carousel": "~1.5.9",
+    "angular-mousewheel": "~1.0.4",
+    "bootstrap-fileinput": "^4.3.2",
+    "angular-ui-calendar": "~1.0.1",
+    "angular-mocks": "~1.5.0",
+    "angular-toastr": "~1.7.0",
+    "textAngular": "~1.5.0",
+    "angular-loading-bar": "^0.8.0",
+    "angular-cookies": "^1.5.0",
+    "angular-xeditable": "^0.1.10",
+    "angular-pdf-viewer": "^0.2.9",
+    "angular-ueditor": "latest",
+    "angular-nicescroll": "^0.0.9"
+  },
+  "overrides": {
+    "angular-validation": {
+      "main": [
+        "dist/angular-validation.js",
+        "dist/angular-validation-rule.js"
+      ]
+    },
+    "slick-carousel": {
+      "main": [
+        "slick/slick.js",
+        "slick/slick.css",
+        "slick/slick-theme.css",
+        "slick/fonts/*"
+      ]
+    },
+    "angular-echarts": {
+      "main": [
+        "./dist/angular-echarts.js"
+      ]
+    },
+    "fullcalendar": {
+      "main": [
+        "dist/fullcalendar.js",
+        "dist/fullcalendar.css"
+      ]
+    },
+    "jquery.nicescroll": {
+      "main": [
+        "./jquery.nicescroll.min.js"
+      ]
+    },
+    "bootstrap-fileinput": {
+      "main": [
+        "./css/fileinput.min.css",
+        "./js/plugins/canvas-to-blob.min.js",
+        "./js/fileinput.js",
+        "./js/fileinput_locale_zh.js"
+      ]
+    }
+  }
+}
