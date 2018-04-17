@@ -1,0 +1,341 @@
+<header>通用弹出框组件</header>
+<section>
+
+	<form name="SampleForm" class="form-default">
+		<fieldset>
+			<legend>选择出资实体</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">出资实体选择单选</label>
+						<div class="controls">
+							<input type="text" name="address"
+								class="span12" placeholder="选择出资实体"
+								fund-info-format
+								readonly ng-model="vm.item.fundinfo"
+								ng-click="vm.selectFundInfo()"
+							 />
+						</div>
+				 	</div>
+				 	
+				 	<div class="span6">
+						<label class="control-label">出资实体选择多选</label>
+						<div class="controls">
+							<input type="text" name="address"
+								class="span12" placeholder="选择出资实体"
+								fund-info-format
+								readonly ng-model="vm.item.fundinfoM"
+								ng-click="vm.selectFundInfoM()"
+							 />
+						</div>
+				 	</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>选择行业</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">行业选择</label>
+						<div class="controls">
+							<input type="text" name="address"
+								class="span12" placeholder="选择行业"
+								readonly ng-model="vm.item.industry"
+								ng-click="vm.selectIndustry()"
+							 />
+						</div>
+				 	</div>
+				</div>
+			</div>
+		</fieldset>
+	
+		<fieldset>
+			<legend>选择地址</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">国家，省，市 选择</label>
+						<div class="controls">
+							<input type="text" name="address"
+								class="span12" placeholder="选择国家，省，市"
+								readonly ng-model="vm.item.address.addressNames"
+								ng-click="vm.selectAddress()"
+							 />
+						</div>
+				 	</div>
+				</div>
+			</div>
+		</fieldset>
+	
+		<fieldset>
+			<legend>选择企业</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">企业单选| {{vm.item.company}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="企业单选"
+								   readonly   ng-model="vm.item.company"
+								   ng-click="vm.selectCompany()" />
+						</div>
+					</div>
+
+					<div class="span6">
+						<label class="control-label">企业多选| {{vm.item.companys}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="企业多选"
+								   readonly   ng-model="vm.item.companys"
+								   ng-click="vm.selectCompanys()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<hr />
+		<fieldset>
+			<legend>选择证券</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">证券多选| {{vm.item.prdtrds}}</label>
+						<div class="controls" >
+							<input type="text" name="text" class="span12" placeholder="证券多选"
+								   readonly   ng-model="vm.item.prdtrds"
+								   ng-click="vm.selectPrdtrds()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<hr />
+		<fieldset>
+			<legend>选择项目</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">项目 (单选)| {{vm.item.project}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="项目"
+								readonly project-format ng-model="vm.item.project"
+								ng-click="vm.queryProject()" />
+						</div>
+					</div>
+					<div class="span6">
+						<label class="control-label">项目(多选) | {{vm.item.projects}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="项目"
+								readonly project-format ng-model="vm.item.projects"
+								ng-click="vm.queryProjects()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<hr />
+		<fieldset>
+			<legend>选择 管理平台</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">管理平台(多选) | {{vm.item.glpts}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" 
+								readonly ng-model="vm.item.glpts"
+								ng-click="vm.queryGlpts()" />
+						</div>
+					</div>
+					<div class="span6">
+						<label class="control-label">管理平台(单选) | {{vm.item.glpt}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12"
+								readonly
+								ng-model="vm.item.glpt" ng-click="vm.queryGlpt()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>选择用户管理平台</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">用户管理平台(多选) | {{vm.item.userglpts}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" 
+								readonly ng-model="vm.item.userglpts"
+								ng-click="vm.queryuserGlpts()" />
+						</div>
+					</div>
+					<div class="span6">
+						<label class="control-label">用户管理平台(单选) | {{vm.item.userglpt}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12"
+								readonly
+								ng-model="vm.item.userglpt" ng-click="vm.queryuserGlpt()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+
+		<fieldset>
+			<legend>选择部门</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">部门多选 | {{vm.item.units}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="部门多选"
+								readonly unit-format 
+								ng-model="vm.item.units"
+								ng-click="vm.queryUnit()" />
+						</div>
+					</div>
+					<div class="span6">
+						<label class="control-label">部门单选 | {{vm.item.unit}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="部门单选"
+								readonly unit-format 
+								ng-model="vm.item.unit"
+								ng-click="vm.queryUnitSingle()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>选择角色</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">角色多选 | {{vm.item.roles}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="角色多选"
+								readonly role-format ng-model="vm.item.roles"
+								ng-click="vm.queryRoles()" />
+						</div>
+					</div>
+					<div class="span6">
+						<label class="control-label">角色单选 | {{vm.item.role}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="角色单选"
+								readonly role-format ng-model="vm.item.role"
+								ng-click="vm.queryRole()" />
+						</div>
+					</div>
+				</div>
+			</div>		
+		</fieldset>
+		<fieldset>
+			<legend>选择用户</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">用户(多选) | {{vm.item.selusers}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="人员(多选)"
+								readonly user-format ng-model="vm.item.selusers"
+								ng-click="vm.queryUser()" />
+						</div>
+					</div>
+					<div class="span6">
+						<label class="control-label">用户(单选) | {{vm.item.seluser}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12"
+								placeholder="人员(单选)" readonly user-format
+								ng-model="vm.item.seluser" ng-click="vm.queryUserSingle()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>树形部门-选择用户</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">用户(多选) | {{vm.item.usersT}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="项目主负责人"
+								readonly user-format ng-model="vm.item.usersT"
+								ng-click="vm.deptTrreeQueryUser()" />
+						</div>
+					</div>
+					<div class="span6">
+						<label class="control-label">用户(单选) | {{vm.item.userT}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12"
+								placeholder="主负责人（单选）" readonly user-format
+								ng-model="vm.item.userT"
+								ng-click="vm.deptTrreeQueryUserSingle()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+				<fieldset>
+			<legend>选择复星通人员</legend>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">复星通人员(多选) | {{vm.item.selusersFxt}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="复星通人员(多选)"
+								readonly user-format ng-model="vm.item.selusersFxt"
+								ng-click="vm.queryUserFxt()" />
+						</div>
+					</div>
+					<div class="span6">
+						<label class="control-label">复星通人员(单选) | {{vm.item.seluserFxt}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12"
+								placeholder="复星通人员(单选)" readonly user-format
+								ng-model="vm.item.seluserFxt" ng-click="vm.queryUserSingleFxt()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label">汇率（估值币种兑换人民币）| {{vm.item.exchanges}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="汇率"
+								   readonly exchange-format  ng-model="vm.item.exchanges"
+								   ng-click="vm.selectExchange()" />
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label"> 根据用户的code 查询复星通部门树| {{vm.item.userIUnitTree}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="根据用户的code 查询复星通部门树"
+								   readonly useriunittree-format  ng-model="vm.item.userIUnitTree"
+								   ng-click="vm.userIUnitTree()" />
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="control-label"> 分管部门| {{vm.item.unitsTree}}</label>
+						<div class="controls">
+							<input type="text" name="text" class="span12" placeholder="分管部门"
+								   readonly unit-format
+								   ng-model="vm.item.unitsTree"
+								   ng-click="vm.userUnitTree()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</section>

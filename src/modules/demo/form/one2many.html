@@ -1,0 +1,95 @@
+<header>
+    一对多保存
+</header>
+<section>
+
+    <form name="ProjectForm" class="form-default">
+        <fieldset>
+            <div class="control-group">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <label class="control-label required">编码</label>
+                        <div class="controls">
+                            <p>{{vm.item.catalogCode}}</p>
+                        </div>
+                    </div>
+
+                    <div class="span6">
+                        <label class="control-label required">名称</label>
+                        <div class="controls">
+                            <p>{{vm.item.catalogName}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            {{vm.item.dataDictionaries}}
+        </fieldset>
+    </form>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <table class="table table-bordered table-condensed editable">
+                <thead>
+                <tr>
+                    <th>数值</th>
+                    <th>编码</th>
+                    <th>类型</th>
+                    <th width="100"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="data in vm.item.dataDictionaries">
+                    <td>
+                        <span editable-text="data.dataValue" e-form="rowform"
+                              onbeforesave="vm.checkCode($data, data.dataValue)"
+                              e-required>{{data.dataValue || '填写明细编码'}}</span>
+                    </td>
+                    <td>
+                        <span>{{data.dataCode || '请填写类型'}}</span>
+
+                    </td>
+                    <td>{{data.dataStyle}}</td>
+
+                    <td class="text-center">
+                        <form editable-form name="rowform"
+                              shown="vm.inserted == data"
+                              onshow="$$onshow(rowform)"
+                              onhide="$$onhide()"
+                              ng-show="rowform.$visible">
+                            <button type="submit" ng-disabled="rowform.$waiting">
+                                <i class="icon icon-ok"></i>
+                            </button>
+                            <button ng-click="rowform.$cancel()">
+                                <i class="icon icon-remove"></i>
+                            </button>
+                        </form>
+
+                        <div class="buttons" ng-show="!rowform.$visible">
+                            <button title="编辑" ng-click="rowform.$show()">
+                                <i class="icon icon-pencil"></i>
+                            </button>
+                            <button title="删除" ng-click="vm.remove(vm.item.dataDictionaries, $index)">
+                                <i class="icon icon-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center" colspan="4" title="添加" ng-click="vm.add(vm.item.dataDictionaries)">
+                        <i class="icon icon-plus"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+<footer>
+    <button class="btn btn-primary"
+            validation-submit="ProjectForm"
+            ng-click="vm.save(vm.item)">保存</button>
+</footer>

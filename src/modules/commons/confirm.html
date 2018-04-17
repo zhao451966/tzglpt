@@ -1,0 +1,6 @@
+<header ng-bind="ngDialogData.title" ng-if="ngDialogData.title"></header>
+<section ng-bind-html="ngDialogData.message" style="text-align: center; font-size: 18px; padding: 40px;"></section>
+<footer>
+    <button ng-if="!ngDialogData.noCancel" class="btn" ng-click="closeThisDialog(0)">{{::ngDialogData.cancelText}}</button>
+    <button ng-if="ngDialogData.hasOk||angular.isUndefined(ngDialogData.hasOk)" class="btn btn-primary" ng-click="confirm(1)">{{::ngDialogData.okText}}</button>
+</footer>

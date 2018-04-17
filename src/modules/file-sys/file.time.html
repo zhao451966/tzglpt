@@ -1,0 +1,99 @@
+<header >
+    <div  ng class="header-title" translate="N004531">
+        修改报告时间
+    </div>
+</header>
+<section style="padding-bottom: 0px;">
+    <form id="fileTimeForm" name="fileTimeForm" class="form-default">
+
+
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="control-label required" translate="N004538">报告类型</label>
+                <div class="controls">
+                    <select name="fileType" class="span12 fx-select" ng-model="vm.item.fileType"
+                            ng-options="fileType.dataCode as fileType.dataValue for fileType in vm.dictionary.fileTypes"
+                            ng-change="vm.selectFileType()" validator="required">
+                        <option value="" translate="N000037">---请选择---</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span4" ng-if="vm.item.fileType=='001'">
+                <label class="control-label required" translate="N004534">报告时间</label>
+                <div class="controls">
+                    <select name="fileFirstType" class="span12 fx-select" ng-model="vm.item.fileFirstType"
+                            ng-options="fileFirstType.dataCode as fileFirstType.dataValue for fileFirstType in vm.dictionary.fileFirstTypes"
+                            ng-change="vm.selectFirstType()" validator="required">
+                        <option value="" translate="N000037">---请选择---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="span4" ng-if="vm.item.fileType=='001'&&vm.item.fileFirstType">
+                <label class="control-label" >&nbsp;</label>
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="text" class="span12" placeholder="{{'N001026' | translate}}"
+                               ng-model="vm.item.year"
+                               date-time format="YYYY" view="year" min-view="year"
+                               name="year"
+                               validator="required"
+                               valid-method="blur"/>
+                                <span class="add-on" style="border:none;border-radius: inherit;">
+                                    <i class="icon icon-calendar"></i>
+                                </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4" ng-if="vm.item.fileType=='001'&&(vm.item.fileFirstType=='004'||vm.item.fileFirstType=='005')">
+                <label class="control-label" >&nbsp;</label>
+                <div class="controls">
+
+                    <select ng-if="vm.item.fileFirstType=='004'" name="quarter" class="span12 fx-select" ng-model="vm.item.quarter"
+                            ng-options="quarter.dataCode as quarter.dataValue for quarter in vm.dictionary.quarters"
+                            validator="required">
+                        <option value="" translate="N000037">---请选择---</option>
+                    </select>
+
+
+                    <div class="input-append jx-wrapper" ng-if="vm.item.fileFirstType=='005'">
+                        <input type="text" class="span12" placeholder="{{'N001026' | translate}}"
+                               ng-model="vm.item.month"
+                               date-time format="MM" view="month" min-view="month"
+                               name="month"
+                               validator="required"
+                               valid-method="blur"/>
+                                <span class="add-on" style="border:none;border-radius: inherit;">
+                                    <i class="icon icon-calendar"></i>
+                                </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4" ng-if="vm.item.fileType=='002'">
+                <label class="control-label required" translate="N004534">报告时间</label>
+                <div class="controls">
+                    <div class="input-append" >
+                        <input id="filedate" type="text" class="span12" placeholder="{{'N001026' | translate}}"
+                               ng-model="vm.item.filedate"
+                               date-time format="YYYY-MM-DD" view="date" min-view="date"
+                               name="filedate"
+                               validator="required"
+                               valid-method="blur"/>
+                                <span class="add-on" style="border:none;border-radius: inherit;">
+                                    <i class="icon icon-calendar"></i>
+                                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<footer>
+    <button class="btn btn-primary" validation-submit="fileTimeForm" ng-click="vm.save(fileRenameForm)" translate="N001208">提交</button>
+    <button class="btn" ng-click="vm.close()" translate="N000992">取消</button>
+</footer>

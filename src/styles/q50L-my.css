@@ -1,0 +1,126 @@
+
+
+body {
+    color: rgb(84, 105, 141);
+}
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+#content a:link, #content a:visited {
+    color: #0088cc;
+}
+
+#content {
+    position: relative;
+}
+
+.no-padding {
+    padding: 0!important;
+}
+
+.table th, .table td {
+    font-weight: 400;
+    color: rgb(84, 105, 141);
+    border-top: 1px solid rgb(216, 221, 230);
+    padding: .75rem .5rem;
+}
+.table th {
+    font-size: 13px;
+}
+.table th:first-child, .table td:first-child {
+    padding-left: 1.5rem;
+}
+
+.widget-content {
+    padding: 24px;
+    border-bottom: 1px solid rgb(216, 221, 230);
+}
+
+.widget-content .sub-title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.widget-content .main-title {
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.btn-group {
+    margin: 0 4px;
+}
+
+
+.btn-group-sm {
+    padding: 0 2px;
+}
+
+/* 项目编辑 */
+.widget-box.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.input-append input[class*="span"], .input-append .uneditable-input[class*="span"], .input-prepend input[class*="span"], .input-prepend .uneditable-input[class*="span"], .row-fluid input[class*="span"], .row-fluid select[class*="span"],
+.row-fluid textarea[class*="span"], .row-fluid .uneditable-input[class*="span"], .row-fluid .input-prepend [class*="span"], .row-fluid .input-append [class*="span"] {
+    height: 40px;
+    overflow: hidden;
+}
+
+
+.row-fluid textarea[class*="span"] {
+    -moz-overflow-x: hidden;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    -moz-overflow-y: hidden;
+    -ms-overflow-y: auto;
+}
+
+
+.row-fluid table textarea[class*="span"] {
+    -moz-overflow-x: auto;
+    -ms-overflow-x: auto;
+    overflow-x: auto;
+    -moz-overflow-y: hidden;
+    -ms-overflow-y: hidden;
+    overflow-y: hidden;
+}
+
+
+.gray-box {
+    background: #F4F6F9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.gray-box .widget-title {
+    padding: 0 10px;
+}
+.gray-box .widget-title .icon,
+.gray-box .widget-title h3 {
+    float: left;
+}
+.gray-box .widget-title .icon {
+    margin: 0 10px 0 0;
+}
+.gray-box .widget-content {
+    padding: 0 10px;
+}
+
+.text-info {
+    color: rgb(22, 50, 92);
+}
+
+.tab-content {
+    padding-top: 16px;
+}

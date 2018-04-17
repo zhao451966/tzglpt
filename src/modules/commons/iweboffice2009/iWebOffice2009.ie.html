@@ -1,0 +1,49 @@
+
+<header id="imgView" style="width:100%;">
+	<div style="width:100%;">
+	<div class="icon left">
+		<img ng-src="{{vm.file.fileType | fileType}}" />
+	</div>
+	<div class="imgname left" style="width:20%"> &nbsp;{{vm.file.fileName}} </div>
+	<div style="width:auto;padding-left: 200px;" class="imgname left">
+ 		<a target="_blank" href="modules/commons/iweboffice2009/iWebOffice.help.html" >IE不能正确显示？</a>
+	</div>
+	<div class="iconDiv right" title="关闭" ng-click="vm.close()">
+		<img class="icon16" src="styles/img/remove_120.png" />
+	</div>
+	<div ng-if="vm.file.filePermision.down" class="iconDiv right" title="下载" ng-click="vm.download()">
+		<img class="icon16" src="styles/img/download_120.png" />
+	</div>
+	<div ng-if="vm.file.filePermision.view" class="iconDiv right" title="打印" onclick="javascript:webform.WebOffice.WebOpenPrint();" >
+		<img class="icon16" src="styles/img/print.png" />
+	</div>
+	<div ng-if="vm.file.filePermision.remove" class="iconDiv right" title="删除" ng-click="vm.deleteFile()">
+		<img class="icon16" src="styles/img/delete_120.png" />
+	</div>
+		<!-- 隐藏 -->
+<!-- 	<div ng-if="1==2" class="iconDiv right" title="上传" >
+		<img class="icon16" src="styles/img/upload_120.png" />
+		<div fx-uploader="vm.options" fx-uploader on-complete="vm.onComplete" ></div>
+	</div> -->
+	</div>
+</header>
+<section id="iweboffice2009" >
+	<form name="webform" method="post" >
+		<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+			<tr>
+				 <td height="100%" valign="top">
+  				 	<OBJECT id="WebOffice" name="WebOffice"
+						width="100%" height="100%"
+						classid="clsid:8B23EA28-2009-402F-92C4-59BE0E063499"
+						codebase="iWebOffice2009.cab#version=10,8,6,14"
+					></OBJECT>
+				</td>
+			</tr>
+		</table>
+	</form>
+</section>
+<script type="text/javascript" >
+	$(function() {
+		window.Load();
+	});
+</script>

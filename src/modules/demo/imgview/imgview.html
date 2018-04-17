@@ -1,0 +1,50 @@
+
+<header id="imgView">
+<div style="width: 100%;">
+	<div class="icon left">
+		<img src="styles/img/file/image.png" />
+	</div>
+	<div class="imgname left" style="width:20%;">&nbsp;{{vm.img.fileName}}</div>
+	<div class="iconDiv right" title="{{'N000557' | translate}}" ng-click="vm.close()">
+		<img class="icon16" src="styles/img/remove_120.png" />
+	</div>
+	<div class="iconDiv right" title="{{'N001360' | translate}}" ng-click="vm.download()">
+		<a ng-href="{{vm.img.url}}">
+			<img class="icon16" src="styles/img/download_120.png" />
+		</a>
+	</div>
+	<!-- 隐藏 -->
+	<div ng-if="1==2" class="iconDiv right" title="{{'N001058' | translate}}" >
+		<img class="icon16" src="styles/img/upload_120.png" />
+		<div fx-uploader="vm.options" fx-uploader on-complete="vm.onComplete" ></div>
+	</div>
+	<div class="iconDiv right" title="{{'N001034' | translate}}" ng-click="vm.deleteFile()">
+		<img class="icon16" src="styles/img/delete_120.png" />
+	</div>
+</div>
+</header>
+<section>
+	<table>
+		<tbody>
+			<tr>
+				<td ng-if="vm.img.fileId">
+					<img ng-if="vm.img.fileId" ng-src="{{vm.img.url}}" alt="{{'N106051' | translate}}" />
+				</td>
+				<td ng-if="!vm.img.fileId" style="width:200px;">
+					<img ng-if="!vm.img.fileId" src="styles/img/imageIcon.png" style="width:200px;" alt="{{'N106052' | translate}}" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+<div id="lock" style="width:100%;height:100%;position: absolute;top:0;left:0;display: none;">
+	<table style="width: 100%;height: 100%;">
+		<tbody>
+			<tr>
+				<td style="text-align: center;">
+					<img src="styles/loading.gif">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

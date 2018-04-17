@@ -1,0 +1,19 @@
+<div class="user-thumb" style="display: flex; flex: 0 0 auto; margin-right: 10px;white-space:nowrap;">
+                    <span class="project-icon" style="margin-right: 16px;">
+                        <img src="styles/img/project-icon.png"/>
+                    </span>
+    <div >
+        <h3 style="margin: 0px;line-height: 32px;">
+            <a ng-if="project.vcProName.length<=10" ui-sref="root.projects.bigview({id: project.id})"
+               class="ng-binding ng-scope"
+               style="font-size:24px;font-weight:400;">
+                {{project.vcProName}}
+            </a>
+            <a ng-if="project.vcProName.length>10" ui-sref="root.projects.bigview({id: project.id})"
+               class="ng-binding ng-scope"
+               style="font-size:24px;font-weight:400;" title="{{project.vcProName}}">
+                {{project.vcProName.substring(0,10)+'...'}}
+            </a>
+        </h3>
+    </div>
+</div>

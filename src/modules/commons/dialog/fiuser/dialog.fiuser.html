@@ -1,0 +1,71 @@
+<header ng-bind="ngDialogData.title" translate="N000222">查询用户</header>
+<section>
+	<form class="form-default">
+         <div style="margin:0px;" class="row-fluid">
+            <div class="span6">
+                 <div class="controls">
+                     <div style="margin-bottom: 20px;" class="input-append"><!--用户名-->
+                         <input placeholder="{{'N001600' | translate}}" class="span12" type="text" ng-model="vm.userName">
+                         <span class="add-on">
+                             <i style="cursor:pointer;" ng-click="vm.searchUserByName()" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+         	<div class="span6" style="display: none">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-repeat="user in vm.customSelectedUsers" ng-click="vm.removeUser(user, $index)" class="badge icon-remove">{{user.userName}}</a>
+             	</div>
+             </div>
+         </div>
+    </form>
+    <div>
+	    <table class="table table-hover table-bordered main-table"
+	    	   st-table="vm.users"
+	    	   st-pipe="vm.searchUserByName"
+	           fx-table="dialog.users">
+	        <thead>
+	        <tr>
+	            <th style="width: 64px;">
+					<!--<input type="checkbox" class="fx-checkbox" id="chk_all" ng-click="vm.chkAll(vm.users)"/>-->
+				</th>
+	            <th translate="N001600">用户名</th>
+	            <th translate="N001158">手机号码</th>
+	            <th translate="N001612">邮箱</th>
+				<th translate="N003086">成员身份</th>
+	        </tr>
+	        </thead>
+	        <tbody>
+	        <tr ng-click="vm.toggleSelectUser(data)"
+	        	st-select-row="data"
+	            st-select-mode="{{::ngDialogData.selectionMode}}"
+	            ng-repeat="data in vm.users" >
+	            <td>
+	                <input type="radio" 
+	                	   class="fx-radio"
+	                	   name="redio"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'single'" />
+	                <input type="checkbox" class="fx-checkbox"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+	            </td>
+	            <td class="ellipsis" title="{{data.userName}}" ng-bind-html="data.userName | highlight:vm.userName"></td>
+	            <td class="ellipsis" title="{{data.regcellphone}}" ng-bind-html="data.regcellphone"></td>
+	            <td class="ellipsis" title="{{data.regEmail}}" ng-bind-html="data.regEmail"></td>
+	            <td class="ellipsis" title="{{data.postion}}" ng-bind-html="data.postion"></td>
+	            <!-- <td class="ellipsis" title="{{data.primaryUnit}}" ng-bind-html="data.primaryUnit"></td> -->
+	        </tr>
+	        </tbody>
+	    </table>
+	</div>
+</section>
+<footer>
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>

@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title></title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="google-header-bar  centered">
+			<div class="header content clearfix">
+			</div>
+		</div>
+		<div class="main content clearfix">
+			<div class="main-content no-name ">
+				<div class="card signin-card pre-shift no-name" style="height: 238px;position: fixed; top: 0px; right: 0px;  left: 0px; bottom: 0px; margin: auto;" >
+					<div id="cc_iframe_parent"></div>
+					<div class="circle-mask" style="">
+					</div>
+					<form novalidate  id="gaia_loginform">
+						<div class="form-panel second " >
+							<div style="text-align: center;">
+								<div>
+									<p id="profile-name"></p>
+									<span dir="ltr" id="email-display"></span>
+								</div>
+								<div>
+								   <div id="password-shown">
+								    <div>
+								        <h2  class="banner" translate="N005108">找回您的账户密码</h2>
+								        <P style="font-size: 14px;color: #262626; margin: -10px 0 15px;font-weight: bold; text-align: left;" translate="N005118" translate-values="{loginName:vm.UserinfoRegister.regEmail}">我们会将含有密码重置的电子邮件发送到您的电子邮箱地址：{{vm.UserinfoRegister.regEmail}}，请查收并及时修改。</p>
+									</div>
+									</div>
+								</div>
+								<input id="next" name="signIn" class="rc-button rc-button-submit" style="margin-top: 21px;" ng-click="vm.send()"  type="submit" value="{{'N005119' | translate}}">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

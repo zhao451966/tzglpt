@@ -1,0 +1,98 @@
+
+<header ng-bind="ngDialogData.title">查询企业</header>
+<section>
+    <form class="form-default">
+        <div style="margin:0px;" class="row-fluid">
+	         <div class="span6">
+	            <div class="controls">
+	                <select class="span4"
+	                        ng-model="ngDialogData.vcAppCountry"
+	                        ng-options="country.VC_COUNTRY_NAME for country in vm.countrys"
+	                        ng-change="vm.countrySelect()" >
+	                    <option value="" translate="N000037">--请选择国家--</option>
+	                </select>
+	                <select class="span4"
+	                        ng-model="ngDialogData.vcAppProvince"
+	                        ng-options="provint.VC_PROVIN_NAME for provint in vm.provints"
+	                        ng-change="vm.provinceSelect()" >
+	                    <option value="" translate="N000037">--请选择省份--</option>
+	                </select>
+	                <select class="span4"
+	                		ng-change="vm.citiySelect()"
+	                        ng-model="ngDialogData.vcAppCity"
+	                        ng-options="city.VC_CITY_NAME for city in vm.citys" >
+	                    <option value="" translate="N000037">--请选择城市--</option>
+	                </select>
+            	</div>
+            </div>
+            <div class="span6">
+                <div style="margin-bottom:20px;" class="controls">
+                    <div class="input-append">
+                        <input placeholder="{{'N001795' | translate}}" class="span12" type="text"
+                               ng-model="vm.searchParam">
+                         <span class="add-on">
+                              <i style="cursor:pointer;" ng-click="vm.searchCompany()" class="icon icon-search"></i>
+                          </span>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="1==2" class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-if="1==2" ng-repeat="company in vm.customSelectedCompanys" ng-click="vm.removeCompany(company, $index)" class="badge icon-remove">{{company.vcCompanyName}}</a>
+             	</div>
+            </div>
+        </div>
+    </form>
+     <div class="row-fluid flex">
+     <div class="main-panel hundredTable">
+    <table class="table table-hover table-bordered main-table"
+           st-table="vm.companys"
+           st-pipe="vm.searchCompany"
+           fx-table="dialog.companys">
+        <thead>
+        <tr>
+            <th style="width:64px;"></th>
+            <th translate="N001228">统一社会信用代码</th>
+            <th translate="N000963">企业名称</th>
+            <th translate="N001802">类型</th>
+            <th translate="N000385">法定代表人</th>
+            <th translate="N001803">地址</th>
+        </tr>
+        </thead>
+        <tbody>
+           <tr ng-click="vm.toggleSelectCompany(data)"
+        	st-select-row="data"
+            st-select-mode="{{::ngDialogData.selectionMode}}"
+            ng-repeat="data in vm.companys" >
+            <td>
+                <input type="radio" class="fx-radio"
+                       ng-checked="data.isSelected"
+                       ng-if="ngDialogData.selectionMode == 'single'" />
+                <input type="checkbox" class="fx-checkbox"
+                       ng-checked="data.isSelected"
+                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+            </td>
+            <td class="ellipsis"  ng-bind-html="data.vcCompanyCode | highlight:vm.searchParam"></td>
+            <td class="ellipsis"  ng-bind-html="data.vcCompanyName | highlight:vm.searchParam"></td>
+            <td class="ellipsis"  ng-bind-html="data.vcCompanyType | highlight:vm.searchParam"></td>
+            <td class="ellipsis"  ng-bind-html="data.vcCorporate | highlight:vm.searchParam"></td>
+            <td class="ellipsis" title="{{data.fullAddress}}" ng-bind-html="data.fullAddress | highlight:vm.searchParam"></td>
+        </tr>
+        </tbody>
+    </table>
+	</div>
+	</div>
+</section>
+<footer>
+<!-- 分页控件 -->
+<div style="float:left;">
+	<div fx-pagination></div>
+</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

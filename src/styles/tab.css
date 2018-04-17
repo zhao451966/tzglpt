@@ -1,0 +1,62 @@
+.fx-tabset > .nav-tabs {
+    margin: 0;
+    border-bottom: none;
+}
+
+.fx-tabset > .nav-tabs > .active > a,
+.fx-tabset > .nav-tabs > .active > a:hover,
+.fx-tabset > .nav-tabs > .active > a:focus {
+    background: #F9F9F9;
+    font-weight: 700;
+    border: 1px solid #CDCDCD;
+    border-bottom-color: transparent;
+}
+
+.fx-tabset > .nav-tabs > li > a {
+    border-radius: 0;
+    line-height: 19px;
+}
+
+.fx-tabset > .tab-content {
+    padding: 0 15px;
+    background: #F9F9F9;
+    border: 1px solid #CDCDCD;
+}
+
+.fx-tabset .form-default .control-group {
+    padding: 5px 0 0;
+}
+ .fx-tabset .form-default .control-group.first {
+     border-top: none;
+ }
+.fx-tabset .form-default .control-label {
+    padding-left: 0;
+    color: #3A87AD;
+}
+
+.fx-tabset .accordion {
+    padding: 0px 20px;
+}
+
+.fx-tabset .accordion .accordion-group {
+    border: none;
+}
+.fx-tabset .accordion .accordion-body .accordion-inner {
+    border: none;
+    padding-top: 0;
+}
+.fx-tabset .accordion .accordion-heading {
+    padding-right: 15px;
+}
+.fx-tabset .accordion .accordion-heading a {
+    padding: 8px 0;
+    background: url(img/border-right-bg.png) right center repeat-x;
+}
+.fx-tabset .accordion .accordion-heading h5 {
+    margin: 0;
+    display: inline-block;
+    width: auto;
+    padding-right: 10px;
+    /*background: #F9F9F9;*/
+    background: #fff;
+}

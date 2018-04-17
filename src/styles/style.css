@@ -1,0 +1,923 @@
+body.fosun {
+    background: #fff!important;
+    font-size: 14px;
+}
+
+body,
+body .btn,
+body button,
+body input{
+/*    font-family:"Microsoft YaHei","MicrosoftJhengHei",STHeiti,MingLiu!important;*/
+    font-family: 'Fosun Sans', Arial, sans-serif!important;
+/*    font-size: 12px;*/
+}
+
+form .my-info-noFirst {
+    position: absolute;
+    width: 408px;
+    height: 290px;
+    right: -10px;
+    background: #F4F6F9;
+    padding: 12px;
+    top: 21px;
+    border-radius: 8px;
+    left: 443px;
+}
+form .my-info-noFirst label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .my-info-noFirst ol {
+    margin-left: 12px;
+}
+form .my-info-noFirst li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+form .my-info {
+    position: absolute;
+    width: 408px;
+    #height: 203px;
+    right: -10px;
+    background: #F4F6F9;
+    padding: 12px;
+    top: 21px;
+    border-radius: 8px;
+    left: 443px;
+}
+ form .my-info-edit1 {
+     position: absolute;
+     width: 408px;
+     #height: 203px;
+     right: -10px;
+     background: #F4F6F9;
+     padding: 12px;
+     top: 112px;
+     border-radius: 8px;
+     left: 442px;
+ }
+form .my-info-edit1 label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .my-info-edit2 label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .my-info-edit3 label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .my-info-edit2 {
+    position: absolute;
+    width: 408px;
+    #height: 200px;
+    right: -10px;
+    background: #F4F6F9;
+    padding: 12px;
+    top: 103px;
+    border-radius: 8px;
+    left: 442px;
+}
+form .my-info-edit2 li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+form .my-info-edit3 {
+    position: absolute;
+    width: 408px;
+    #height: 200px;
+    right: -10px;
+    background: #F4F6F9;
+    padding: 12px;
+    top: 185px;
+    border-radius: 8px;
+    left: 442px;
+}
+form .my-info-edit3 li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+form .my-info-add {
+    position: absolute;
+    width: 408px;
+    height: 158px;
+    right: -10px;
+    background: #F4F6F9;
+    padding: 12px;
+    top: 184px;
+    border-radius: 8px;
+    left: 443px;
+}
+form .my-info-add li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+form .my-info-add label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .my-info-add-fix {
+    position: absolute;
+    width: 408px;
+    height: 158px;
+    right: -10px;
+    background: #F4F6F9;
+    padding: 12px;
+    top: 192px;
+    border-radius: 8px;
+    left: 443px;
+}
+form .my-info-add-fix li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+form .my-info-add-fix label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .my-info-edit1 li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+form .my-info-two {
+    position: absolute;
+    width: 408px;
+    #height: 161px;
+    right: -10px;
+    background: #F4F6F9;
+    padding: 12px;
+    top: 23px;
+    border-radius: 8px;
+    left: 442px;
+}
+form .my-info-two li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+
+form .my-info-three {
+    position: absolute;
+    width: 408px;
+    #height: 123px;
+    right: -10px;
+    background: #F4F6F9;
+    padding: 12px;
+    top: 21px;
+    border-radius: 8px;
+    left: 443px;
+}
+form .my-info-three li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+form .my-info label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .my-info-two label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .my-info-three label {
+    width: 100%;
+    top: 2px;
+    border-bottom: 1px solid #ddd;
+    left: 14px;
+    padding-bottom: 5px;
+}
+form .tip-info {
+    padding: 0px;
+    font-size: 13.4px;
+}
+
+form .my-info ol {
+    margin-left: 12px;
+}
+form .my-info li {
+    line-height: 24px;
+    margin-bottom: 2.3px;
+    font-size: 13px;
+}
+
+a.select-pro {
+    width: 418px;
+}
+div#content {
+    position: relative;
+}
+
+table.table tr.st-selected {
+
+    background: rgb(240, 248, 252);
+    
+
+    /*border: 2px solid rgb(0, 112, 210);*/
+
+}
+table.table tr.st-selected > td {
+
+    border-bottom: 1px solid rgb(216, 221, 230);
+    border-top: 1px solid rgb(216, 221, 230);
+
+}
+
+.table-hover tbody tr.st-selected:hover > td, .table-hover tbody tr.st-selected:hover > th {
+    background: rgb(240, 248, 252);
+}
+
+
+
+/*body.loading {*/
+/*overflow: hidden;*/
+/*}*/
+
+body.loading .loading-indicator {
+    display: block;
+}
+
+.loading-indicator {
+    display: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    padding: 0.7em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*background: rgba(255,255,255,.5);*/
+    line-height: 100vh;
+    z-index: 1001;
+}
+
+.loading-indicator:before {
+    display: inline-block;
+    margin: 0 0.4em;
+    min-width: 1em;
+    min-height: 1em;
+    border-top: 4px solid #646464;
+    border-right: 4px solid #999;
+    border-left: 4px solid #e6e6e6;
+    border-bottom: 4px solid #999;
+    content: "";
+    -webkit-animation: halfspin 1s ease infinite;
+    -moz-animation: halfspin 1s ease infinite;
+    -o-animation: halfspin 1s ease infinite;
+    animation: halfspin 1s ease infinite;
+    border-radius: 100%;
+}
+
+@-webkit-keyframes halfspin {
+    to {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        transform: rotate(180deg); } }
+
+@-moz-keyframes halfspin {
+    to {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        transform: rotate(180deg); } }
+
+@keyframes halfspin {
+    to {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        transform: rotate(180deg); } }
+
+th[st-sort] {
+    cursor: pointer;
+}
+
+.st-sort-ascent:before{
+    content: '\25B2';
+    margin-right: 10px;
+}
+
+.st-sort-descent:before{
+    content: '\25BC';
+    margin-right: 10px;
+}
+
+.form-default .control-label {
+    /*padding-left: 8px;*/
+    font-size: 16px;
+}
+form .control-label:after {
+    /*content: ":";*/
+}
+
+.form-default .control-group {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 0;
+    /*
+    padding: 5px 25px 0;
+    */
+    /*overflow: hidden;*/
+}
+.form-default .control-group:first-child {
+    border-top: none;
+}
+.form-default .control-group:last-child,
+.form-default .control-group.last {
+    border-bottom: none;
+}
+
+.form-default .form-actions {
+    margin-bottom: 0;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    font-size: 14px;
+    box-shadow:none;
+    color: rgb(22, 50, 92);
+}
+
+.fx-actions {
+    padding-right: 16px;
+}
+
+.row-fluid .fx-span6:first-child {
+    margin-left: 0;
+}
+
+.row-fluid .fx-span6 {
+    width: 49.6%;
+    margin-left: 0.8%;
+}
+
+.widget-content.search-box {
+    padding: 6px 15px;
+    height: 37px;
+    transition: height 1s;
+    -moz-transition: height 1s;
+    -webkit-transition: height 1s;
+    -o-transition: height 1s;
+    overflow: hidden;
+}
+
+.search-box.more {
+    height: auto;
+    transition: height 1s;
+    -moz-transition: height 1s;
+    -webkit-transition: height 1s;
+    -o-transition: height 1s;
+}
+
+.search-box.more .control-group{
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+.search-box.more .control-group:first-child{
+    border-top: none;
+}
+.search-box.more .control-group:last-child{
+    border-bottom: none;
+}
+
+.formbx {
+    position: absolute;
+    left: 10px;
+    margin: 0;
+    top: 12px;
+}
+.formbx2 {
+    position: absolute;
+    left: 74px;
+    margin: 0;
+    top: 12px;
+}
+
+
+.padding {
+    padding: 10px;
+}
+.search-box .control-group {
+    border: none;
+}
+.search-box .control-label {
+    line-height: 28px;
+
+}
+
+.widget-box.table-box {
+    margin-top: 0;
+}
+
+.search-box select,
+.search-box textarea,
+.search-box input[type="text"],
+.search-box input[type="password"],
+.search-box input[type="datetime"],
+.search-box input[type="datetime-local"],
+.search-box input[type="date"],
+.search-box input[type="month"],
+.search-box input[type="time"],
+.search-box input[type="week"],
+.search-box input[type="number"],
+.search-box input[type="email"],
+.search-box input[type="url"],
+.search-box input[type="search"],
+.search-box input[type="tel"],
+.search-box input[type="color"],
+.search-box .uneditable-input {
+    margin: 0;
+
+}
+
+.widget-box {
+    /*border-bottom: 1px solid #CDCDCD;*/
+}
+.modal-height400{
+    height:400px;
+}
+.modal-small .modal {
+    width: 560px;
+    margin-left: -260px;
+    top: 48px;
+    border-radius: 4px;
+}
+.modal-small .spanInput {
+    width: 100%;
+    *width: 99.94680851063829%;
+}
+.modal-lg .spanInput{
+    width: 48.717948717948715%;
+    *width: 48.664757228587014%;
+}
+.modal-lg .modal {
+    width: 960px;
+    margin-left: -480px;
+    top: 48px;
+    border-radius: 4px;
+}
+
+.modal-slg .modal {
+    width: 1200px;
+    margin-left: -600px;
+    top: 48px;
+    border-radius: 4px;
+}
+
+
+.modal-slg.modal .modal-body {
+    max-height: 400px;
+}
+
+.modal-right .modal {
+    top: 0; right: 0; left: initial;
+    margin-left: 0;
+    border: none;
+    border-radius: 0;
+    height: 100vh;
+    width: 320px;
+}
+
+.modal-left .modal {
+    top: 0; left: 0; right: initial;
+    margin-left: 0;
+    border: none;
+    border-radius: 0;
+    height: 100vh;
+    width: 320px;
+}
+.modal-right .modal-body,
+.modal-left .modal-body {
+    position: absolute;
+    top: 44px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+}
+.modal-right .modal-footer,
+.modal-left .modal-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.select2-drop {
+    z-index: 99999;
+}
+
+div a:hover, div a:focus {
+    text-decoration: none;
+    color: #005580;
+}
+div label {
+    cursor: default;
+}
+
+th {
+    vertical-align: middle;
+}
+
+.container-fluid.fx-container {
+/*    padding-left: 0;
+    padding-right: 0;*/
+}
+
+.modal-header {
+    border-radius: 8px 8px 0 0;
+}
+
+.container-fluid .row-fluid div.no-margin,
+.container-fluid .row-fluid .no-margin
+{
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.container-fluid .row-fluid .nav-tabs {
+    /*
+    margin-top: 16px;
+    */
+}
+
+.control-label {
+    /** font-weight: 700; */
+}
+
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.opt-width {
+    width: 5%;
+}
+/*提示字体*/
+.table th[contenteditable], .table td[contenteditable] {
+    color: rgb(197, 200, 204);
+}
+/*获得焦点时*/
+.table th[contenteditable]:focus,.table td[contenteditable]:focus {
+    color: black;
+    font-size: 14px;
+}
+/*有内容时*/
+.table th[contenteditable].text-conent,.table td[contenteditable].text-conent {
+    color: black;
+    font-size: 14px;
+}
+
+.td50{
+    width:50px;
+}
+.text-inline{
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/*可输入的查询框  文本框 按钮 有分割线*/
+.search-input{
+    width: 385px;
+    height: 26px;
+    border: 1px solid rgb(216, 221, 230);
+    background: #fff;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+    margin: 13px 0px 10px -3px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+.search-searchbtn{
+    height: 36px;
+    padding: 0;
+    width: 55px;
+    margin: 13px 0 10px 0;
+    text-align: center;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0 4px 4px 0;
+    border: 1px solid  rgb(206, 206, 206);
+    border-left: none;
+    font-size: 14px;
+    color: rgb(150, 150, 150);
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    left: -10px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+
+}
+/*带放大镜的 文本框 放大镜在文本框里*/
+.search-input2{
+    height:40px;width:100%;
+    padding-right:60px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+}
+.search-searchbtn2{
+    left: -37px;
+    top: 9px;
+    z-index: 100;
+    border: none;
+    position: relative;background-color: white;
+    color: rgb(136,136,136);
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+}
+.search-searchbtn2:hover{
+    background-color: #eeeeee;
+}
+
+
+
+
+
+
+.form-default .control-group.space.first{
+    border-bottom: 1px solid rgb(216, 221, 230);
+    padding-bottom: 27px;
+    margin-top: 0px;
+}
+
+.form-default:last-child .control-group.space.first {
+    border-bottom: 0;
+    padding-bottom: 27px;
+    margin-top: 0px;
+}
+
+.form-default .control-group.space.last{
+    border-bottom: 0px;
+    padding-bottom: 27px;
+    margin-top: 42px;
+}
+
+.form-default .control-group.space{
+    border-bottom: 1px solid rgb(216, 221, 230);
+    padding-bottom: 27px;
+    margin-top: 42px;
+}
+
+.breadcrumbSeparator{
+    margin:0 5px;
+}
+
+
+
+
+
+
+
+/*整个文件div*/
+.dymicRemove{
+    width:200px;
+    height:30px;
+    line-height:30px;
+}
+/*文件图标*/
+.fileIcon{width:30px;height:30px;float:left;}
+/*文件标题*/
+.fileName{
+    width:140px;margin-left:15px;float:left;
+    display:block;white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.img-word-f{
+    background-image: url("img/word.png");
+    width: 30px;
+    height: 30px;
+}
+.img-excel-f{
+    background-image: url("img/excel.png");
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+    cursor:hand;
+}
+.img-ppt-f{
+    background-image: url("img/ppt.png");
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+    cursor:hand;
+}
+.img-pdf-f{
+    background-image: url("img/pdf.png");
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+    cursor:hand;
+}
+.img-text-f{
+    background-image: url("img/text.png");
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+    cursor:hand;
+}
+.img-image-f{
+    background-image: url("img/image.png");
+    width: 30px;
+    height: 30px;
+}
+.img-video-f{
+    background-image: url("img/video.png");
+    width: 30px;
+    height: 30px;
+}
+
+/*删除图标默认样式*/
+.deleteFile{
+    width:14px;
+    height:14px;
+    line-height: 14px;
+    margin-top:9px;
+    float:left;
+    display:none;
+    color:#CCCCCC;
+    *margin-right: .3em;
+    vertical-align: text-top;
+    background-image: url("../../bower_components/bootstrap/img/glyphicons-halflings.png");
+    background-repeat: no-repeat;
+    background-position: -312px 0;
+}
+
+.dymicRemove:hover{
+    cursor:pointer;
+    cursor:hand;
+    text-decoration: underline;
+}
+/*删除文件图标动态出现*/
+.dymicRemove:hover > .deleteFile{
+    cursor:pointer;
+    cursor:hand;
+    color:#CCCCCC;
+    display:block !important;
+}
+
+select{
+    font-family: 'Fosun Sans', Arial, sans-serif!important;
+    font-size:14px;
+}
+
+
+
+table.nowrap td, table.dclick td, table.wcilck td {
+    white-space: nowrap;
+}
+
+.lipe {
+    max-width: 100%;
+}
+
+.lipe td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.maxer {
+    max-height: 215px;
+    overflow: scroll;
+}
+
+table.nowrap td, table.dclick td, table.wcilck td {
+    white-space: nowrap;
+}
+
+.inline-tabset.tabbable.showtable:first-child .tab-content {
+    padding: 0;
+}
+
+.main-panel .no-data{
+    background: white;
+    height: 90px;
+    border: solid 1px #e5e5e5;
+    background-color: white;
+    color: #666;
+}
+
+.main-panel .no-data span.no-data-loading{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.main-panel .no-data span.no-data-title{
+    display: block;
+    margin-top: 22px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #1e1e1e;
+}
+
+.main-panel .no-data span.no-data-tip{
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #848484;
+}
+
+.table th, .table td.file-name-td{
+    color: #000000;
+    cursor: pointer;
+}
+
+.tooltipLEMClass {
+    width: 380px;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+.file-name-td  tooltip{
+    height: 21px;
+    width: 100%;
+}
+
+/**分页样式改造**/
+.list-header-content .pagination ul{
+    box-shadow: none;
+}
+.list-header-content .pagination ul > li > a, .pagination ul > li > span {
+    border: none;
+    background: transparent;
+    color: #999;
+}
+.list-header-content .pagination ul > li > a:hover,
+.list-header-content .pagination ul > li > a:focus,
+.list-header-content .pagination ul > .active > a,
+.list-header-content .pagination ul > .active > span {
+    background-image: url("img/page_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #FFFFFF;
+}
+/**分页样式改造**/

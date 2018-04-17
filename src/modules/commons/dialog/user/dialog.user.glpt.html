@@ -1,0 +1,67 @@
+<header ng-bind="ngDialogData.title">用户管理平台</header>
+<section>
+	<form class="form-default">
+         <div style="margin:0px;" class="row-fluid">
+            <div class="span6">
+                 <div class="controls">
+                     <div style="margin-bottom: 20px;" class="input-append">
+                         <input placeholder="{{'N106005' | translate}}" class="span12" type="text" ng-model="vm.name">
+                         <span class="add-on">
+                             <i style="cursor:pointer;" ng-click="vm.searchGlptByName()" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+         	<div ng-if="1==2" class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-if="1==2" ng-repeat="glpt in vm.customSelectedGlpts" ng-click="vm.removeGlpt(glpt, $index)" class="badge icon-remove">{{glpt.glptName}}</a>
+             	</div>
+             </div>
+         </div>
+    </form>
+    <div>
+	    <table class="table table-hover table-bordered main-table"
+	    	   st-table="vm.glpts"
+	    	   st-pipe="vm.searchGlptByName"
+	           fx-table="dialog.glpts">
+	        <thead>
+	        <tr>
+	            <th style="width: 64px;"></th>
+	            <th translate="N001600">用户名</th>
+	            <th translate="N000162">部门</th>
+	            <th translate="N000574">管理平台</th>
+	        </tr>
+	        </thead>
+	        <tbody>
+	        <tr ng-click="vm.toggleSelectGlpt(data)"
+	        	st-select-row="data"
+	            st-select-mode="{{::ngDialogData.selectionMode}}"
+	            ng-repeat="data in vm.glpts" >
+	            <td>
+	                <input type="radio" 
+	                	   class="fx-radio"
+	                	   name="redio"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'single'" />
+	                <input type="checkbox" class="fx-checkbox"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+	            </td>
+	            <td class="ellipsis" title="{{data.label}}" ng-bind-html="data.label | highlight:vm.name"></td>
+	            <td class="ellipsis" title="{{data.unitName}}" ng-bind-html="data.unitName  | highlight:vm.name"></td>
+	            <td class="ellipsis" title="{{data.glptName}}" ng-bind-html="data.glptName | highlight:vm.name"></td>
+	        </tr>
+	        </tbody>
+	    </table>
+	</div>
+</section>
+<footer>
+	<!-- 分页控件 -->
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>

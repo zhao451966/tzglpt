@@ -1,0 +1,489 @@
+.container-fluid.bike {
+    padding: 0;
+}
+.fixed-row.row-fluid .user-thumb.bike-display {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: 0.2s;
+ }
+.container-fluid.bike .fixed-row.row-fluid {
+    position: fixed;
+    background: rgb(244, 246, 249);
+    /* background: #fff; */
+    z-index: 1;
+    margin-top: -2px;
+    /* border-bottom: 1px solid #eee; */
+}
+
+.container-fluid.bike .fixed-suit-row.row-fluid {
+    margin-top: 82px;
+}
+
+
+.fixed-row.row-fluid .user-thumb {
+    height: 35px;
+    padding: 24px;
+    width: 100%;
+    border-bottom: 1px solid rgb(216, 221, 230);
+}
+.fixed-row.row-fluid .user-thumb h3 {
+    display: block;
+    float: left;
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-top: 3px;
+    font-size: 24px;
+    color: rgb(22, 50, 92);
+}
+.bike .fixed-row.row-fluid .user-thumb span.bikeLogo {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 36px;
+    float: left;
+    border-radius: .25rem;
+    margin-right: 12px;
+    /* margin-left: 10px; */
+    margin-top: 2px;
+}
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeDue {
+    background: #baac94;
+}
+.bike .fixed-row.row-fluid .user-thumb span.bikeboard {
+    background: #ed6f67;
+}
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeCash {
+    background: #4c9ece;
+}
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeCompany {
+    background: #3dbecc;
+}
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeStockLogo {
+    background: #baac94;
+}
+
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeBondLogo {
+    background: #baac94;
+}
+
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeTeamLogo {
+    background: #50bf79;
+}
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeEstimate {
+    background: #85b7fc;
+}
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeRisk {
+    background: #e97293;
+}
+
+.bike .fixed-row.row-fluid .user-thumb i {
+    color: #ffffff;
+    font-size: 20px;
+    /* line-height: 5px; */
+}
+
+.bike a.icon-refresh {
+    line-height: 36px;
+}
+
+.fixed-row.row-fluid .bike-bnt-group{
+    position: fixed;
+    right: 18px;
+    top: 74px;
+}
+
+.widget-content.bike-widget {
+    border: none;
+    padding: 0 24px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    max-height: 218px;
+}
+
+.bike-bnt-group a.btn.single-btn {
+}
+
+
+.bike-bnt-group .btn-group > .btn + .dropdown-toggle {
+    padding-right: 8px;
+    padding-left: 8px;
+     -webkit-box-shadow:none;
+    -moz-box-shadow: none;
+     box-shadow: none;
+}
+
+.widget-box.info-box {
+    background: #ffffff;
+}
+
+.projectsEncy.bike-cut-off .widget-content.info-box{
+    padding: 0;
+    height: 34px;
+}
+
+
+/*.projectsEncy.bike-cut-off .widget-title {
+    margin: 0 0 0 -15px;
+}*/
+
+.fosun-container .sub-panel.bike-no-border {
+box-shadow: none;
+}
+
+.container-fluid.bike .fixed-suit-row.row-fluid .projectsEncy  {
+    padding: 4px 1% 0px 1%;
+    border-bottom: none;
+}
+
+
+.bike-position {
+    overflow:hidden;
+    border:0px solid #cdcdcd;
+    background-color:#fff;
+    margin: 0 0 0 0px;
+}
+
+.bike-right-top {
+    padding: 0;
+    margin: 22px 16px 0px;
+    border: 1px solid #e0e0e0;
+    border-bottom: 0;
+}
+
+
+
+.info-box p.dash {
+    width: 100%;
+    height: 10px;
+    margin-left: 9px;
+    position: relative;
+    background: #ffffff url(../img/bike/sideCatalog.png) no-repeat left -74px;
+    z-index: 1;
+}
+
+.info-box p.dashed-p1 {
+    top: 8px;
+}
+.info-box p.dashed-p2 {
+    bottom: 2px;
+}
+
+
+#content .info-box .bike-position ul {
+    margin: 0 -10px;
+
+}
+
+#content .info-box .bike-position li {
+    float: none;
+    list-style: none;
+    padding-left: 20px;
+    width: 100%;
+}
+
+#content .info-box .bike-position ul li.bikeLv1 {
+    background: url(../img/bike/sideCatalog.png) no-repeat left -88px;
+}
+
+#content .info-box .bike-position ul li.active {
+    background: url(../img/bike/sideArr.png) no-repeat left;
+}
+
+
+#content .info-box .bike-position ul li.bikeLv1:hover {
+    background: url(../img/bike/sideCatalog.png) no-repeat left -111px;
+}
+
+#content .info-box .bike-position ul li.active:hover {
+    background: url(../img/bike/sideArr.png) no-repeat left;
+}
+
+
+
+#content .info-box .bike-position ul li.bikeLv1 a {
+    color: #555;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 0px;
+    padding: 6px 10px;
+}
+
+#content .info-box .bike-position ul li.bikeLv1 a:hover {
+    background: #f5f5f5;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 #eaeaea;
+
+}
+
+
+#content .info-box .bike-position li.bikeLv2 a {
+    color: #666;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 0px;
+    padding: 6px 20px;
+    display: block;
+}
+
+#content .info-box .bike-position li.bikeLv3 a {
+    padding: 6px 30px;
+    font-size: 12px;
+    color:#000;
+}
+
+
+#content .info-box .bike-position li.bikeLv2:hover {
+    background:none;
+}
+
+#content .info-box .bike-position li.bikeLv2 a:hover {
+    background: #f5f5f5;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 #eaeaea;
+}
+
+#content .info-box .bike-position li.bikeLv2:hover li.bikeLv1 {
+    background: none;
+}
+
+.projectsEncy-fixed-box.bike-fixed-box {
+
+    margin: 0;
+    background: #fff;
+
+}
+
+.bike-right-top .show-suo {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.bike-right-top .show_retract {
+    height: 0;
+    border-bottom: 0;
+    transition: .2s;
+}
+.bike-right-top .show_expand {
+    /*height: 140px;*/
+    transition: .2s;
+}
+
+
+.bike-right-top .sub-title {
+    font-weight: 100;
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.bike-right-top p.sub-cont {
+    font-size: 14px;
+    height: auto;
+    margin: 10px 12px;
+}
+
+
+.bike-right-top .flex-row {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 12px 12px;
+    width: auto;
+    position: relative;
+}
+
+
+.bike-right-top .flex-row span.hong {
+    margin: 0;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+}
+
+.bike-right-top .flex-row.row-fluid span.hong {
+    width: 32px;
+    height: 30px;
+    border-radius: 2px;
+    background: #FCB95B;
+    display: inline-table;
+}
+
+
+.show_height2 {
+    #height: 330px;
+    height: 280px;
+    transition: .2s;
+}
+.show_height1 {
+    #height: 203px;
+    height: 140px;
+    transition: .2s;
+}
+.bike-right-top .flex-row h4.shortName {
+    border: none;
+    height: 32px;
+    margin: 0 12px;
+    line-height: 32px;
+    padding: 0;
+}
+.bike-right-top .flex-row a {
+    width: 100%;
+    margin: 0 12px;
+}
+.bike-right-top .flex-row a h4.shortName {
+    border: none;
+    height: 32px;
+    width: 80%;
+    margin: 0;
+    line-height: 32px;
+    padding: 0;
+}
+
+.bike-right-top .tran {
+    width: 0px;
+    /* height: 30px; */
+    padding: 0;
+    margin: 0;
+    margin-top: 13px;
+    position: absolute;
+    right: 12px;
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); 	/* IE 9 */
+    -moz-transform:rotate(90deg); 	/* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari �? Chrome */
+    -o-transform:rotate(90deg);
+}
+
+.bike-right-top .tran2 {
+    width: 0px;
+    /* height: 30px; */
+    padding: 0;
+    margin: 0;
+    margin-top: 13px;
+    position: absolute;
+    right: 12px;
+}
+
+.bike .span9 .widget-box {
+    padding-left: 12px;
+    background: #fff;
+
+}
+.row-fluid .lv3Title {
+    height: 26px;
+}
+
+.row-fluid .lv3Title hr {
+    position: relative;
+    top: -8px;
+}
+
+.row-fluid .lv3Title a {
+    position: relative;
+    top: -39px;
+    background: #fff;
+    padding: 0 8px;
+    float: right;
+
+}
+
+.row-fluid .lv3Title legend {
+    padding: 0 8px 0 0;
+}
+
+
+.dueOpinion table td {
+    border: 1px solid #ddd;
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+.bike .span3 .article-post {
+    width: 23.4%;
+    position: fixed;
+    height:100%;
+}
+
+.bike .span3 .article-post.bikeExpand {
+    width: 21.1%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.projectsEncy a.edit.coverBike span {
+    padding: 0;
+    background: #ffffff url(../img/bike/pencle.png) no-repeat;
+    height: 20px;
+    width: 20px;
+    display: block;
+    margin-top: 9px;
+}
+
+.projectsEncy a.edit.coverBike span:hover {
+    background: #ffffff url(../img/bike/pencle-blue.png) no-repeat;
+}
+
+.bike .projectsEncy.widget-content .article-post .control-group .row-fluid.lv3Title {
+    margin: 0px;
+    padding-right: 0;
+    margin-top: 8px;
+}
+
+.bike .article-post .control-group .control-group {
+    border-bottom: none;
+    margin-top: 10px;
+}
+
+/*
+.bike .projectsEncy.widget-content .article-post .row-fluid {
+    padding: 0 0 8px;
+}
+*/
+.projectsEncy.widget-content .article-post .control-group .row-fluid {
+    width: auto;
+    padding-left: 22px;
+    padding-right: 26px;
+}
+
+.bike .fixed-row.row-fluid .user-thumb span.bikeMeeting {
+    background: #808fde;
+}
+
+.bike .fixed-row.row-fluid .user-thumb span.bikecoverPage {
+    background: #5085BF;
+}
+
+
+.bike .form-default legend {
+    padding-left: 22px;
+}
+
+.bike .ng-scope.ng-isolate-scope iframe body {
+    margin-left: 0;
+}
+
+.bike div[fx-ueditor] {
+    border-bottom: 1px dashed #9e9e9e;
+}
+
+.more-info {
+    color: #0088cc;
+    line-height: 24px;
+}

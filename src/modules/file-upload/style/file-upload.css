@@ -1,0 +1,293 @@
+.ngdialog.ngdialog-theme-default .ngdialog-content>section.no-padding-top {
+    padding-bottom: 0;
+    padding-top: 0;
+    overflow: hidden;
+}
+
+
+.form-default .row-fluid.file-no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+.form-default .row-fluid.file-no-margin div.span6 {
+    margin: 0;
+    padding:0 12px;
+
+}
+.form-default .row-fluid.file-no-margin div.file-left {
+    padding-right: 30px;
+    width: 35%;
+    position: ABSOLUTE;
+}
+.form-default .row-fluid.file-no-margin div.file-right {
+
+    border-left: 1px solid #ddd;
+    position: absolute;
+    padding-left: 14px;
+    width: 65%;
+    left: 35%;
+    bottom: 60px;
+    top: 70px;
+    overflow: auto;
+}
+
+
+.form-default .row-fluid ul.file-ul {
+
+}
+
+.form-default .row-fluid ul.file-ul li {
+    display: flex;
+    padding: 6px 0;
+
+}
+
+.form-default .row-fluid ul.file-ul li img {
+    width: 37px;
+    height: 34px;
+    margin-right: 11px;
+    margin-top: 4px;
+    border-radius: 2px;
+}
+.form-default .row-fluid ul.file-ul li span {
+
+}
+.form-default .row-fluid ul.file-ul li label.file-delete {
+    float: right;
+
+}
+
+.form-default .row-fluid span.itemTitle {
+    color: #000000;
+    font-size: 14px;
+    line-height: 15px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-default .row-fluid ul.file-ul li p.secondaryFields {
+    color: rgb(84, 105, 141);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 100%;
+    display: inline-block;
+}
+
+.form-default .row-fluid.file-no-margin div.file-right .row-fluid {
+    margin-top: 75px ;
+}
+
+.form-default .row-fluid.file-no-margin div.file-right .row-fluid:first-child {
+    position: relative;
+    top: 5px;
+    background: #fff;
+    z-index: 2;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.form-default .row-fluid.file-no-margin div.file-left .row-fluid:first-child {
+    margin-bottom: 19px;
+    margin-top: 13px;
+
+}
+
+
+header .header-yindao .file-icon-container {
+    position: relative;
+    direction: ltr;
+    text-align: left;
+    height: 21px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 21px;
+    display: inline-block;
+    margin-right: 0px;
+}
+
+header .header-yindao .file-icon-container .ydright-icon-span-img{
+    margin-left: 0px;
+    left: 0;
+    top: -1683px;
+}
+
+
+div.ngdialog.ngdialog-theme-default .ngdialog-content>section.file-upload{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    padding-right: 160px;
+    padding-left: 160px;
+    overflow: initial;
+}
+
+#FullPageLock{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.1);
+}
+
+.upload-btn-container{
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 0px;
+}
+
+.upload-btn-title{
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    color: #cac6c7;
+}
+
+.upload-tips{
+    margin-top: 20px;
+}
+
+.form-default .control-group .upload-tips .control-label,
+.form-default .control-group .upload-tips p {
+    font-size: 14px;
+    color: #747474;
+}
+
+.upload-tips{
+    margin-top: 20px;
+}
+
+#fileUploadForm{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#fileUploadForm .control-group{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#fileUploadForm .control-group .upload-btn-container{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-default  .upload-file-list.control-group{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: -130px;
+    margin-right: -130px;
+}
+
+.form-default .upload-file-list .row-fluid{
+    margin: 0px;
+}
+
+.waiting-file-list{
+    flex: auto;
+    border: solid 1px #e5e5e5;
+    overflow: auto;
+}
+
+.form-default .upload-file-list table.table-hover tbody tr>td {
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.form-default .upload-file-list table.table-hover tbody tr>td.lastTD{
+    width: 64px;
+}
+
+.form-default .table td.lastTD {
+    width: 60px;
+}
+
+.form-default .table td.lastTD>div{
+    width: 100%;
+    padding-left: 27px;
+    border-left: solid 1px #ccc;;
+}
+
+.selected-files {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.continue-uploader{
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.browse-file.continue-select{
+    font-size: 14px;
+    padding: 8px 0;
+    border-radius: 4px;
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    border: none;
+    height: 30px;
+}
+
+.file-upload form {
+    margin: 0 0 0px;
+}
+
+.file-upload .table-hover tbody tr:hover > td {
+    background-color: #f1faf6;
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-md.file-rename .ngdialog-content{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    min-height: 200px;
+    max-height: 400px;
+    height: 200px;
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-md.file-retime .ngdialog-content{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    min-height: 200px;
+    max-height: 400px;
+    height: 300px;
+}
+
+#fileTimeForm p.validation-invalid {
+    margin: 0px;
+}
+
+.upload-tip{
+    font-size: 16px;
+    background: white;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+}
+
+.upload-tip-word{
+    color: red;
+    margin-left: 5px;
+    margin-right: 5px
+}

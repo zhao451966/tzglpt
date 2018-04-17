@@ -1,0 +1,100 @@
+<div class="breadcrumb-outer">
+
+    <div class="header-search">
+            <input type="text" class="search-bar" ng-model="vm.projectName"
+                   ng-keydown="vm.keydown($event)"
+                   placeholder="{{'N106003' | translate}}" />
+            <button class="add-on search-btn" ng-click="vm.searchProjects()">
+                <i class="icon-search"></i>
+            </button>
+    </div>
+
+    <span class="small-menus-conainer">
+
+           <span ng-if="Authenticate.checkOpt('HOME_PAGE', 'LIST')" class="icon-lastProgress" title="{{'N001162' | translate}}"
+              ui-sref="root.fake"
+              ui-sref-opts="{reload: true}">
+                <img src="styles/img/dashboard/home.png" alt=""/>
+            </span>
+
+
+           <span  class="icon-sysSet" ng-if="vm.projectqxList.length!=0">
+                <div class="btn-group" fx-btn-group="vm.menus" style="margin: 0;">
+                    <span class="btn dropdown-toggle btn-mini no-padding" data-toggle="dropdown" style="border: none; margin-top: 0px;">
+                        <img src="styles/img/dashboard/build.png" alt=""/>
+                    </span>
+                    <ul ng-if="vm.projectqxHWList.length!=0||vm.projectqxGNList.length!=0" class="dropdown-menu pull-right large-menu">
+                        <li ng-if="vm.projectqxHWList.length!=0">
+                            <a  href="https://am.fosunproperty.com/FosunPortalOS/ProjectRisk/OverViewReadonly" target="_blank">
+                                地控海外业务
+                            </a>
+                        </li>
+                        <li ng-if="vm.projectqxGNList.length!=0">
+                            <a  href="https://am.fosunproperty.com/FosunPortal/ProjectRisk/OverViewReadonly" target="_blank">
+                                地控国内业务
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+
+            <!-- N001756=最新进展 -->
+            <span ng-if="Authenticate.checkOpt('ZXJZ_Z', 'CHECK-LIST')" class="icon-lastProgress" title="{{'N001756' | translate}}"
+                ui-sref="root.latestProjectList"
+                ui-sref-opts="{reload: true}">
+                <img src="styles/img/dashboard/icon-lastProgress.png" alt=""/>
+            </span>
+            <!-- N000293=待办事宜 -->
+            <span ng-if="Authenticate.checkOpt('apply', 'LIST')" class="icon-lastProgress" title="{{'N000293' | translate}}" ui-sref="root.apply">
+                <img src="styles/img/dashboard/icon-task.png" alt=""/>
+            </span>
+
+          <span ng-if="vm.menusBB.length!=0" class="icon-reportForms" title="{{'N000092' | translate}}">
+                <div class="btn-group" style="margin: 0;" >
+                    <span class="btn dropdown-toggle btn-mini no-padding" data-toggle="dropdown" style="border: none; margin-top: 0px;">
+                        <img src="styles/img/dashboard/icon-reportForms.png" alt=""/>
+                    </span>
+                    <ul  ng-if="vm.menusBB.length!=0" class="dropdown-menu pull-right large-menu-report" >
+                        <li ng-repeat="m1 in vm.menusBB"
+                            catalog="projectTargetClass"
+                            class="large-menu-li">
+                            <a ui-sref="{{m1.route}}"
+                               class="ellipsis"
+                               style="max-width: 200px; line-height: 28px;"
+                               title="{{::m1.name}}">{{::m1.name}}</a>
+                        </li>
+
+                    </ul>
+                </div>
+         </span>
+
+
+            <span  class="icon-sysSet">
+                <div class="btn-group" fx-btn-group="vm.menus" style="margin: 0;">
+                    <span class="btn dropdown-toggle btn-mini no-padding" data-toggle="dropdown" style="border: none; margin-top: 0px;">
+                        <img src="styles/img/dashboard/icon-sysSet.png" alt=""/>
+                    </span>
+
+
+                    <ul class="dropdown-menu pull-right large-menu">
+                        <li ng-if="m1.showFlag==true && m1.children.length > 0" ng-repeat="m1 in vm.menus">
+                            <a ng-if="m1.route" ui-sref="{{m1.route}}" style="line-height: 28px; height: 28px;">
+                                {{::m1.name}}
+                            </a>
+                            <a ng-if="!m1.route" style="line-height: 28px; height: 28px;">
+                               {{::m1.name}}
+                            </a>
+                            <ul class="settingLv2">
+                                <div class="arrow"></div>
+                                <div class="arrow-white"></div>
+                                <li ng-if="m2.showFlag==true" ng-repeat="m2 in m1.children">
+                                    <a ui-sref="{{m2.route}}" style="line-height: 28px; height: 28px;">{{::m2.name}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+
+    </span>
+</div>

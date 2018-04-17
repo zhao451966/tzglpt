@@ -1,0 +1,658 @@
+.projects-type > .nav-tabs > .active {
+    border-bottom: 2px solid #0070D2;
+}
+
+.projects-type > .nav-tabs > .active > a,
+.projects-type > .nav-tabs > .active > a:hover,
+.projects-type > .nav-tabs > .active > a:focus {
+    background: transparent;
+    border: none;
+}
+
+.projects-type > .nav-tabs .nav > li > a:hover,
+.projects-type > .nav-tabs .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #fff;
+}
+
+body, #content {
+    background: #fff!important;
+}
+
+.fx-container .form-default .control-group {
+    /*padding: 10px 0 10px 25px;*/
+}
+
+div#breadcrumb {
+    background: #fff;
+    border: none;
+    z-index: 2;
+}
+
+
+.fosun-search .btn-group > .btn.active {
+    z-index: 1;
+}
+
+div#main {
+    width: auto;
+}
+
+div#footer {
+    height: 30px;
+    width: auto;
+    background-color: red;
+}
+
+.footer {
+    background: #f7f8fb;
+    color: #133154;
+    border-top: 1px solid #e4e8ef;
+
+}
+.footer.container-fluid {
+    flex: 0;
+}
+
+.footer .row-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+.enter .footer  {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.footer .row-fluid span {
+    border-right: 1px solid #133154;
+    padding: 0 16px;
+    height: 12px;
+    line-height: 12px;
+    margin: 8px 0 8px 0;
+    font-size: 12px;
+}
+
+#content .footer .row-fluid span a {
+    color: #133154;
+}
+
+
+.footer .row-fluid span:first-child {
+    border-left: 1px solid #133154;
+}
+
+.footer .row-fluid p {
+    padding: 0 16px;
+    height: 14px;
+    line-height: 14px;
+    margin: 0 0 8px 0;
+    font-size: 12px;
+}
+
+.footer_outer {
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    right: 0;
+    left: 0;
+}
+
+.footer_outer.views{
+    flex: 0 0 auto;
+}
+
+
+.enter {
+    width: 100%;
+}
+
+.enter .enter_content div {
+
+}
+
+.enter_head {
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: auto;
+}
+
+.enter_head {
+    position: fixed;
+    height: 73px;
+    width: 100%;
+    background: #fff;
+}
+
+.enter_foot {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 66px;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.enter_content {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    min-height: 720px;
+}
+.enter_content .content-top,
+.enter_content .content-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.enter_content div.content-top {
+    height: 50%;
+    background: #e5e5e5 url("../modules/styles/img/enter/enter_bg.png") no-repeat;
+    background-position: center 48px;
+}
+.enter_content div.content-top:hover {
+    height: 50%;
+    background: #ebebeb url("../modules/styles/img/enter/enter_bg2.png") no-repeat;
+    background-position: center 48px;
+    transition: 0.6s;
+}
+.enter_content div.content-top:hover button {
+    background: url("../modules/styles/img/enter/btn_enter_hover.png");
+    transition: 0.2s;
+}
+
+
+.enter_content div.content-bottom {
+    height: 50%;
+}
+.content-bottom ul.enter_slick {
+    display: flex;
+    justify-content: center;
+}
+.content-bottom ul.enter_slick li {
+    float: left;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.content-bottom ul.enter_slick li div {
+    width: 80px;
+    height: 92px;
+    background: url("../styles/img/icon_link_nor.png");
+    margin: 0 auto;
+}
+.content-bottom ul.enter_slick li:hover div {
+    width: 80px;
+    height: 92px;
+    background: url("../styles/img/icon_link_hover.png");
+    transition: 0.4s;
+}
+.content-bottom ul.enter_slick li span {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    color:#004B97;
+    margin: 12px 0 6px 0;
+}
+
+
+.content-bottom ul.enter_slick li p {
+    font-size: 14px;
+    color: #8fa2c2;
+}
+
+.content-bottom ul.enter_slick li>div>span {
+    width: 80px;
+    height: 92px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content-bottom ul.enter_slick .sl_reports span {
+    background-image: url("../styles/img/enter/icon_report.png") ;
+}
+.content-bottom ul.enter_slick li:hover div.sl_reports span {
+    background-image: url("../styles/img/enter/icon_report_hover.png") ;
+    transition: 0.4s;
+}
+
+.content-bottom ul.enter_slick .sl_stock span {
+    background-image: url("../styles/img/enter/icon_stock.png") ;
+}
+.content-bottom ul.enter_slick li:hover div.sl_stock span {
+    background-image: url("../styles/img/enter/icon_stock_hover.png") ;
+    transition: 0.4s;
+}
+
+
+.content-bottom ul.enter_slick .sl_currencies span {
+    background-image: url("../styles/img/enter/icon_rate.png") ;
+}
+.content-bottom ul.enter_slick li:hover div.sl_currencies span {
+    background-image: url("../styles/img/enter/icon_rate_hover.png") ;
+    transition: 0.4s;
+}
+
+
+.content-bottom ul.enter_slick .sl_eur span {
+    background-image: url("../styles/img/enter/icon_ourui.png") ;
+}
+
+
+.content-bottom ul.enter_slick .sl_download span {
+    background-image: url("../styles/img/enter/icon_download.png") ;
+}
+.content-bottom ul.enter_slick li:hover div.sl_download span {
+    background-image: url("../styles/img/enter/icon_download_hover.png") ;
+    transition: 0.4s;
+}
+
+.content-bottom .content_slick{
+    margin-bottom: 50px;
+    clear:both;
+    padding: 0;
+    z-index: 2;
+    background: #fff;
+}
+
+
+.content-top h1,
+.content-top h2 {
+    text-align: center;
+}
+
+.content-top button {
+    width: 240px;
+    margin: 0 auto;
+    height: 68px;
+    border: none;
+    margin-top: 310px;
+    background: url("../modules/styles/img/enter/btn_enter.png");
+}
+
+
+.content-top .enter_title {
+    margin-top: 73px;
+}
+
+.enter_foot.footer p {
+text-align: center;
+}
+
+
+.content-bottom .slick-slide.slick-current {
+    cursor: pointer;
+}
+
+.content-top .enter_banner {
+    background: url("../modules/styles/img/enter/fosun_logo_blue.png");
+    width: 179px;
+    height: 24px;
+    margin: 24px;
+    float: left;
+}
+
+
+.content-top .banner_right {
+    float: right;
+    margin: 22px 8px;
+}
+
+.content-top div.banner_right {
+    width: 26px;
+    height: 30px;
+    background: url("../modules/styles/img/enter/icon_user.png");
+}
+
+.content-top p.banner_right {
+    margin-right: 24px;
+    margin-top: 27px;
+}
+
+/*dashboard*/
+.fx-dashboard .span9 .span12,
+.fx-dashboard .span9 .span6,
+.fx-dashboard .span3 .span12 {
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    padding: 20px 20px 10px;
+}
+
+.fx-dashboard .span3 .span12.no-border {
+    padding-bottom: 20px;
+}
+
+.fx-dashboard .span3 .span12.no-border h2 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+
+.fx-dashboard .span9 .span12 {
+    padding: 0;
+}
+
+.fx-dashboard .row-fluid {
+    margin: 20px 0;
+}
+.fx-dashboard .row-fluid.outer_row {
+    margin-bottom: 0;
+}
+
+
+.fx-dashboard .pass_meeting {
+    display: flex;
+    flex-direction: column;
+}
+
+.fx-dashboard .pass_meeting div.meeting_title,
+.fx-dashboard .pass_meeting div.meeting_content {
+    padding: 20px;
+}
+.fx-dashboard .pass_meeting div.meeting_title {
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.fx-dashboard .row-fluid .top {
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+.fx-dashboard .row-fluid .top h2 {
+    float: left;
+    font-size: 18px;
+    line-height: 20px;
+}
+.fx-dashboard .row-fluid .top p,
+.fx-dashboard .row-fluid .top span {
+    float: right;
+    font-size: 16px;
+    line-height: 20px;
+}
+.fx-dashboard .row-fluid .top p {
+    margin-right: 20px;
+}
+
+.fx-dashboard .pass_meeting div.meeting_title ul li {
+    float: left;
+    margin-right: 20px;
+
+}
+.fx-dashboard div.meeting_title ul span {
+    width: 14px;
+    height: 14px;
+    float: left;
+    margin-top: 3px;
+    margin-right: 12px;
+    display: inline-block;
+}
+.fx-dashboard div.meeting_title ul li.tbsh span {
+    background: #4097ae;
+
+}
+.fx-dashboard div.meeting_title ul li.tzgh span {
+     background: #4473a4;
+ }
+.fx-dashboard div.meeting_title ul li.xmcz span {
+    background: #ec8106;
+}
+
+
+.fx-dashboard div.meeting_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fx-dashboard div.meeting_content ul.demo li {
+    margin: 24px 0;
+
+}
+
+.fx-dashboard div.meeting_content div.pyramid {
+    width: 45%;
+    height: 226px;
+}
+
+.fx-dashboard div.meeting_content ul.description {
+    width: 45%;
+}
+
+.fx-dashboard div.meeting_content ul.description li {
+    margin: 12px 0;
+    list-style-type: square;
+}
+
+.fx-dashboard ul.dbsx li {
+    margin: 8px 0;
+    height: 20px;
+}
+
+.fx-dashboard ul.dbsx li p {
+   float: left;
+    width: 80%;
+}
+.fx-dashboard ul.dbsx li span {
+    float: right;
+    width: 20%;
+
+}
+
+
+.fx-dashboard .row-fluid  .middle_content {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fx-dashboard .row-fluid  .middle_content2 {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fx-dashboard .recent_project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.fx-dashboard .recent_project:hover {
+    box-shadow: #ECECEC 0px 1px 4px;
+}
+.fx-dashboard .recent_project div.pizza {
+    display: flex;
+    height: 32px;
+    flex-direction: row;
+}
+
+.fx-dashboard .recent_project div span {
+    width: 32px;
+    background: #fdba51;
+    border-radius: 2px;
+    height: 32px;
+    display: -webkit-box;
+    float: left;
+}
+
+.fx-dashboard .recent_project div h3 {
+    float: left;
+    font-size: 16px;
+
+    line-height: 32px;
+    width: 78%;
+    margin: 0;
+    padding: 0 16px;
+}
+.fx-dashboard .recent_project dl {
+    margin: 4px 0;
+}
+.fx-dashboard .recent_project dl dt {
+    text-align: left;
+    width: 100px;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.fx-dashboard .recent_project dl dd {
+    text-align: left;
+    margin-left: 120px;
+    color: rgb(22, 50, 92);
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.fx-dashboard ul.dsyj li {
+    height: 54px;
+}
+.fx-dashboard ul.dsyj li>div span {
+    float: none;
+}
+.fx-dashboard ul.dsyj ul.bossSta li {
+ float: left;
+    height: 22px;
+
+}
+
+
+.fx-dashboard ul.dsyj li>div.ULinnerDIV {
+    display: block;
+    width: 100%;
+    height: 12px;
+    line-height: 12px;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-lg.ngdialog-enter-download {
+  /*  padding-bottom: 200px;*/
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-lg.ngdialog-enter-download .ngdialog-content>footer {
+    border: 0;
+    background: #fff;
+}
+div.ngdialog.ngdialog-theme-default.ngdialog-lg.ngdialog-enter-download .ngdialog-content>section {
+    overflow: auto;
+    padding-top: 0;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-lg.ngdialog-enter-download .ngdialog-content {
+    background: #fff;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-lg.ngdialog-enter-download .ngdialog-content>header {
+    margin: 0 38px;
+    width: auto;
+    display: flex;
+    padding: 24px 0px 54px 0px;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-lg.ngdialog-enter-download .ngdialog-content>header span {
+    background-image: url("../styles/img/enter/icon_download.png");
+    width: 40px;
+    height: 40px;
+    background-position: -12px -12px;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-lg.ngdialog-enter-download .ngdialog-content>header p.p1 {
+    line-height: 36px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-lg.ngdialog-enter-download .ngdialog-content>header p.p2 {
+    line-height: 46px;
+    margin-left: 8px;
+    font-weight: 600;
+    color: #8fa2c2;
+    font-size: 14px;
+}
+
+
+div.ngdialog.ngdialog-theme-default.ngdialog-enter-download  .ngdialog-close:before {
+    line-height: 72px;
+    margin-right: 26px;
+}
+
+form.form-enter .row-fluid .t-fl {
+    text-align: left;
+    display: flex;
+}
+
+form.form-enter .row-fluid .t-fr {
+    text-align: right;
+}
+
+form.form-enter .row-fluid .t-fl p {
+    margin-left: 16px;
+    color: #15294c;
+    line-height: 42px;
+}
+form.form-enter .row-fluid .t-fl span.icon_date {
+    background-image: url("../styles/img/enter/icon_date.png");
+    width: 40px;
+    height: 40px;
+}
+
+form.form-enter .row-fluid .t-fl span.google_chrome {
+    background-image: url("../styles/img/enter/chrome_logo.png");
+    width: 40px;
+    height: 40px;
+}
+
+form.form-enter .row-fluid .t-fl span.ms_ie {
+    background-image: url("../styles/img/enter/ie_logo.png");
+    width: 40px;
+    height: 40px;
+}
+form.form-enter .row-fluid {
+    border-bottom: 2px dashed #e8eaed;
+    padding: 8px 0;
+}
+
+form.form-enter .row-fluid .t-fr a {
+    width: 120px;
+    height: 40px;
+    background: #204586;
+    color: #ffffff;
+    border: 0;
+    line-height: 28px;
+
+}
+
+div.input-append div[date-picker] td {
+    text-align: center;
+}
+
+
+/*
+unitTree*/
+.ztree>.level0 .node_name {
+    font-size: 14px;
+}
+
+.ztree>.level1 .node_name {
+    font-size: 14px;
+}
+
+ul.ztree li span.button.noline_close.level0 {
+    background-position: -18px -20px;
+}

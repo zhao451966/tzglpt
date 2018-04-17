@@ -1,0 +1,14 @@
+#sidebar > ul.main-menu {
+    top: 112px;
+    background: #000;
+}
+
+#sidebar .menu-toggle {
+    position: fixed;
+    top: 111px;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+}

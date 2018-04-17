@@ -1,0 +1,145 @@
+
+<style>
+	tooltip{
+	    width: 100%;
+    	height: 25px;
+    	line-height: 25px;
+	}
+</style>
+<div class="container-fluid bike">
+    <div class="row-fluid fixed-row"  >
+        <div class="user-thumb" style="display: flex">
+             <span class="project-icon">
+                <img src="styles/img/project-icon.png"/>
+            </span>
+            <h3 style="    margin-left: 24px;">
+                <a  ng-if="vm.bigviewheaders.vcProIsstop == '1'" ui-sref="root.projects.bigview({id: vm.bigviewheaders.id})">{{vm.bigviewheaders.vcProName}}</a>
+                <a  ng-if="vm.bigviewheaders.vcProIsstop != '1'" ng-click="vm.enterView(vm.bigviewheaders.vcProIsstop)">{{vm.bigviewheaders.vcProName}}</a>
+            </h3>
+        </div>
+        <div class="bike-bnt-group">
+            <button class="btn" onclick="javascript:history.go(-1);" translate="N000388">返回</button>
+        </div>
+    </div>
+    <div class="row-fluid fixed-suit-row" >
+        <div class="main-panel">
+            <section>
+                <form class="form-default">
+                    <fieldset style="padding: 0 20px;">
+                        <table id="ordertb" class="table table-hover table-bordered ordertb" 
+                        	style="margin-top: 14px;border-top:none;border-bottom:none;"
+                           st-table="vm.exchangeList"
+                           fx-table is-fixed="false"
+                           st-pipe="vm.query"
+                            >
+                        <thead>
+                        <tr>
+                            <th translate="N001318">文档阶段</th>
+                            <th translate="N001329">文档一级类型</th>
+                            <th translate="N001317">文档二级类型</th>
+                            <th style="width:8%" translate="N001099">是否必须</th>
+                            <th style="width:8%" translate="N001327">文档数量</th>
+                            <th translate="N001762">最新文档来源</th>
+                            <!--<th st-sort="vcDocStatus">状态</th>-->
+                            <th translate="N001760">最新上传时间</th>
+                            <th translate="N001761">最新文档</th>
+                            <th class="lastTH"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                                	
+                        <tr ng-repeat="data in vm.exchangeList"class="movingTr" on-finish-render-filters>
+                            <td class="ellipsis" id="{{data.vcProStatus}}" title="{{data.vcProStatusName}}" >{{data.vcProStatusName}}</td>
+                            
+                            <td ng-if="data.vcSecTypeid!='81'" class="ellipsis" title="{{data.vcFirstTypename}}" >{{data.vcFirstTypename}}</td>
+                            <td ng-if="data.vcSecTypeid!='81'" class="ellipsis" title="{{data.vcSecTypename}}" >{{data.vcSecTypename}}</td>
+                            <td ng-if="data.vcSecTypeid!='81'" class="ellipsis" title="{{data.vcIsmustName}}" >{{data.vcIsmustName}}</td>
+                            <td ng-if="data.vcSecTypeid!='81'" class="ellipsis" title="{{data.coun}}" >{{data.coun}}</td>
+                            <td ng-if="data.vcSecTypeid!='81'" class="ellipsis" title="{{data.vcSourceTypeName}}" >{{data.vcSourceTypeName}}</td>
+                            <td ng-if="data.vcSecTypeid!='81'" class="ellipsis" title="{{data.createdate}}" >{{data.createdate}}</td>
+                            <td ng-if="data.vcSecTypeid!='81'" class="ellipsis" title="{{data.vcDocName}}" ><a  ng-click="vm.view(data)">{{data.vcDocName}}</a></td>
+                            <td ng-if="data.vcSecTypeid!='81'" class="no-padding">
+                                <div class="btn-group btn-group-sm">
+                                    <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-min-width" style="left: -80px;">
+                                        <li ng-if="Authenticate.checkOpt('PROJECT_FILE_Z_TYPE', 'FILETYPE_UPLOAD')">
+                                            <a ng-click="vm.UploadFile(data);" translate="N001058">上传文件</a>
+                                        </li>
+                                        <li ng-if="Authenticate.checkOpt('PROJECT_FILE_Z_TYPE', 'FILETYPE_VIEW')">
+                                            <a ui-sref="root.projectfile.viewbyfiles({vcproid:vm.vcProId,vcProStatus:data.vcProStatus,vcProStatusName:data.vcProStatusName,vcFirstTypeid:data.vcFirstTypeid,vcFirstTypename:data.vcFirstTypename,vcSecTypeid:data.vcSecTypeid,vcSecTypename:data.vcSecTypename})" translate="N000205">查看</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            
+                            
+                            <td ng-mouseleave="vm.clearRowTips('thisShowTips',$index)" ng-mouseenter="vm.setRowTips('thisShowTips',$index)" ng-if="data.vcSecTypeid=='81'" class="ellipsis">{{data.vcFirstTypename}}</td>
+                            <td ng-mouseleave="vm.clearRowTips('thisShowTips',$index)" ng-mouseenter="vm.setRowTips('thisShowTips',$index)" ng-if="data.vcSecTypeid=='81'" class="ellipsis">{{data.vcSecTypename}}</td>
+                            <td ng-mouseleave="vm.clearRowTips('thisShowTips',$index)" ng-mouseenter="vm.setRowTips('thisShowTips',$index)" ng-if="data.vcSecTypeid=='81'" class="ellipsis">{{data.vcIsmustName}}</td>
+                            <td id="thisShowTips{{$index}}" ng-if="data.vcSecTypeid=='81'"><span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}" class="ellipsis">{{data.coun}}&nbsp;</span></td>
+                            <td ng-mouseleave="vm.clearRowTips('thisShowTips',$index)" ng-mouseenter="vm.setRowTips('thisShowTips',$index)" ng-if="data.vcSecTypeid=='81'" class="ellipsis">{{data.vcSourceTypeName}}</td>
+                            <td ng-mouseleave="vm.clearRowTips('thisShowTips',$index)" ng-mouseenter="vm.setRowTips('thisShowTips',$index)" ng-if="data.vcSecTypeid=='81'" class="ellipsis">{{data.createdate}}</td>
+                            <td ng-mouseleave="vm.clearRowTips('thisShowTips',$index)" ng-mouseenter="vm.setRowTips('thisShowTips',$index)" ng-if="data.vcSecTypeid=='81'" class="ellipsis"><a ng-click="vm.view(data)">{{data.vcDocName}}</a></td>
+                            <td ng-mouseleave="vm.clearRowTips('thisShowTips',$index)" ng-mouseenter="vm.setRowTips('thisShowTips',$index)" ng-if="data.vcSecTypeid=='81'" class="no-padding">
+                                <div class="btn-group btn-group-sm">
+                                    <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-min-width" style="left: -80px;">
+                                        <li ng-if="Authenticate.checkOpt('PROJECT_FILE_Z_TYPE', 'FILETYPE_UPLOAD')">
+                                            <a ng-click="vm.UploadFile(data);" translate="N001058">上传文件</a>
+                                        </li>
+                                        <li ng-if="Authenticate.checkOpt('PROJECT_FILE_Z_TYPE', 'FILETYPE_VIEW')">
+                                            <a ui-sref="root.projectfile.viewbyfiles({vcproid:vm.vcProId,vcProStatus:data.vcProStatus,vcProStatusName:data.vcProStatusName,vcFirstTypeid:data.vcFirstTypeid,vcFirstTypename:data.vcFirstTypename,vcSecTypeid:data.vcSecTypeid,vcSecTypename:data.vcSecTypename})" translate="N000205">查看</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            
+                            <!-- <td ng-if="data.vcSecTypeid=='81'"><span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}">{{data.vcFirstTypename}}&nbsp;</span></td>
+                            <td ng-if="data.vcSecTypeid=='81'"><span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}">{{data.vcSecTypename}}&nbsp;</span></td>
+                            <td ng-if="data.vcSecTypeid=='81'"><span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}">{{data.vcIsmustName}}&nbsp;</span></td>
+                            <td ng-if="data.vcSecTypeid=='81'"><span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}">{{data.coun}}&nbsp;</span></td>
+                            <td ng-if="data.vcSecTypeid=='81'"><span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}">{{data.vcSourceTypeName}}&nbsp;</span></td>
+                            <td ng-if="data.vcSecTypeid=='81'"><span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}">{{data.createdate}}&nbsp;</span></td>
+                            <td ng-if="data.vcSecTypeid=='81'"><span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}"><a ng-click="vm.view(data)">{{data.vcDocName}}&nbsp;</a></span></td>
+                            <td ng-if="data.vcSecTypeid=='81'" class="no-padding">
+                             <span tooltip-class="tooltipLEMClass" tooltip-side="bottom" 
+                            	tooltips tooltip-template="{{'N003356' | translate}}">
+                                <div class="btn-group btn-group-sm">
+                                    <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-min-width" style="left: -80px;">
+                                        <li ng-if="Authenticate.checkOpt('PROJECT_FILE_Z_TYPE', 'FILETYPE_UPLOAD')">
+                                            <a ng-click="vm.UploadFile(data);" translate="N001058">上传文件</a>
+                                        </li>
+                                        <li ng-if="Authenticate.checkOpt('PROJECT_FILE_Z_TYPE', 'FILETYPE_VIEW')">
+                                            <a ui-sref="root.projectfile.viewbyfiles({vcproid:vm.vcProId,vcProStatus:data.vcProStatus,vcProStatusName:data.vcProStatusName,vcFirstTypeid:data.vcFirstTypeid,vcFirstTypename:data.vcFirstTypename,vcSecTypeid:data.vcSecTypeid,vcSecTypename:data.vcSecTypename})" translate="N000205">查看</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                </span>
+                            </td> -->
+                            
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    </fieldset>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</div>

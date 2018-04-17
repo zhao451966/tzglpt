@@ -1,0 +1,114 @@
+@-webkit-keyframes ngPdfDialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ngPdfDialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes ngPdfDialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ngPdfDialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.ngPdfDialog {
+  box-sizing: border-box;
+}
+
+.ngPdfDialog *,
+.ngPdfDialog *:before,
+.ngPdfDialog *:after {
+  box-sizing: inherit;
+}
+
+.ngPdfDialog {
+  position: fixed;
+  /*overflow: hidden;*/
+  -webkit-overflow-scrolling: touch;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.ngPdfDialog.ngPdfDialog-disabled-animation,
+.ngPdfDialog.ngPdfDialog-disabled-animation .ngPdfDialog-overlay,
+.ngPdfDialog.ngPdfDialog-disabled-animation .ngPdfDialog-content {
+  -webkit-animation: none!important;
+  animation: none!important;
+}
+
+.ngPdfDialog-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngPdfDialog-fadein 0.5s;
+  animation: ngPdfDialog-fadein 0.5s;
+}
+
+.ngPdfDialog-no-overlay {
+  pointer-events: none;
+}
+
+.ngPdfDialog.ngPdfDialog-closing .ngPdfDialog-overlay {
+  -webkit-animation: ngPdfDialog-fadeout 0.5s;
+  animation: ngPdfDialog-fadeout 0.5s;
+  -webkit-backface-visibility: hidden;
+}
+
+.ngPdfDialog-content {
+  background: white;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngPdfDialog-fadein 0.5s;
+  animation: ngPdfDialog-fadein 0.5s;
+  pointer-events: all;
+  height: 100%;
+}
+
+.ngPdfDialog.ngPdfDialog-closing .ngPdfDialog-content {
+  -webkit-animation: ngPdfDialog-fadeout 0.5s;
+  animation: ngPdfDialog-fadeout 0.5s;
+  -webkit-backface-visibility: hidden;
+}
+
+.ngPdfDialog-close:before {
+  content: '\00D7';
+  cursor: pointer;
+}
+
+html.ngPdfDialog-open,
+body.ngPdfDialog-open {
+  overflow: hidden;
+}

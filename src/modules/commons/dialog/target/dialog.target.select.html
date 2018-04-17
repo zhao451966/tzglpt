@@ -1,0 +1,70 @@
+<header ng-bind="ngDialogData.title" translate="N000215">查询标的</header>
+<section>
+    <form class="form-default">
+         <div style="margin:0px;" class="row-fluid">
+             <div class="span6">
+                 <div class="controls">
+                     <div style="margin-bottom: 20px;" class="input-append">
+                         <input placeholder="{{'N106811' | translate}}" class="span12" type="text"
+                                       ng-model="vm.searchParam">
+                         <span class="add-on">
+                             <i ng-click="vm.query()" style="cursor: pointer;" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+         	<div class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-if="1==2" ng-repeat="target in vm.customSelectedTargets" ng-click="vm.removeTarget(target, $index)" class="badge icon-remove">{{target.vcTargetName}}</a>
+             	</div>
+             </div>
+         </div>
+    </form>
+    
+    <div class="row-fluid flex">
+        <div class="main-panel hundredTable">
+            <table class="table table-hover table-bordered"
+             fx-table 
+             st-pipe="vm.query"
+             st-table="vm.targets">
+                <thead>
+                <tr>
+                    <th style="width: 64px;"></th>
+                    <th translate="N000137">标的编号</th>
+                    <th translate="N000143">标的名称</th>
+                    <th translate="N001716">注册号/股票代码/债券代码</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-click="vm.toggleSelectTarget(data)"
+		        	st-select-row="data"
+		            st-select-mode="{{::ngDialogData.selectionMode}}"
+		            ng-repeat="data in vm.targets" >
+		            <td>
+		                <input name="redio" type="radio" class="fx-radio"
+		                       ng-checked="data.isSelected"
+		                       ng-if="ngDialogData.selectionMode == 'single'" />
+		                <input type="checkbox" class="fx-checkbox"
+		                       ng-checked="data.isSelected"
+		                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+		            </td>
+                    <td class="ellipsis" title="{{data.vcTargetNumber}}" ng-bind-html="data.vcTargetNo"></td>
+                    <td class="ellipsis" title="{{data.vcTargetName}}" ng-bind-html="data.vcTargetName"></td>
+                    <td class="ellipsis" title="{{data.vcTargetCode}}" ng-bind-html="data.vcTargetCode"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<footer>
+	<!-- 分页控件 -->
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+

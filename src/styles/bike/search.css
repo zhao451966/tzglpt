@@ -1,0 +1,156 @@
+.projects {
+    overflow: hidden;
+}
+
+.projects a {
+    color: #28b779;
+}
+
+.projects > li {
+    overflow: hidden;
+}
+
+.projects label.title {
+    float: left;
+    margin-right: 10px;
+    min-width: 110px;
+    font-weight: 700;
+}
+
+.projects label.title:after {
+    /*content: "："*/
+}
+.projects .details {
+    overflow: hidden;
+    height: 48px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    text-indent: 2em;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.projects .widget-content {
+    overflow: hidden;
+}
+
+.project-box {
+    float: left;
+    margin-right: 10px;
+}
+.project-box h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 14px;
+    padding: 0 10px;
+    height: 22px;
+    line-height: 22px;
+    font-weight: 400;
+}
+.project-box p {
+    margin: 0;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.project-box.state {
+    border: 1px solid #0099FF;
+}
+.project-box.state h3{
+    background: #0099FF;
+}
+.project-box.state p{
+    color: #0099FF;
+    border: 1px solid #B7E8FF;
+}
+.project-box.process {
+    border: 1px solid #32CD99;
+}
+.project-box.process h3{
+    background: #32CD99;
+}
+.project-box.process p{
+    color: #32CD99;
+    border: 1px solid #CCF2E5;
+}
+
+.info-box .widget-content {
+    text-align: center;
+}
+
+.info-box .widget-content img.person{
+    margin: 0 auto;
+}
+
+.info-box h4 {
+    display: initial;
+    float: left;
+    margin: 0;
+    padding-left: 12px;
+}
+
+.info-box span {
+
+}
+
+.info-box span a {
+    color:#3D8CDB;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+.info-box ul {
+    margin: 47px 0 10px 42px;
+    padding-left: 21px;
+    overflow: hidden;
+    clear: both;
+}
+
+.info-box ul:after {
+    clear: both;
+}
+
+.info-box ul li {
+    text-align: left;
+    list-style-type: square;
+    float: left;
+    width: 33%;
+}
+
+.info-box ul a {
+    color:#3D8CDB;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+.article-post h3 a {
+    color:#3D8CDB;
+}
+
+.info-box .top-tool {
+    margin: 15px 0 -4px -6px;
+}
+
+.info-box .top-tool li {
+    width: 28%;
+    padding-left: 13px;
+    list-style-type: none;
+    text-align: center;
+}
+.info-box .top-tool li span {
+    color:#3D8CDB;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.info-box .top-tool .top-tool-bodRight {
+    border-right: 1px solid #ccd2d8;
+}
+
+.info-box .top-tool li {
+    cursor: pointer;
+}

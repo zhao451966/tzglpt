@@ -1,0 +1,82 @@
+
+<header style="line-height: 1;" ng-bind="ngDialogData.title"></header>
+<section>
+	<form class="form-default">
+         <div style="margin:0px;" class="row-fluid">
+            <div class="span6">
+                 <div class="controls">
+                     <div style="margin-bottom: 20px;" class="input-append">
+                         <input placeholder="{{'N001592' | translate}}" class="span12" type="text" ng-model="vm.name">
+                         <span class="add-on">
+                             <i style="cursor:pointer;" ng-click="vm.searchUserByName()" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+			 <div ng-if=" ngDialogData.selectionMode=='multiple'" class="span6">
+				 <div class="controls">
+					 <label style="padding-top: 6px; line-height: 25px;" translate="N001714">注：可一次性选择多个人员</label>
+				 </div>
+			 </div>
+             <!-- 以选择 标签 暂不显示 -->
+         	<div ng-if="1==2" class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-repeat="user in vm.customSelectedUsers" ng-click="vm.removeUser(user, $index)" class="badge icon-remove">{{user.userName}}</a>
+             	</div>
+             </div>
+         </div>
+    </form>
+    <div>
+    <!-- st-pipe="vm.searchUserByName" -->
+	    <table class="table table-hover table-bordered main-table"
+	    	   st-table="vm.users"
+	    	   st-pipe="vm.searchUserByName"
+	           fx-table="dialog.users">
+	        <thead>
+	        <tr>
+	            <th style="width: 64px;"></th>
+	            <th translate="N001600">用户名</th>
+	            <th translate="N001158">手机号码</th>
+	            <th ng-if="!ngDialogData.s_CUSTOM_DIY" translate="N000313">登录名</th>
+	            <th ng-if="!ngDialogData.s_CUSTOM_DIY"  translate="N000162">部门</th>
+	            <th ng-if="ngDialogData.s_CUSTOM_DIY=='invest'"  translate="N001612">邮箱</th>
+	            <th ng-if="ngDialogData.s_CUSTOM_DIY=='invest'"  translate="N003086">成员身份</th>
+	        </tr>
+	        </thead>
+	        <tbody>
+	        <tr ng-repeat="data in vm.users"
+	            ng-click="vm.toggleSelectUser(data)"
+	        	st-select-row="data"
+	            st-select-mode="{{::ngDialogData.selectionMode}}"
+	             >
+	            <td>
+	                <input type="radio" 
+	                	   class="fx-radio"
+	                	   name="redio"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'single'" />
+	                <input type="checkbox" class="fx-checkbox"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+	            </td>
+	            <td class="ellipsis" title="{{data.userName}}" ng-bind-html="data.userName | highlight:vm.name"></td>
+	            <td class="ellipsis" title="{{data.regCellPhone}}" ng-bind-html="data.regCellPhone"></td>
+	            <td ng-if="!ngDialogData.s_CUSTOM_DIY" class="ellipsis" title="{{data.regEmail}}" ng-bind-html="data.regEmail | highlight:vm.name"></td>
+	            <td ng-if="!ngDialogData.s_CUSTOM_DIY" class="ellipsis" title="{{data.primaryUnitName}}" ng-bind-html="data.primaryUnitName | highlight:vm.name"></td>
+	            <td ng-if="ngDialogData.s_CUSTOM_DIY=='invest'" class="ellipsis" title="{{data.regEmail}}" ng-bind-html="data.regEmail | highlight:vm.name"></td>
+	            <td ng-if="ngDialogData.s_CUSTOM_DIY=='invest'" class="ellipsis" title="{{data.postion}}" ng-bind-html="data.postion | highlight:vm.name"></td>
+	        </tr>
+	        </tbody>
+	    </table>
+	</div>
+</section>
+<footer>
+	<!-- 分页控件 -->
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>

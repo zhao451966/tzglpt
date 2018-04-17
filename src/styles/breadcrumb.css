@@ -1,0 +1,204 @@
+
+div#breadcrumb {
+    top: 50px;
+    height: 60px;
+    position: fixed;
+    z-index: 1;
+/*    width: 1014px;*/
+/*    margin-left: 226px;*/
+    width:calc(100% - 56px);
+    margin-left: 56px;
+    box-shadow: none;
+    background: #eee;
+    padding: 0 ;
+}
+
+div#breadcrumb.expand {
+    margin-left: 200px;
+}
+#breadcrumb .breadcrumb-outer {
+    height: 60px;
+    /*#border-bottom: 1px solid #ccc;*/
+    box-shadow: 0 1px 2px #ccc;
+}
+body.no-menu #breadcrumb {
+    margin-left: 0;
+    width: 1238px;
+}
+
+.small-menus-conainer {
+    margin-top: 14px;
+    position: fixed;
+    right: 17px;
+}
+.small-menus-conainer i {
+    margin-left: 10px; width: 32px; height: 32px; font-size: 24px;
+    cursor: pointer;
+    padding: 4px 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.small-menus-conainer span {
+    float: left;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+
+    margin: 1px 5px;
+    font-size: 24px;
+    cursor: pointer;
+
+    border: 1px solid #ddd;
+}
+.small-menus-conainer span:hover {
+    background: #f3f3f3;
+}
+
+
+
+.btn-group a.translateA2Wen.btn.btn-mini:hover,
+.btn-group a.translateWen2A.btn.btn-mini:hover,
+.btn-group a.translateA2Wen,
+.btn-group a.translateWen2A
+{
+    background: none;
+    border: none;
+}
+.translateWen2A span {
+    background-image: url(img/dashboard/icon-translate-zh.png)!important;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin-top: 0px;  margin-right: 4px;
+
+}
+.translateA2Wen span {
+    background-image: url(img/dashboard/icon-translate-en.png)!important;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin-top: 0px;  margin-right: 4px;
+
+}
+
+
+ul.dropdown-menu.large-menu {
+    width: auto;
+    text-align: center;
+    margin-top: 4px;
+}
+
+ul.dropdown-menu.large-menu li {
+    position: relative;
+
+}
+
+
+.large-menu .settingLv2 {
+    position: absolute;
+    right: 102px;
+    top: -6px;
+    /*display: none;*/
+    visibility: hidden;
+    background-color: #ffffff;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    padding: 5px 0;
+    margin-right: 8px;
+    z-index: 3;
+
+    transition: all 0s linear .1s;
+}
+
+
+.large-menu > li:hover .settingLv2 {
+    visibility: visible;
+    /*-webkit-animation: slideInRight .2s;*/
+    /*-moz-animation: slideInRight .2s;*/
+    /*-ms-animation: slideInRight .2s;*/
+    /*animation: slideInRight .2s;*/
+}
+.large-menu .settingLv2:hover {
+    visibility: visible;
+}
+
+.large-menu .settingLv2 > li {
+    display: block;
+    clear: both;
+    font-weight: normal;
+    line-height: 34px;
+    color: #0088cc;
+    white-space: nowrap;
+    text-align: right;
+}
+.large-menu .settingLv2 > li a {
+    color: #0088cc;
+    text-decoration: none;
+    background-color: #fff;
+}
+
+
+/*.large-menu .settingLv2 > li:first-child li {
+    padding-top: 5px;
+}
+.large-menu .settingLv2 > li:last-child li {
+    padding-bottom: 5px;
+}*/
+.large-menu .settingLv2 > li > a {
+    height: 36px;
+    line-height: 36px;
+    display: block;
+    font-size: 14px;
+}
+
+
+.large-menu .settingLv2 li > a:hover,
+.large-menu .settingLv2 li > a:focus {
+    background-color: #F4F6F9;
+}
+
+.large-menu .arrow {
+    position: absolute;
+    right: -16px;
+    top: 18px;
+    border: 8px solid transparent;
+    border-left: 8px solid #8A8D93;
+}
+.large-menu .arrow-white {
+    position: absolute;
+    right: -15px;
+    top: 18px;
+    border: 8px solid transparent;
+    border-left: 8px solid #fff;
+}
+
+/*
+.large-menu > li.nolv2menu:hover .settingLv2 {
+    display: none;
+}
+*/
+
+ul.dropdown-menu.large-menu-report {
+    text-align: center;
+    margin-top: 4px;
+    width: 406px;
+    max-height: 588px;
+}
+
+ul.dropdown-menu.large-menu-report li {
+    position: relative;
+    width: 200px;
+    float: left;
+    text-align: right;
+
+}

@@ -1,0 +1,66 @@
+<header ng-bind="ngDialogData.title">查询企业</header>
+<section>
+	<form class="form-default">
+         <div style="margin:0px;" class="row-fluid">
+            <div class="span6">
+                 <div style="margin-bottom:20px;" class="controls">
+                     <div class="input-append">
+                         <input placeholder="请输入企业信用代码/企业名称" class="span12" type="text"
+                                 ng-model="q">
+                         <span class="add-on">
+                             <i style="cursor: pointer;" ng-click="vm.query()" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+             <div class="span6">
+                 <div class="controls">
+                     <input type="text" class="span4" placeholder="{{'所在地' | translate}}"
+                            ng-model="vm.item.vcCountryCode"/>
+                     <input type="text" class="span4" placeholder="{{'' | translate}}"
+                            ng-model="vm.item.vcProvinceCode"/>
+                     <input type="text" class="span4" placeholder="{{'' | translate}}"
+                            ng-model="vm.item.vcCityCode"/>
+                 </div>
+             </div>
+         </div>
+    </form>
+    <table class="table table-hover table-bordered"
+            st-table="vm.enteripriseList"
+            fx-table>
+        <thead>
+        <tr>
+            <th style="width:64px;"></th>
+            <th>统一社会信用代码</th>
+            <th>企业名称</th>
+            <th>类型</th>
+            <th>法定代表人</th>
+            <th>住所</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr st-select-row="data" ng-repeat="data in vm.enteripriseList | filter:q">
+            <td style="padding-left: 8px;">
+            <input type="radio" class="fx-radio" ng-checked="data.isSelected"/>
+            </td>
+            <td class="ellipsis"  ng-bind-html="data.xydm | highlight:q"></td>
+            <td class="ellipsis"  ng-bind-html="data.qymc | highlight:q"></td>
+            <td class="ellipsis"  ng-bind-html="data.qylx | highlight:q"></td>
+            <td class="ellipsis"  ng-bind-html="data.frdb | highlight:q"></td>
+            <td class="ellipsis"  ng-bind-html="data.zs | highlight:q"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<footer>
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+        ng-click="vm.ok()"
+        ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

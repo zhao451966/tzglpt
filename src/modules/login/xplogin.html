@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title></title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="google-header-bar  centered">
+        <a class="lang-a btn btn-mini no-padding"
+           ng-click="vm.translatelx(wen2A?'0':'1');">
+            <i ng-if="wen2A" class="i-icon my-lang-en">
+            </i>
+            <i ng-if="!wen2A" class="i-icon my-lang-zh">
+            </i>
+        </a>
+    </div>
+    <div class="main content clearfix">
+        <div class="main-content no-name ">
+            <div ng-if="vm.view==0" class="card signin-card pre-shift no-name"
+                 style="position: fixed; top: 0px; right: 0px;  left: 0px; bottom: 0px; margin: auto;">
+                <div id="cc_iframe_parent"></div>
+                <div class="circle-mask" style="">
+                </div>
+                <form novalidate id="gaia_loginform">
+                    <div class="form-panel second ">
+                        <div style="text-align: center;">
+                            <div>
+                                <p id="profile-name"></p>
+                                <span dir="ltr" id="email-display"></span>
+                            </div>
+                            <div>
+                                <div id="password-shown">
+                                    <div>
+                                        <h2 class="banner" translate="N005100"> 登录您的帐号</h2>
+                                        <label class="hidden-label" for="email" translate="N001600">用户名</label> <input
+                                            id="username" name="username" type="username" placeholder="Email"
+                                            ng-model="vm.user.username"
+                                            class="">
+                                    </div>
+                                    <div>
+                                        <label class="hidden-label" for="Passwd" translate="N000871">密码</label> <input
+                                            id="Passwd" name="Passwd" type="password" placeholder="Password"
+                                            ng-model="vm.user.password"
+                                            class="">
+                                    </div>
+                                </div>
+                            </div>
+                            <input id="signIn" name="signIn" class="rc-button rc-button-submit" type="submit"
+                                   style="margin-top: 21px;" ng-click="vm.login()" value="{{'N005101' | translate}}">
+                            <a href="" ng-click="vm.backPasswd()" translate="N005102"> 找回我的密码 </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

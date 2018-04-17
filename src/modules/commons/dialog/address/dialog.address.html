@@ -1,0 +1,53 @@
+
+<header ng-bind="ngDialogData.title"></header>
+<section>
+	<form class="form-default">
+		<fieldset>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="control-label" translate="N000584">国家</label>
+						<div class="controls">
+							<select class="span12" ng-model="ngDialogData.vcAppCountry"
+								ng-options="country.VC_COUNTRY_NAME for country in vm.countrys"
+								ng-change="vm.countrySelect()">
+								<option value="" translate="N000037">--请选择国家--</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="control-label" translate="N001089">省份(直辖市、自治区)</label>
+						<div class="controls">
+							<select class="span12" ng-model="ngDialogData.vcAppProvince"
+								ng-options="provint.VC_PROVIN_NAME for provint in vm.provints"
+								ng-change="vm.provinceSelect()">
+								<option value="" translate="N000037">--请选择省份--</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="control-label" translate="N000235">城市(区)</label>
+						<div class="controls">
+							<select class="span12" ng-change="vm.citiySelect()"
+								ng-model="ngDialogData.vcAppCity"
+								ng-options="city.VC_CITY_NAME for city in vm.citys">
+								<option value="" translate="N000037">--请选择城市--</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</section>
+<footer>
+	<a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+	<a class="btn btn-primary" ng-click="vm.ok()">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

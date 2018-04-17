@@ -1,0 +1,13 @@
+<div class="btn-group">
+    <button class="btn" title="统计"
+            ng-if="$$panel.hasChart"
+            ng-class="{active: $$panel.isChartPanelOpen}"
+            ng-click="$$panel.toggleChartPanel()">
+        <i class="icon icon-th"></i>
+    </button>
+    <button class="btn" title="查询"
+            ng-class="{active: $$panel.isFilterPanelOpen}"
+            ng-click="$$panel.toggleFilterPanel()">
+        <i class="icon icon-filter"></i>
+    </button>
+</div>

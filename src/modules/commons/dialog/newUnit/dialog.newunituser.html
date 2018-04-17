@@ -1,0 +1,103 @@
+<header ng-bind="ngDialogData.title">查询部门</header>
+<section>
+	<form class="form-default">
+         <div  class="row-fluid">
+            <div class="span6">
+                 <div class="controls">
+                     <div class="input-append">
+                         <input placeholder="{{'N005067' | translate}}" class="span12" type="text"
+                                ng-model="vm.unitName">
+                         <span class="add-on">
+                             <i style="cursor:pointer;" ng-click="vm.searchUnitByName('search')" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+             <div class="span6">
+             	<div class="controls" style="display:flex;flex-wrap:wrap;">
+              		<a ng-if="1==2" ng-repeat="unit in vm.customSelectedUnits" ng-click="vm.removeUnit(unit, $index)" class="badge icon-remove">{{unit.unitName}}</a>
+             	</div>
+             </div>
+         </div>
+		<div style="margin:-3px 0 5px 0" class="row-fluid">
+			<div class="span12">
+				<div class="controls">
+					<p>
+						<a ng-if="!vm.showPath" ng-click="vm.searchUnitByName('link',vm.unit)">{{vm.unit.unitName}}</a>
+						<span ng-if="vm.showPath&&vm.topUnits.length-1!=$index" ng-repeat="data in vm.topUnits"><a ng-click="vm.searchUnitByName('link',vm.topUnits[$index])">{{vm.topUnits[$index].unitName}}</a>>></span><a ng-if="vm.showPath" ng-click="vm.searchUnitByName('link',vm.topUnits[vm.topUnits.length-1])">{{vm.topUnits[vm.topUnits.length-1].unitName}}</a>
+					</p>
+				</div>
+			</div>
+		</div>
+     </form>
+ <div>
+    <table class="table table-hover table-bordered main-table"
+           st-table="vm.units"
+           st-pipe="vm.searchUnitByName"
+           fx-table="dialog.units">
+        <thead>
+	        <tr>
+	            <th style="width:64px;" ng-click="vm.toggleSelectUnitAll()">
+	            <input type="checkbox" class="fx-checkbox"  id="chk_all"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'multiple'" /> </th>
+	            <!-- <th>部门编码</th> -->
+	            <th style="width:30%;" translate="N000172">部门名称</th>
+	            <th rowspan="2" style="width:60%;" translate="N005065">部门层级关系</th>
+	            <th style="width:80px;" translate="N005066">部门层级</th>
+	        </tr>
+        </thead>
+        <tbody>
+	        <tr ng-repeat="data in vm.units" >
+	            <td>
+	                <input type="radio" class="fx-radio"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'single'"
+						   st-select-row="data"
+						   st-select-mode="{{::ngDialogData.selectionMode}}"
+						   ng-click="vm.toggleSelectUnit(data)"/>
+	                <input type="checkbox" class="fx-checkbox"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'multiple'"
+						   st-select-row="data"
+						   st-select-mode="{{::ngDialogData.selectionMode}}"
+						   ng-click="vm.toggleSelectUnit(data)"/>
+	            </td>
+<!-- 	            <td class="ellipsis" title="{{data.unitCode}}" ng-bind-html="data.unitCode | highlight:vm.unitName"></td>
+ -->	        <!--<td class="ellipsis" title="{{data.unitName}}" ng-bind-html="data.unitName | highlight:vm.unitName"></td>
+	            <td class="ellipsis" title="{{data.namePath}}" ng-bind-html="data.namePath | highlight:vm.unitName"></td>
+	            <td class="ellipsis" title="{{data.unitLeave}}" ng-bind-html="data.unitLeave"></td>-->
+				<td class="ellipsis" title="{{data.unitName}}">
+					<a ng-if="data.exist=='true'" ng-click="vm.searchUnitByName('link',data)" ng-bind-html="data.unitName | highlight:vm.unitName">{{data.unitName}}</a>
+					<span ng-if="data.exist=='false'" ng-bind-html="data.unitName | highlight:vm.unitName">{{data.unitName}}</span>
+				</td>
+				<td  title="{{data.namePath}}">
+					<span ng-if="data.exist=='true'" ng-click="vm.searchUnitByName('link',data)">
+					<a>
+						<div style="width:99%;float:left;" class="ellipsis" ng-bind-html="data.namePath | highlight:vm.unitName">{{data.namePath}}</div>
+						<div style="width:1%;float:left;">></div>
+					</a>
+					</span>
+					<div ng-if="data.exist=='false'" style="width:100%;" class="ellipsis" ng-bind-html="data.namePath | highlight:vm.unitName">{{data.namePath}}</div>
+				</td>
+				<td class="ellipsis" title="{{data.unitLeave}}">
+					<a ng-if="data.exist=='true'" ng-click="vm.searchUnitByName('link',data)">{{data.unitLeave}}</a>
+					<span ng-if="data.exist=='false'">{{data.unitLeave}}</span>
+				</td>
+	        </tr>
+        </tbody>
+    </table>
+</div>
+</section>
+<footer>
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

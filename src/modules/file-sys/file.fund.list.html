@@ -1,0 +1,150 @@
+<div class="item-container">
+    <div id="newFileListHeader" class="list-header">
+        <div class="list-header-content">
+            <div class="row-fluid">
+                <div class="main-panel">
+                    <table class="table table-hover main-table" fx-table="fileToday"
+                       st-pipe="vm.query"
+                       st-table="vm.items">
+                    <thead>
+                    <tr>
+                        <th id="fileListTitle"  style="width: 40%;border: none;" st-sort="vcDocName">
+                            {{ vm.fileListTitle.title}}
+                        </th>
+                        <th  style="width: 20%;border: none;" st-sort="companyName">{{ vm.fileListTitle.company}}</th>
+                        <th class="th-filter"  style="width: 20%;border: none;overflow: visible;position: relative" >
+                            <div class="btn-group" fx-btn-group style="text-align: left;top: 12px;position: absolute;">
+                                <span class="dropdown-toggle" data-toggle="dropdown" style="float: left;font-size: 16px;margin-top: 6px;">{{ vm.fileListTitle.reportDate}}</span>
+                                <a class="dropdown-toggle" data-toggle="dropdown" style="padding: 6px;float: right;">
+                                    <div class="list-opt">
+                                        <div class="dropdown-toggle-icon" style="padding-top: 2px"></div>
+                                    </div>
+                                </a>
+                                <input ng-show="false" type="text" class="span12" ng-model="$$filter.reportType"/>
+                                <ul class="dropdown-menu pull-right" style="width: 150px;">
+                                    <li>
+                                        <a class="file-type" ng-click="vm.filterData(1)" >
+                                            <!--全部类型-->
+                                            <span style="float: left;">{{'N004521' |translate}}</span>
+                                            <span ng-if="!$$filter.reportType||$$filter.reportType=='1'" class="file-icon-container" style="float: right;margin-right: 0px;">
+                                                <span class="sub-meau-check-icon-img">
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="file-type" ng-click="vm.filterData(2)" >
+                                            <!--年报-->
+                                            <span style="float: left;">{{'N004522' |translate}}</span>
+                                            <span ng-if="$$filter.reportType=='2'" class="file-icon-container" style="float: right;margin-right: 0px;">
+                                                <span class="sub-meau-check-icon-img">
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="file-type" ng-click="vm.filterData(3)" >
+                                            <!--季报-->
+                                            <span style="float: left;">{{'N004523' |translate}}</span>
+                                            <span ng-if="$$filter.reportType=='3'" class="file-icon-container" style="float: right;margin-right: 0px;">
+                                                <span class="sub-meau-check-icon-img">
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="file-type" ng-click="vm.filterData(4)" >
+                                            <!--月报-->
+                                            <span style="float: left;">{{'N004524' |translate}}</span>
+                                            <span ng-if="$$filter.reportType=='4'" class="file-icon-container" style="float: right;margin-right: 0px;">
+                                                <span class="sub-meau-check-icon-img">
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="file-type" ng-click="vm.filterData(5)" >
+                                            <!--约定报告-->
+                                            <span style="float: left;">{{'N004525' |translate}}</span>
+                                            <span ng-if="$$filter.reportType=='5'" class="file-icon-container" style="float: right;margin-right: 0px;">
+                                                <span class="sub-meau-check-icon-img">
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </th>
+                        <th  style="width: 20%;border: none;" st-sort="createdate">{{ vm.fileListTitle.upLoadDate}}</th>
+                    </tr>
+                    </thead>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid firstChild">
+        <div class="row-fluid">
+            <div class="main-panel">
+                <table ng-show="vm.items&&vm.items.length>0" class="table table-hover main-table" style="margin-bottom: 0px;"
+                       >
+                    <tbody>
+                        <tr ng-repeat="item in vm.items">
+                            <td  class="file-name-td" style="width: 40%;overflow: visible" ng-click="vm.Preview(item)">
+                                <div style="width: 100%;height: 22px;padding-top: 2px">
+                                    <div class="ellipsis" style="width: 100%;"   tooltip-side="bottom"
+                                         tooltip-class="tooltipLEMClass"
+                                         tooltips tooltip-template="{{item.vcDocName}}">
+                                        <span class="file-icon-container" >
+                                            <span class="{{item.vcType|fileType}}-icon-img"></span>
+                                        </span>
+                                        {{item.vcDocName}}
+                                    </div>
+                                </div>
+                            </td>
+                            <td  class="file-name-td" style="width: 20%;;overflow: visible" >
+                                <div style="width: 100%;height: 22px;padding-top: 2px">
+                                    <div class="ellipsis" style="width: 100%;height: 20px;line-height: 20px"   tooltip-side="bottom"
+                                          tooltip-class="tooltipLEMClass"
+                                          tooltips tooltip-template="{{item.companyName}}">
+                                            {{item.companyName}}
+                                    </div>
+                                </div>
+                            </td>
+                            <td ng-if="item.vcDocTypeid=='001'&&item.vcReportDateFirst=='003'" style="width: 20%"
+                                translate="N004526"
+                                translate-values="{vcReportDateSec:item.vcReportDateSec}">
+                                {{item.vcReportDateSec}}年报
+                            </td>
+                            <td  ng-if="item.vcDocTypeid=='001'&&item.vcReportDateFirst=='004'" style="width: 20%"
+                                 translate="N004527"
+                                 translate-values="{vcReportDateSec:item.vcReportDateSec,vcReportDateThird:item.vcReportDateThird}">
+                                {{item.vcReportDateSec}}年第{{item.vcReportDateThird}}季报告
+                            </td>
+                            <td ng-if="item.vcDocTypeid=='001'&&item.vcReportDateFirst=='005'" style="width: 20%"
+                                translate="N004528"
+                                translate-values="{vcReportDateSec:item.vcReportDateSec,vcReportDateThird:item.vcReportDateThird}">
+                                {{item.vcReportDateSec}}年{{item.vcReportDateThird}}月报告
+                            </td>
+                            <td ng-if="item.vcDocTypeid=='002'"  style="width: 20%" >
+                                {{item.vcReportDateThird|mFormat:'YYYY年MM月DD日'}}
+                            </td>
+
+
+                            <td  style="width: 20%" >{{item.createdate|mFormat:'YYYY-MM-DD HH:mm:ss'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div   class="list-header-content">
+        <div class="row-fluid">
+            <div ng-if="vm.isSearchQuery==true" class="back-file-list"><a ng-click="vm.backFileList()" translate="N004532">返回完整列表</a></div>
+            <div ng-show="vm.items&&vm.items.length>0" fx-pagination></div>
+        </div>
+    </div>
+
+</div>
+

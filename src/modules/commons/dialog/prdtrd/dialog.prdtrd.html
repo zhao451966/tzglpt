@@ -1,0 +1,151 @@
+<header ng-bind="ngDialogData.title">查询证券</header>
+<section>
+    <form class="form-default">
+        <div class="control-group" style="position: relative;">
+            <div class="row-fluid">
+                <!--<div class="span6">-->
+                    <!--<label class="control-label required">数据来源</label>-->
+                    <!--<div class="controls" style="margin-bottom: 10px;">-->
+                        <!--<select class="span12"-->
+                                <!--ng-change="vm.companys.length = 0;"-->
+                                <!--ng-model="vm.gpdm"-->
+                                <!--ng-options="company.dataCode as company.dataValue for company in vm.customfdg">-->
+                        <!--</select>-->
+                       <!--&lt;!&ndash; <div fx-select-dictionary="vm.customSelectedCompanys.sjly" catalog="securityCodeSource"></div>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="span6">
+                    <label class="control-label" translate="N000220">查询条件</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <input placeholder="{{'N106000' | translate}}"
+                                   class="span12" type="text"
+                                   ng-model="vm.searchParam"  style="margin-bottom: 0px;">
+                             <span class="add-on" ng-click="vm.searchCompany('2')">
+                                  <i  class="icon icon-search"></i>
+                              </span>
+                        </div>
+                    </div>
+                    <li>
+                        <p class="control-label" translate="N106001">
+                            查询系统存量数据
+                        </p>
+                    </li>
+                </div>
+
+                <div class="span6">
+                    <label class="control-label required" translate="N001669">证券代码验证接口</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <input placeholder="{{'N000985' | translate}}"
+                                   type="text" class="span12"
+                                   ng-model="vm.searchParamBG" style="margin-bottom: 0px;">
+
+                            <span class="add-on" ng-click="vm.searchCompany('1')">
+                                <i class="icon icon-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <li>
+                        <p class="control-label">
+                            <!--如查询不到所需结果，请在证券代码验证接口输入完整的证券代码。输入证券代码时请参考-->{{'N001029' | translate}}
+                            <a class="title" target="_blank" href="modules/commons/dialog/prdtrd/dialog.pbdmgz.html"  > <!-- href="modules/commons/dialog/prdtrd/dialog.pbdmgz.html"-->
+                                <!--彭博代码-->{{'N004443' | translate}}
+                            </a><!--规则进行填写-->{{'N004444' | translate}}。
+                        </p>
+                    </li>
+                   <!-- <p class="control-label">如查询不到所需结果，请在证券代码验证接口输入完整的证券代码。</p>
+                    <p class="control-label">输入证券代码时请参考<a target="_blank" ui-sref="root.checkingpbdmgz" >彭博代码</a>规则进行填写。</p>&lt;!&ndash;href="modules/commons/dialog/prdtrd/dialog.pbdmgz.html"&ndash;&gt;
+ -->               </div>
+
+              <!--  <div class="span6">
+                    <div class="controls" style="display: flex;flex-wrap: wrap;">
+                        <a ng-if="1==2" ng-repeat="company in vm.customSelectedCompanys" ng-click="vm.removeCompany(company, $index)" class="badge icon-remove">{{company.vcCompanyName}}</a>
+                    </div>
+                </div>-->
+            </div>
+
+            <div class="row-fluid">
+                <div class="span6">
+                    <label class="control-label" translate="N000712">交易所</label>
+                    <div class="controls" style="margin-bottom: 10px;">
+                        <select style="margin:0; padding:0;" class="span12 fx-select"
+                                ng-model="vm.exchanges"
+                                ng-options="count.exchanges for count in vm.getxchanges"
+                                ng-change="vm.searchCompany('2')">
+                        </select>
+                        <!-- <div fx-select-dictionary="vm.customSelectedCompanys.sjly" catalog="securityCodeSource"></div>-->
+                    </div>
+                </div>
+                <!--<div class="span6">-->
+                    <!--<label class="control-label">证券类别</label>-->
+                    <!--<label style="    margin-top: 10px;font-size: 12px;color: #54698d;">-->
+                    <!--<input style="margin-top: 1px" name="zqlb" ng-model="$$filter.zqlb" type="radio" value="1" />股票-->
+                    <!--<input style="margin-left: 9px;margin-top: 1px;" name="zqlb" ng-model="$$filter.zqlb" type="radio" value="2" />债券-->
+                    <!--</label>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </form>
+    <div class="row-fluid flex">
+        <div class="main-panel hundredTable">
+		    <table class="table table-hover table-bordered"
+		           st-table="vm.companys"
+		           st-pipe="vm.searchCompany"
+		           fx-table>
+		        <thead>
+		        <tr>
+		            <th style="width:64px;"></th>
+		            <th style="width: 11%" translate="N000708">交易市场</th>
+		            <th style="width: 20%" translate="N000709">交易市场名称</th>
+		            <th style="width: 17%" translate="N001668">证券代码</th>
+		            <th translate="N001671">证券简称</th>
+		            <th style="width: 25%" ng-if="vm.type=='1'" translate="N001672">证券全称</th>
+		            <th style="width: 25%" ng-if="vm.type=='2'" translate="N106002">融资主体</th>
+		        </tr>
+		        </thead>
+		        <tbody>
+		        <tr ng-click="vm.toggleSelectCompany(data)"
+		            st-select-row="data"
+		            st-select-mode="{{::ngDialogData.selectionMode}}"
+		            ng-repeat="data in vm.companys" ng-if="data.vcChiName!='未查询到您提交的证券代码的信息!'" >
+		            <td>
+		                <input type="radio" class="fx-radio"
+		                       ng-checked="data.isSelected"
+		                       ng-if="ngDialogData.selectionMode == 'single'" />
+		                <input type="checkbox" class="fx-checkbox"
+		                       ng-checked="data.isSelected"
+		                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+		            </td>
+		            <td class="ellipsis" title="{{data.vcExchName}}"  ng-bind-html="data.vcExchName | highlight:vm.searchParam"></td>
+		            <td class="ellipsis" title="{{data.vcExchanges}}" ng-bind-html="data.vcExchanges | highlight:vm.searchParam"></td>
+		            <td class="ellipsis" title="{{data.vcTrdCode}}" ng-bind-html="data.vcTrdCode | highlight:vm.searchParam"></td>
+		            <td class="ellipsis" title="{{data.vcSecuSht}}"  ng-bind-html="data.vcSecuSht | highlight:vm.searchParam"></td>
+                    <td class="ellipsis" ng-if="vm.type=='1'" title="{{data.vcChiName}}{{data.issuer}}" ng-bind-html="data.vcChiName+data.issuer | highlight:vm.searchParam"></td>
+                    <td class="ellipsis" ng-if="vm.type=='2'" title="{{data.vcPublisher}}{{data.issuer}}" ng-bind-html="data.vcPublisher+data.issuer | highlight:vm.searchParam"></td>
+		        </tr>
+		        <tr ng-click="vm.toggleSelectCompany(data)"
+		            st-select-row="data"
+		            st-select-mode="{{::ngDialogData.selectionMode}}"
+		            ng-repeat="data in vm.companys" ng-if="data.vcChiName=='未查询到您提交的证券代码的信息!'" >
+		            <td></td>
+		            <td colspan="5">{{data.vcChiName}}</td>
+		        </tr>
+		        </tbody>
+		    </table>
+	    </div>
+	</div>
+</section>
+<footer>
+	<div style="float:left;">
+		<div ng-if="vm.showPage" fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

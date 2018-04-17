@@ -1,0 +1,31 @@
+<header translate="N000574">管理平台</header>
+<section>
+    <form  class="form-default">
+        <fieldset>
+            <div class="sub-panel" style="order: 0" >
+                <div class="control-group  treefar" >
+                    <div
+                            data-angular-treeview="true"
+                            data-tree-id="DEPTCODE"
+                            data-tree-model="vm.listIUnitTree"
+                            data-node-id="DEPTCODE"
+                            data-node-label="DEPTNAME"
+                            data-node-children="children"
+                            ng-click="printParent()">
+                    </div>
+                 </div>
+            </div>
+            <div style="width: 100%;text-align:center;" ng-if="vm.listIUnitTree == ''"
+				class="alert alert-block new-alert-block" translate="N106018">
+               当前用户没有管理平台
+            </div>
+        </fieldset>
+    </form>
+</section>
+<footer>
+    <a  class="btn "  ng-click="closeThisDialog()" translate="N000992">取消</a>
+    <a  class="btn btn-primary"  ng-click="vm.ok()" translate="N001524">选择</a>
+</footer>
+
+
+

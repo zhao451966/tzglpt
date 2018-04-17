@@ -1,0 +1,22 @@
+<span ng-class="{'ng-invalid': $parent[form][name].$invalid}">
+<div
+        isteven-multi-select
+        input-model="inputs"
+        output-model="outputUsers"
+        button-label="dataValue"
+        item-label="dataValue"
+        tick-property="selected"
+        translation="localLang"
+        helper-elements="{{helperElements}}"
+        on-item-click="onItemClick()"
+        on-select-all="onItemClick()"
+        on-select-none="onItemClick()"
+        on-open="onOpen()"
+        output-properties="dataCode dataValue"
+        selection-mode="{{selectionMode}}"
+        max-labels="{{maxLabels}}"
+        >
+</div>
+
+<input ng-if="validator" type="text" style="display: none" validator="{{validator}}" name="{{name}}" ng-model="selected">
+</span>

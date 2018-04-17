@@ -1,0 +1,222 @@
+.projectsEncy .widget-content .widget-title {
+    background: #e0e0e0;
+    height: 1px;
+    top: 0;
+    position: relative;
+    margin-top: 20px;
+
+}
+
+.projectsEncy .row-fluid.lv3Title .widget-title {
+    background: #e0e0e0;
+    height: 1px;
+    position: relative;
+    top: 8px;
+}
+
+.projectsEncy .row-fluid.lv3Title .widget-title legend {
+    background: #ffffff;
+    width: auto;
+    padding-left: 0;
+    position: absolute;
+    top: -10px;
+}
+
+.projectsEncy .row-fluid.lv3Title .widget-title a {
+    padding: 0 0 0 8px;
+    top: -16px;
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+
+
+.projectsEncy .widget-content .widget-title h4,
+.projectsEncy .widget-content .widget-title a{
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    background: #FFFFFF;
+    border-left: 12px solid #4F9CEE;
+    float: unset;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    top: -12px;
+    color: #000;
+}
+
+h4{
+    height: 36px;
+    line-height: 36px;
+  /*  margin: 0;*/
+    padding: 0 10px;
+    font-size:17.5px;
+    border-left: 15px solid #4F9CEE;
+    float:unset;
+}
+.projectsEncy .widget-content .widget-title h5,
+.projectsEncy .widget-content .widget-title a{
+    height: 36px;
+    line-height: 36px;
+    margin: 0;
+    padding: 0 20px;
+    background: #FFFFFF;
+    font-size:15.5px;
+}
+
+.projectsEncy .widget-content .widget-title h6,
+.projectsEncy .widget-content .widget-title a{
+    height: 36px;
+    line-height: 36px;
+    margin: 0;
+    padding: 0 30px;
+    background: #FFFFFF;
+    font-size:13.5px;
+}
+
+.projectsEncy .widget-content .widget-title a.edit{
+    float: right;
+    font-size:12px;
+    color:#666;
+    background-color: #FFFFFF;
+
+}
+
+.projectsEncy .control-group .row-fluid a.edit{
+    color:#666;
+}
+
+.projectsEncy .widget-content.info-box{
+    height: 140px;
+    border-bottom: none;
+}
+
+.projectsEncy .widget-content.info-box-detail{
+    border-bottom: none;
+}
+
+.projectsEncy .widget-content.info-box.more{
+    height: auto;
+}
+/*.projectsEncy-fixed-box {
+    position: fixed; top: 122px; right: 30px;
+}*/
+/*zzw*/
+.projectsEncy-fixed-box .bs-docs-sidenav .active a,
+.projectsEncy-fixed-box .bs-docs-sidenav a:hover,
+.projectsEncy-fixed-box .bs-docs-sidenav a.focus {
+    color: #5896d5;
+    background: transparent;
+}
+.projectsEncy-fixed-box .bs-docs-sidenav li.active {
+    list-style-image: url(../images/hover.png);
+}
+
+.projectsEncy-fixed-box .nav-wrapper {
+    position: relative;
+    background: url(../img/bike/shuxian.png) 11px 8px no-repeat;
+    padding: 17px 0;
+    padding-right: 8px;
+
+}
+
+.projectsEncy-fixed-box ol.nav {
+    list-style: inherit;
+    margin-left: 30px;
+}
+
+.projectsEncy-fixed-box ol.nav li,
+.projectsEncy-fixed-box ol.nav a:link {
+    line-height: 22px;
+    height: 22px;
+    padding: 0; margin: 0;
+    color: #000000;
+}
+
+.projectsEncy-fixed-box ol.nav a:hover {
+    background: transparent;
+}
+
+.projectProfile-view .projectProfile-view-box {
+    background: white;
+    border: 0px;
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-bottom: 0px
+}
+
+.encyclopediaLabel {
+    border-bottom: 1px solid #eeeeee;
+    border-top: 0px solid #eeeeee;
+}
+
+.FYdashed {
+    border-bottom:1px #9e9e9e dashed;
+}
+
+.control-group.control-group-label{
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.dashed{
+    border-bottom: 1px #9e9e9e dashed;
+}
+
+.FYpost .row-fluid .FYdashed p {margin-bottom: 5px;}
+
+.FYpost .row-fluid .FYdashed label {margin-top: 5px;}
+
+.FYpost .row-fluid .FYdashed {
+    border-bottom:1px #9e9e9e dashed;
+}
+
+.FYinfo .FYmarket ul li {
+    float: left;width: 46%;
+    border-bottom:none;
+    padding-bottom: 0;
+    list-style: none;
+
+}
+
+.FYinfo .FYmarket ul {
+
+    margin-top: 0;
+}
+.FYinfo .FYmarket ul li h5 {
+    font-weight: 200;
+    float: left;
+    margin-top: 0;
+    margin-right: 10px;
+
+
+}
+.FYinfo .FYmarket ul li span {
+    font-size: 22px;
+    float: left;
+}
+.FYinfo .widget-content {
+    padding-bottom: 0;
+}
+
+
+.FYlv1market .FYdashed {
+    border-bottom:1px #9e9e9e dashed;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.FYlv1market .FYdashed p {
+    margin-bottom: 0;
+}
+
+
+/**/
+.projectsEncyList .table th, .projectsEncyList .table td {
+    #padding: 8px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    #border-top: 1px solid #dddddd;
+}
+/**/

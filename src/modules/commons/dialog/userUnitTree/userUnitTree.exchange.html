@@ -1,0 +1,25 @@
+<header translate="N000409">分管部门</header>
+<section>
+    <form  class="form-default">
+        <fieldset>
+            <div class="sub-panel" style="order: 0">
+                <div ivh-treeview="vm.listUnitTree"
+                     ivh-treeview-id-attribute="'unitCode'"
+                     ivh-treeview-label-attribute="'unitName'"
+                     ivh-treeview-use-checkboxes="true"
+                     ivh-treeview-on-toggle="vm.awesomeCallback(ivhNode, ivhTree)"
+                     ivh-treeview-on-cb-change="vm.otherAwesomeCallback(ivhNode, ivhIsSelected, ivhTree)"
+                        >
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</section>
+<footer>
+    <a style="color: red;float: left;text-align: left;line-height: 36px;" translate="N000866">每行部门前面的复选框可以选中当前部门及下级部门，后面的单选框只能选中当前部门</a>
+    <a  class="btn "  ng-click="closeThisDialog()" translate="N000992">取消</a>
+    <a  class="btn btn-primary"  ng-click="vm.ok()" translate="N001524">选择</a>
+</footer>
+
+
+

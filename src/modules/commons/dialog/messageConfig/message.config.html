@@ -1,0 +1,105 @@
+<header >{{vm.item.optname}}{{'N106023' | translate}}</header>
+<section>
+    <form name="msgForm" class="form-default" enctype="multipart/from-data">
+    	<fieldset>
+    		<div class="control-group">
+    			
+    			<div class="row-fluid">
+    				<div class="span12">
+    					<label class="control-label" translate="N001460">消息方式</label>
+    					<div class="controls">
+    						<!-- <label class="checkbox inline ng-binding ng-scope">
+    							<input type="checkbox" class="fx-checkbox" name="inner" value="1" ng-model="vm.item.innerCheck">内部消息
+                            </label> -->
+    						<label class="checkbox inline ng-binding ng-scope">
+    							<input type="checkbox" class="fx-checkbox" name="email" ng-checked="vm.item.emailCheck"  ng-model="vm.item.emailCheck">{{'N001607' | translate}}
+                            </label>
+    					<!-- 	<label class="checkbox inline ng-binding ng-scope">
+    							<input type="checkbox" class="fx-checkbox" name="dinggroup" ng-checked="vm.item.dingGroupCheck" ng-model="vm.item.dingGroupCheck">钉钉群
+                            </label> -->
+                            <label class="checkbox inline ng-binding ng-scope">
+    							<input type="checkbox" class="fx-checkbox" name="fxfamily" ng-checked="vm.item.fxfamilyCheck" ng-model="vm.item.fxfamilyCheck">{{'N000450' | translate}}
+                            </label>
+                            <label class="checkbox inline ng-binding ng-scope">
+    							<input type="checkbox" class="fx-checkbox" name="one" ng-checked="vm.item.dingOneCheck" ng-model="vm.item.dingOneCheck">{{'N000472' | translate}}
+                            </label>
+<!--                             <label class="checkbox inline ng-binding ng-scope">
+    							<input type="checkbox" class="fx-checkbox" name="mob" ng-checked="vm.item.mobCheck" ng-model="vm.item.mobCheck">投管移动端
+                            </label> -->
+    					</div>
+    				</div>
+    			</div>
+    			
+    			<!-- <div class="row-fluid">
+    				<div class="span12">
+    				<label class="control-label">投管移动端消息模版</label>
+    					<div class="controls">
+    						<textarea type="text" class="span12 texthigher" name="innerMsgContent"
+							 validator="required,maxlength=200" 
+							 ng-model="vm.item.inner.content"></textarea>
+    					</div>
+    				</div>
+    			</div> -->
+    			<div class="row-fluid">
+    				<div class="span12">
+    				<label class="control-label" translate="N001611">邮件消息模版</label>
+    					<div class="controls">
+    						 <div class="ueditor" ready="vm.readyEmailModel" config="vm.configEmialModel" ng-model="vm.item.email.content"></div>
+    					</div>
+    				</div>
+    			</div>
+    			
+    			<div class="row-fluid">
+    				<div class="span12">
+    					<label class="control-label" translate="N000328">钉钉消息模版</label>
+    					<div class="controls">
+    						<div>
+    							<label class="checkbox inline ng-binding ng-scope">
+    								<input type="radio" class="fx-radio" name="dingContentType" value="0" ng-model="vm.item.ding.contentType">{{'N001313' | translate}}
+	                            </label>
+	                            <label class="checkbox inline ng-binding ng-scope">
+	    							<input type="radio" class="fx-radio" name="dingContentType" value="1" ng-model="vm.item.ding.contentType">{{'N001280' | translate}}
+	                            </label>
+    						</div>
+    						<div id="dingModel" style="text-align: center">
+    							<div ng-if="vm.item.ding.contentType=='1'">
+	    							<input id="head" name="head" type="text" ng-model="vm.item.ding.head" />
+	    						</div>
+	    						<div ng-if="vm.item.ding.contentType=='1'">
+	    							<input id="title" name="title" type="text" ng-model="vm.item.ding.title" />
+	    						</div>
+	    						<div id="dingImageDiv" ng-if="vm.item.ding.contentType=='1'">
+	    							 <img id="dingImage" alt="image" ng-src="{{vm.item.ding.dingImage}}" />
+<!-- 	    							 <img id="dingImage" alt="image" ng-src="{{vm.dingimgUrl}}" ng-click="vm.changeDingImage()" />
+                            		 <div fx-uploader="vm.options" on-complete="vm.onComplete" 
+                            		  style="border-radius: 10px;width: 220px;height: 120px;position: absolute;top: 130px;left: 50%;margin-left: -109px;"></div>
+-->
+	    						</div>
+	    						<div ng-if="vm.item.ding.contentType=='1'">
+		    						<textarea id="dingContent" type="text" name="dingMsg"
+									 validator="required,maxlength=200" 
+									 ng-model="vm.item.ding.dingContent"  wrap="hard" cols="10" ></textarea>
+	    						</div>
+	    						<div ng-if="vm.item.ding.contentType=='0'" style="margin-top: 200px;">
+		    						<textarea id="dingContent" type="text" name="dingMsg"
+									 validator="required,maxlength=200" 
+									 ng-model="vm.item.ding.dingContent"  wrap="hard" cols="10" ></textarea>
+	    						</div>
+ 	    						<div ng-if="vm.item.ding.contentType=='1'">
+	    							<input id="dingSender" type="text" readonly="readonly" ng-model="vm.item.ding.sender" />
+	    							<input id="dingDate" type="text" readonly="readonly" ng-model="vm.item.ding.sendTime" />
+	    						</div> 
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			
+
+    		</div>
+    	</fieldset>
+    </form>    
+</section>
+<footer>
+	<a class="btn" ng-click="closeThisDialog()" translate="N000992">取消</a>
+	<a class="btn btn-primary" validation-submit="msgForm" ng-click="vm.save()" translate="N000081">保存</a>
+</footer>

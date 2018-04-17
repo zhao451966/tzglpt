@@ -1,0 +1,89 @@
+<header ng-bind="ngDialogData.title">查询汇率</header>
+<section>
+    <form  class="form-default" fx-form="$$filter">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div  class="controls">
+                            <div class="span6">
+                                <label class="control-label text-info" translate="N106009">币种从</label>
+                                <div class="controls">
+                                    <div style="width:100%" fx-select="$$filter.fromExchange"  code="exchangebh" value="exchangeName" url="projectEstimate/exchange/listfromtoExchangeCommon"></div>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label text-info" translate="N106010">币种到</label>
+                                <div class="controls">
+                                    <div style="width:100%" fx-select="$$filter.toExchange"  code="exchangebh" value="exchangeName"   url="projectEstimate/exchange/listfromtoExchangeCommon"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="controls">
+                            <div class="span6">
+                                <label class="control-label text-info" translate="N106011">日期从</label>
+                                <div class="controls">
+                                    <input type="text"  class="span12" placeholder="{{'N106013' | translate}}"
+                                           ng-model="$$filter.exchangeDateBeg"
+                                           date-time format="YYYY-MM-DD"  view="date" min-view="date" min-view="date"
+                                           validator="required" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label text-info" translate="N106012">日期到</label>
+                                <div class="controls">
+                                    <input type="text"  class="span12" placeholder="{{'N106013' | translate}}"
+                                           ng-model="$$filter.exchangeDateEnd"
+                                           date-time format="YYYY-MM-DD"  view="date"  min-view="date"
+                                           validator="required" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </form>
+    <table class="table table-hover table-bordered"
+            st-table="vm.exchangeList"
+           fx-table is-fixed="false"
+           st-pipe="vm.query"
+            >
+        <thead>
+        <tr>
+            <th style="width: 64px;"></th>
+            <th translate="N001025">日期</th>
+            <th translate="N106009">币种从</th>
+            <th translate="N106010">币种到</th>
+            <th translate="N000641">汇率</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr st-select-row="data" ng-repeat="data in vm.exchangeList | filter:q">
+            <td>
+                <input type="radio"
+                       class="fx-radio"
+                       name="redio"
+                       ng-checked="data.isSelected"
+                      />
+            </td>
+            <td ng-bind-html="data.exchangeDate | highlight:q|mFormat:'YYYY-MM-DD'"></td>
+            <td ng-bind-html="data.fromExchangeName | highlight:q"></td>
+            <td ng-bind-html="data.toExchangeName | highlight:q"></td>
+            <td ng-bind-html="data.exchange | highlight:q"></td><!--|number:2-->
+        </tr>
+        </tbody>
+    </table>
+</section>
+<footer>
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+        ng-click="vm.ok()"
+        ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

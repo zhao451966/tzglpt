@@ -1,0 +1,64 @@
+<header ng-bind="ngDialogData.title" translate="N004441">查询拟出资部门</header>
+<section>
+	<form class="form-default">
+         <div style="margin-bottom:20px;" class="row-fluid">
+            <div class="span6">
+                 <div class="controls">
+                     <div class="input-append">
+                         <input placeholder="{{'N004442' | translate}}" class="span12" type="text"
+                                ng-model="vm.vcDeptName">
+                         <span class="add-on">
+                             <i style="cursor: pointer;" ng-click="vm.searchPlanFundDeptByName()" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+             <div class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-if="1==2" ng-repeat="planFundDept in vm.customSelectedPlanFundDepts" ng-click="vm.removePlanFundDept(planFundDept, $index)" class="badge icon-remove">{{planFundDept.vcDeptName}}</a>
+             	</div>
+             </div>
+         </div>
+     </form>
+ <div>
+    <table class="table table-hover table-bordered main-table"
+           st-table="vm.planFundDepts"
+           st-pipe="vm.searchPlanFundDeptByName"
+           fx-table="dialog.planFundDepts">
+        <!--<thead>
+	        <tr>
+	            <th>部门编码</th>
+	            <th>部门名称</th>
+	        </tr>
+        </thead>-->
+        <tbody>
+	        <tr ng-click="data.level==2?vm.toggleSelectPlanFundDept(data):''"
+	        	st-select-row="data.level==2?data:''"
+	            st-select-mode="{{::ngDialogData.selectionMode}}"
+	            ng-repeat="data in vm.planFundDepts" >
+                <td ng-if="data.level==1" class="ellipsis" style="text-align: right;font-weight: bold" title="{{data.vcDeptName}}" ng-bind-html="data.vcDeptName | highlight:vm.vcDeptName"></td>
+                <td ng-if="data.level==1"></td>
+                <td ng-if="data.level==2"></td>
+                <td ng-if="data.level==2" class="ellipsis" style="text-align: left" title="{{data.vcDeptName}}" >
+                    <input type="radio" class="fx-radio"
+                           ng-checked="data.isSelected"
+                           ng-if="ngDialogData.selectionMode == 'single'" />
+                    <input type="checkbox" class="fx-checkbox"
+                           ng-checked="data.isSelected"
+                           ng-if="ngDialogData.selectionMode == 'multiple'" />
+                    {{data.vcDeptName}}
+                </td>
+	        </tr>
+        </tbody>
+    </table>
+</div>
+</section>
+<footer>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

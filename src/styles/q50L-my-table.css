@@ -1,0 +1,26 @@
+table.table thead {
+    background: #fff;
+}
+
+table.table thead.fixed th{
+    border-bottom: 1px solid rgb(216, 221, 230);
+}
+
+/*表格label加粗
+table td.table-label{
+    #font-weight: bolder;
+}
+
+table th.table-label{
+    font-weight: bolder;
+}
+*/
+table th.table-label-center{
+    text-align: center;
+}
+table td.table-label-center{
+    text-align: center;
+}
+
+
+

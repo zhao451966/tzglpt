@@ -1,0 +1,4 @@
+table.ordertb th:first-child,
+table.ordertb td:first-child {
+    padding-left: 8px;
+}

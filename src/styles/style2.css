@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+body#dashboard>.wrapper {
+    width: 100%;
+    margin: 0;
+}
+
+
+body>.wrapper {
+    /*width: 1280px;*/
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    background: #eeeeee;
+}
+
+div#breadcrumb {
+
+}
+
+div#content.expand {
+    margin: 0 0 0 200px;
+}
+
+#sidebar > ul.main-menu {
+    top: 76px;
+}
+
+div#sidebar {
+    width: auto;
+    background: rgb(22, 50, 92);
+    position: fixed;
+    z-index: 2;
+    top: 50px;
+    bottom: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+div#sidebar:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+div#sidebar .zzwnav {
+    width: 200px;
+}
+
+div#header .header-outer {
+    width: 100vw;
+    margin: 0;
+}
+
+div#header .header-search {
+    margin-left: 0px;
+}
+
+div#header .menu-bar {
+    display: none;
+}
+
+body.no-menu #content {
+    #margin-left: 0;
+}
+
+
+body.no-header #content {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+body.no-header #breadcrumb {
+    display: none;
+}
+

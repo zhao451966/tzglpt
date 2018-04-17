@@ -1,0 +1,76 @@
+<header ng-bind="ngDialogData.title">查询项目</header>
+<section>
+    <form class="form-default">
+         <div style="margin:0px;" class="row-fluid">
+             <div class="span6">
+                 <div class="controls">
+                     <div style="margin-bottom: 20px;" class="input-append">
+                         <input placeholder="{{'N106003' | translate}}" class="span12" type="text"
+                                       ng-model="vm.searchParam">
+                         <span class="add-on">
+                             <i ng-click="vm.query()" style="cursor: pointer;" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+         	<div class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-if="1==2" ng-repeat="project in vm.customSelectedProjects" ng-click="vm.removeProject(project, $index)" class="badge icon-remove">{{project.vcProName}}</a>
+             	</div>
+             </div>
+         </div>
+    </form>
+    
+    <div class="row-fluid flex">
+        <div class="main-panel hundredTable">
+            <table class="table table-hover table-bordered"
+             fx-table 
+             st-pipe="vm.query"
+             st-table="vm.projects">
+                <thead>
+                <tr>
+                    <th style="width: 64px;"></th>
+                    <th translate="N001381">项目编号</th>
+                    <th translate="N001418">项目名称</th>
+                    <th translate="N001404">项目简称</th>
+                    <th translate="N001389">项目代称</th>
+                    <th translate="N001393">项目负责人</th>
+<!--                     <th>管理平台</th> -->
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-click="vm.toggleSelectProject(data)"
+		        	st-select-row="data"
+		            st-select-mode="{{::ngDialogData.selectionMode}}"
+		            ng-repeat="data in vm.projects" >
+		            <td>
+		                <input name="redio" type="radio" class="fx-radio"
+		                       ng-checked="data.isSelected"
+		                       ng-if="ngDialogData.selectionMode == 'single'" />
+		                <input type="checkbox" class="fx-checkbox"
+		                       ng-checked="data.isSelected"
+		                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+		            </td>
+                    <td class="ellipsis" title="{{data.vcProNo}}" ng-bind-html="data.vcProNo | highlight:vm.searchParam"></td>
+                    <td class="ellipsis" title="{{data.vcProName}}" ng-bind-html="data.vcProName | highlight:vm.searchParam"></td>
+                    <td class="ellipsis" title="{{data.vcProShort}}" ng-bind-html="data.vcProShort | highlight:vm.searchParam"></td>
+                    <td class="ellipsis" title="{{data.vcAntonomasiaName}}" ng-bind-html="data.vcAntonomasiaName"></td>
+                    <td class="ellipsis" title="{{data.userName}}" ng-bind-html="data.userName"></td>
+                    <!-- <td class="ellipsis" title="{{data.deptName}}" ng-bind-html="data.deptName"></td> -->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<footer>
+	<!-- 分页控件 -->
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+

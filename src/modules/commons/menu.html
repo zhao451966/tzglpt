@@ -1,0 +1,25 @@
+<nav id="menu" class="menu" ng-class="{expand: vm.expand}" msd-wheel="vm.scroll($event, $delta, $deltaX, $deltaY)">
+    <ul class="lv1">
+        <li ng-click="vm.toggleMenu()" title="{{'N005045' | translate}}">
+            <a class="expendul">
+                <i class="icon icon-align-justify"></i>
+            </a>
+        </li>
+        <li ng-if="m1.showFlag==true" ng-repeat="m1 in vm.menus" fx-menu>
+            <a ng-if="m1.route" ui-sref="{{m1.route}}" title="{{m1.name}}" onclick="javascript:clearTableParams();">
+                <i class="my-icon {{m1.icon}}" ></i><p>{{::m1.name}}</p>
+            </a>
+            <a ng-if="!m1.route">
+                <i class="my-icon {{m1.icon}}" ></i><p>{{::m1.name}}</p>
+            </a>
+            <ul class="lv2" ng-if="m1.children.length > 0" >
+                <li ng-if="m2.showFlag==true" ng-repeat="m2 in m1.children">
+                    <a ng-if="!m2.route"><p>{{::m2.name}}</p>
+                    </a>
+                    <a ui-sref="{{m2.route}}" ng-if="m2.route" onclick="javascript:clearTableParams();">{{::m2.name}}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

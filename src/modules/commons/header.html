@@ -1,0 +1,240 @@
+<div class="header-content">
+    <div class="header-left">
+        <span class="icon-menu" title="主菜单" style="display:none;">
+            <i></i>
+        </span>
+        <span class="logo" onclick="" title="{{'N001162' | translate}}"></span>
+    </div>
+    <div class="header-search">
+        <div class="header-search-container">
+            <button  class="search-btn"><span class="search-btn-i"></span></button>
+            <input type="text" class="search-bar ng-pristine ng-untouched ng-valid" ng-model="vm.fileName" ng-keydown="vm.keydown($event)" placeholder="{{'N004558' | translate}}">
+            <button class="search-clear" ng-click="vm.clearFiles()"><span class="search-clear-i"></span></button>
+            <span>
+                <a class="high-search" title="{{'N004559' | translate}}" ng-click="vm.showHighSearch=!vm.showHighSearch"><i translate="N004559">高级搜索</i></a>
+            </span>
+        </div>
+    </div>
+    <div class="header-right header-tools">
+        <span ng-show="false" class="icon-notice" title="通知">
+            <i></i>
+        </span>
+       <!-- <span class="icon-sysSet"  >
+            <div class="btn-group"  style="margin: 0;">
+                <span class="btn dropdown-toggle btn-mini no-padding" data-toggle="dropdown" title="{{'N001858' | translate}}" style="border: none; margin-top: 0px;">
+                    <img src="styles/img/dashboard/icon-translate-zh.png" alt=""/>
+                </span>
+                <ul  class="dropdown-menu pull-right large-menu">
+                    <li >
+                        <a  ng-click="vm.translatelx('1');" target="_blank">
+                            简体中文
+                        </a>
+                    </li>
+                    <li >
+                        <a  ng-click="vm.translatelx('0');" target="_blank">
+                            English
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </span>-->
+        <a class="btn btn-mini no-padding" style="border: none;background: none;" ng-click="vm.translatelx(wen2A?'0':'1');">
+            <i ng-if="wen2A" class="i-icon my-lang-en" >
+
+            </i>
+            <i ng-if="!wen2A" class="i-icon my-lang-zh">
+
+            </i>
+        </a>
+
+        <a class="btn dropdown-toggle btn-mini no-padding" data-toggle="dropdown" style="border: none;    background: none;">
+            <i class="i-icon my-icon-xiaolian">
+                <span class="user-small">A</span>
+            </i>
+        </a>
+
+        <ul class="dropdown-menu pull-right header-user">
+            <!--<div class="arrow"></div>
+            <div class="arrow-white"></div>-->
+            <li class="firstLine">
+                <span class="user-large">A</span>
+                <span class="user-info">
+                    <p title="{{vm.item.userName}}" class="p-name ellipsis">{{vm.item.userName}}</p>
+                    <p ng-if="vm.item.userType!='0'" title="{{vm.item.vcCompanyName}}" class="p-email ellipsis">{{vm.item.vcCompanyName?vm.item.vcCompanyName:'&nbsp;'}}</p>
+                    <p title="{{vm.item.regCellPhone}}" class="p-phone ellipsis">{{vm.item.regCellPhone?vm.item.regCellPhone:'&nbsp;'}}</p>
+                    <p class="p-epwd" ng-click="vm.updatePwd()" translate="N004560">修改密码</p>
+                    <!--<p class="p-myinfo btn" ng-click="">我的帐号</p>-->
+                     <p class=" ellipsis" ng-class="{'p-phone-edit-fund-inner': vm.item.userType=='0', 'p-phone-edit-inner':vm.item.userType!='0'}" ng-click="vm.updatePhone()" translate="N004100">修改</p>
+                </span>
+                <span ng-if="false" class="user-info-edit">
+                    <p class="p-name-edit ellipsis" ng-click="vm.updateAccount()" translate="N004569">申请修改</p>
+                    <p ng-if="vm.item.userType!='0'" class="p-email-edit ellipsis" ng-click="vm.updateCompany()" translate="N004569">申请修改</p>
+                    <p class="p-phone-edit ellipsis" ng-click="vm.updatePhone()" translate="N004100">修改</p>
+                </span>
+            </li>
+            <li class="secondLine">
+
+                <div class="btn" ui-sref="root.login" title="{{'N001296' | translate}}"  translate="N001296">退出</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div  ng-show="vm.showHighSearch" class="high-search-div">
+    <div class="form-default">
+        <div class="control-group high-search-title" >
+            <div class="row-fluid">
+                <span translate="N004559">高级搜索</span>
+                <button class="high-search-clear" ng-click="vm.hideHighSearch()">
+                    <span class="search-clear-i"></span>
+                </button>
+            </div>
+        </div>
+        <div class="control-group high-search-container">
+            <div class="row-fluid">
+                <label class="control-label" translate="N004538">报告类型</label>
+                <div class="span12">
+                    <div class="controls">
+                        <select name="fileType" class="span12 fx-select" ng-model="vm.highSearch.fileType"
+                                ng-options="fileType.dataCode as fileType.dataValue for fileType in vm.dictionary.fileTypes"
+                                ng-change="vm.selectFileType()" >
+                            <option value="" translate="N000037">---请选择---</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row-fluid" ng-if="vm.highSearch.fileType">
+                <label class="control-label" translate="N004534">报告时间</label>
+                <div class="span12">
+                    <div class="span4" ng-if="vm.highSearch.fileType=='001'">
+                        <div class="controls">
+                            <select name="fileFirstType" class="span12 fx-select" ng-model="vm.highSearch.fileFirstType"
+                                    ng-options="fileFirstType.dataCode as fileFirstType.dataValue for fileFirstType in vm.dictionary.fileFirstTypes"
+                                    ng-change="vm.selectFirstType()" >
+                                <option value="" translate="N000037">---请选择---</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="span4" ng-if="vm.highSearch.fileType=='001'&&vm.highSearch.fileFirstType">
+                        <div class="controls">
+                            <div class="input-append">
+                                <input type="text" class="span12" placeholder="{{'N001026' | translate}}"
+                                       ng-model="vm.highSearch.year"
+                                       date-time format="YYYY" view="year" min-view="year"
+                                       name="year"
+
+                                       valid-method="blur"/>
+                                <span class="add-on" style="border:none;border-radius: inherit;">
+                                    <i class="icon icon-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="span4" ng-if="vm.highSearch.fileType=='001'&&(vm.highSearch.fileFirstType=='004'||vm.highSearch.fileFirstType=='005')">
+                        <div class="controls">
+
+                            <select ng-if="vm.highSearch.fileFirstType=='004'" name="quarter" class="span12 fx-select" ng-model="vm.highSearch.quarter"
+                                    ng-options="quarter.dataCode as quarter.dataValue for quarter in vm.dictionary.quarters"
+                                    >
+                                <option value="" translate="N000037">---请选择---</option>
+                            </select>
+
+                            <div class="input-append jx-wrapper" ng-if="vm.highSearch.fileFirstType=='005'">
+                                <input type="text" class="span12" placeholder="{{'N001026' | translate}}"
+                                       ng-model="vm.highSearch.month"
+                                       date-time format="MM" view="month" min-view="month"
+                                       name="month"
+
+                                       valid-method="blur"/>
+                                <span class="add-on" style="border:none;border-radius: inherit;">
+                                    <i class="icon icon-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="span4" ng-if="vm.highSearch.fileType=='002'">
+                        <div class="controls">
+                            <div class="input-append" >
+                                <input id="filedate" type="text" class="span12" placeholder="{{'N001026' | translate}}"
+                                       ng-model="vm.highSearch.filedate"
+                                       date-time format="YYYY-MM-DD" view="date" min-view="date"
+                                       name="filedate"
+
+                                       valid-method="blur"/>
+                                <span class="add-on" style="border:none;border-radius: inherit;">
+                                    <i class="icon icon-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <label class="control-label" translate="N004535">上传时间</label>
+
+                <div class="span12">
+                    <div class="span6">
+                        <div class="controls">
+                            <div class="input-append">
+                                <!--N004431=从-->
+                                <input type="text" class="span12" placeholder="{{'N004431' | translate}}" date-time format="YYYY-MM-DD" view="date" min-view="date"
+                                       ng-model="vm.highSearch.uploadTimeFrom"/>
+                                <span class="up add-on">
+                                   <i class="icon icon-calendar"></i>
+                                </span>
+                                <span class="up add-on" style="margin-top: -7px;right: -25px; padding-left: 0px; padding-right: 0px; width: 16px; position: absolute; top: 8px;" translate="N001698">
+                                   至
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6"  >
+                        <div class="controls">
+                            <div class="input-append jx-wrapper" style="z-index: 5">
+                                <!--N004432=到-->
+                                <input type="text" class="span12" placeholder="{{'N004432' | translate}}" date-time format="YYYY-MM-DD" view="date" min-view="date"
+                                       ng-model="vm.highSearch.uploadTimeTo"/>
+                                <span class="up add-on">
+                                   <i class="icon icon-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <label class="control-label" translate="N004561">关键字</label>
+                <div class="span12" >
+                    <div class="controls">
+                        <div class="input-append jx-wrapper">
+                            <input  type="text"  name="keyword" class="span12" ng-model="vm.highSearch.keyword" ng-keydown="vm.highSearchKeydown($event)" placeholder="{{'N004561' | translate}}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <label class="control-label" >&nbsp;</label>
+                <div class="span12" >
+                    <div class="controls">
+                        <button class="btn btn-primary fl" ng-click="vm.highSearch()" translate="N004559">高级搜索</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    function go(){
+        window.location.href = getViewContextPath()+'dashboard/index.html';
+    }
+</script>

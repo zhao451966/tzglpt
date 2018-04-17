@@ -1,0 +1,43 @@
+<header>更新密码</header>
+<section>
+            <form  name="userForm" class="form-default">
+                <fieldset>
+                    <div class="control-group" style="padding-bottom:30px;">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info required">旧密码</label>
+                                <div class="controls">
+                                    <input type="password"  name="password" class="span12"  ng-model="vm.password" validator="required" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info required">新密码</label>
+                                <div class="controls">
+                                    <input type="password" name="newPassword" class="span12"  ng-model="vm.newPassword" validator="required"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info required">确认密码</label>
+                                <div class="controls">
+                                    <input type="password" name="qrPassword" class="span12"  ng-model="vm.qrPassword" validator="required"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+</section>
+<footer>
+    <a  class="btn "  ng-click="closeThisDialog()">取消</a>
+    <a  class="btn btn-primary" validation-submit="userForm" ng-click="vm.save(vm.password,vm.newPassword,vm.qrPassword)">保存</a>
+</footer>
+
+
+
+

@@ -1,0 +1,17 @@
+
+/* 解决英文状态下样式问题 */
+
+#menu .lv1 p {
+    width: 134px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#sidebar .menu.expand .lv1 > li > a {
+    padding-right: 0;
+}
+.sub-menu {
+    width: auto!important;
+    min-width: 160px;
+}

@@ -1,0 +1,113 @@
+<html>
+<head>
+	<style>
+	table {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	text-align:center;
+	}
+	.tableHead {
+	background-color:lightgrey;
+	}
+	table th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+	}
+	table td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+	}
+	</style>
+</head>
+
+<body>
+<div>
+<form id="queryForm">
+	<table >
+		<tr>
+		
+			<td ng-repeat="cond in conditions" ng-if="cond.condDisplayStyle!='H'">
+			<label ng-if="cond.paramReferenceType =='Y'||cond.paramReferenceType =='M'||cond.paramReferenceType =='1'">{{cond.condLabel}}:</label>
+			<select ng-model="vm.filter[cond.condName]"  clsss="searchbox" ng-if="cond.paramReferenceType =='Y'||cond.paramReferenceType =='M'||cond.paramReferenceType =='1'">
+				<option ng-repeat="year in cond.comboValues" value="{{year.value}}" ng-selected="cond.condValue==year.value">{{year.key}}</option>
+			</select>
+			<label ng-if="cond.paramReferenceType =='0'|| cond.paramReferenceType =='2' || cond.paramReferenceType =='3'">{{cond.condLabel}}：</label>
+			<input ng-model="vm.filter[cond.condName]" type="text" value="{{cond.condValue}}" id="{{cond.condName}}" ng-if="cond.paramReferenceType =='0'||cond.paramReferenceType =='2'||cond.paramReferenceType =='3'" />
+			</td>
+		
+			<td><input clsss="searchbutton" type="button" ng-click="queryByParam()" value="统计"/></td>
+		</tr>
+	</table>
+</form>
+	<div id="normalTableBody">
+		<table>
+			<tr ng-repeat="datas in tableHead.lines" class="tableHead">
+				<td rowspan="{{tableHead.lines.length}}" class="tableHead" ng-if="$index==0">行号</td>
+				<td ng-repeat="data in datas.cells track by $index" colspan="{{data.colspan}}" rowspan="{{data.rowspan}}" class="tableHead">{{data.value}}</td>
+			</tr>
+			<tr ng-repeat="datas in tableBody.lines">
+				<td>{{$index+1}}</td>
+				<td ng-repeat="data in datas.cells track by $index" colspan="{{data.colspan}}" rowspan="{{data.rowspan}}">{{data.value}}</td>
+			</tr>
+		</table>
+	</div>
+	
+	
+</div>
+</body>
+<!--<script type="text/javascript">
+
+	
+	var model=angular.module('myModel', ['restangular']);
+	model.config(['$locationProvider','$httpProvider',function($locationProvider,$httpProvider) {
+		  $httpProvider.defaults.headers.put['Content-Type'] = 'application/json';
+		  $httpProvider.defaults.headers.post['Content-Type'] = 'application/json';
+		  $httpProvider.defaults.headers.post['Accept'] = 'application/json';
+		  $locationProvider.html5Mode(true);
+		  console.log($locationProvider);
+	}]);
+	model.factory("TwodimenForm", ['Restangular', function(Restangular) {
+		Restangular.setBaseUrl("http://localhost:8980/product-stat/service/stat/twodimenform/");
+		// var twodimen=Restangular.all("product-stat/service/stat/twodimenform/");
+		var twodimen=Restangular.all("");
+		 return twodimen;
+	}]);
+	model.controller('TwoDimenFormController',['$scope','TwodimenForm','$location',function($scope,TwodimenForm,$location){
+		var queryName=$location.search().queryName;
+		console.log($location);
+		var getQueryParms=function(){
+			var queryForm=$("#queryForm")[0].elements;
+			var map={};
+			for(var i=0;i<queryForm.length;i++){
+				var key=queryForm[i].id;
+				var value=queryForm[i].value;
+				if(""!=key&&key!=null)
+				map[key]=value;
+			}
+			return map;
+		}
+		
+		var myDate = new Date(); 
+		//$scope.queryParams={year:myDate.getFullYear(),month:myDate.getMonth()+1,name:''};		
+		$scope.queryByParam=function(){
+			TwodimenForm.one(queryName).customPOST(null,'',getQueryParms()).then(function(data1){
+				$scope.data=data1.data;
+				$scope.tableHead=data1.data.tablePanel.thead;
+				$scope.tableBody=data1.data.tablePanel.tbody;
+				$scope.conditions=data1.data.conditions;
+			})
+		}
+		$scope.queryByParam(getQueryParms());
+  	}]);
+</script>-->
+</html>

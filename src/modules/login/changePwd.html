@@ -1,0 +1,44 @@
+<header translate="N004560">修改密码</header>
+<section>
+            <form  name="userForm" class="form-default">
+                <fieldset>
+                    <div class="control-group">
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info required" translate="N004562">旧的密码</label>
+                                <div class="controls">
+                                    <input type="password"  name="password" class="span12"  ng-model="vm.password" validator="required" autocomplete="off" placeholder="{{'N004562' | translate}}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info required" translate="N005122">新密码</label>
+                                <div class="controls">
+                                    <input type="password" name="newPassword" class="span12"  ng-model="vm.newPassword" validator="required" autocomplete="off" placeholder="{{'N005122' | translate}}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info required" translate="N005123">确认新密码</label>
+                                <div class="controls">
+                                    <input type="password" name="qrPassword" class="span12"  ng-model="vm.qrPassword" validator="required" autocomplete="off" placeholder="{{'N005123' | translate}}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+</section>
+<footer>
+    <a  class="btn btn-primary" validation-submit="userForm" ng-click="vm.save(vm.password,vm.newPassword,vm.qrPassword)" translate="N001208">提交</a>
+    <a  class="btn "  ng-click="closeThisDialog()" translate="N000992">取消</a>
+</footer>
+
+
+
+

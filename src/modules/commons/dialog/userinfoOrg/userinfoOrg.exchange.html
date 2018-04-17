@@ -1,0 +1,15 @@
+<header style="text-align: center;border-bottom: 2px solid rgb(216, 221, 230); max-height: 54px;">选择企业</header>
+<section>
+    <form  class="form-default">
+        <fieldset class="divcss5-abc">
+            <a ng-repeat="data in vm.userinfoOrgList" style="width: 137px; height:137px;text-align:center;float:left;margin-left: 20px; margin-right: 20px; padding: 0px 0px 0px 0px ;margin-top: 20px; position:relative; text-align: center;display:table;" 
+				class="alert alert-block new-alert-block" ng-click="vm.select(data)" >
+               <div style="display:table-cell; vertical-align:middle;">{{data.vcCompanyName}}</div> 
+            </a>
+        </fieldset>
+    </form>
+</section>
+
+
+
+

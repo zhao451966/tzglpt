@@ -1,0 +1,171 @@
+ <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>资源下载</title>
+    <script src="../i18n/zh.js"></script>
+    <script src="../i18n/en.js"></script>
+    <script src="contextPath.js"></script>
+    <link rel="stylesheet" href="style-enter.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-1.11.1.min.js"></script>
+    <!--bootstrap依赖于jQuery所以有先后顺序-->
+    <script src="bootstrap.js"></script>
+    <script language="javascript">
+        getI18NResourse();
+        $.ajax({
+            url: window.ContextPath+"service/dashboard/listMovies",
+            type:"GET",
+            dataType:"json",
+            complete: function(xhr) {
+             eval("jsonResult = "+xhr.responseText);
+                 if(jsonResult.data.objList&&jsonResult.data.objList.length>0) {
+           //         /!*循环添加条目  *!/
+                    for (var i = 0; i < jsonResult.data.objList.length; i++) {
+                    	   var vcResType='';
+                    	   var vcResAddress='';
+                    	   var vcId='';
+                    	   if(jsonResult.data.objList[i].vcResType=='0') {
+                    		   vcResType="ms_ie"
+                    		   vcResAddress= '<a class="downLoad" href="'+ jsonResult.data.objList[i].vcResAddress+ '"">下载</a>'
+                            }else if(jsonResult.data.objList[i].vcResType=='1') {
+                            	vcResType="google_chrome"
+                            	vcResAddress= '<a class="downLoad" href="'+ jsonResult.data.objList[i].vcResAddress+ '"">下载</a>'
+                            	if(jsonResult.data.objList[i].vcId=='a52eca388a324b698f5dc8dd982ce364'){
+                            		vcId='Chrome32ONE';
+                            	}else if (jsonResult.data.objList[i].vcId=='a193b91851484aaf9c2f24efa4b73ec3'){
+                            		vcId='Chrome64ONE';
+                            	}else if(jsonResult.data.objList[i].vcId=='26c5f90690284f219ed51f632fde06d2'){
+                            		vcId='ChromeMacONE';
+                            	}
+                            	
+                            }else if(jsonResult.data.objList[i].vcResType=='2') {
+                            	vcResType="icon_pdf"
+                            	vcResAddress= '<a class="downLoad" onclick="window.open(ContextPath+\''+jsonResult.data.objList[i].vcResAddress+'\',\'_self\')">下载</a>'
+                            	vcId='operate';
+                            }else if(jsonResult.data.objList[i].vcResType=='3') {
+                            	vcResType="icon_date"
+                            	vcResAddress= '<a class="downLoad" href="'+ jsonResult.data.objList[i].vcResAddress+ '"">下载</a>'
+                            	vcId='report';
+                            }else if(jsonResult.data.objList[i].vcResType=='4') {
+                            	vcResType="icon_movie"
+                            	vcResAddress= '<a class="downLoad" href="'+ jsonResult.data.objList[i].vcResAddress+ '"">下载</a>'
+                            	vcId='movie';
+                            }
+                        $("#Chrome32").append($(
+                                '<div class="row-fluid">' +
+                                '<div class="span8 t-fl">' +
+                                '<span class="'+vcResType+'"></span>' +
+                                '<p class="font"  id="'+vcId+'"  >' + jsonResult.data.objList[i].vcResName+ '</p>' +
+                                '</div>' +
+                                '<div class="span4 t-fr">' +vcResAddress+
+                                '</div>'+
+                                '</div>'
+                        ));
+                    }
+                }else{
+                   // $("#movies").append($('<div></div><p class="noResource">暂时没有视频资源。</p></div>'));
+                }
+                $("#Chrome32ONE").html(window.getI18NResourse('N003197')+"&nbsp;&nbsp;&nbsp;"+window.getI18NResourse('N003198'));
+                $("#Chrome32TWO").html(window.getI18NResourse('N003198'));
+                $("#Chrome64ONE").html(window.getI18NResourse('N003199')+"&nbsp;&nbsp;&nbsp;"+window.getI18NResourse('N003198'));
+                $("#Chrome64TWO").html(window.getI18NResourse('N003198'));
+                $("#ChromeMacONE").html(window.getI18NResourse('N003200')+"&nbsp;&nbsp;&nbsp;"+window.getI18NResourse('N003201'));
+                $("#ChromeMacTwo").html(window.getI18NResourse('N003201'));
+                $("#report").html(window.getI18NResourse('N003202'));
+                $("#operate").html(window.getI18NResourse('N003203'));
+                $("#movie").html(window.getI18NResourse('N003204'));
+                $("a").html(window.getI18NResourse('N001360'));
+            }
+        });
+
+    </script>
+</head>
+<body>
+
+
+<header style="margin: 0 auto;width: 1024px;display: flex;padding: 24px 0px 54px 0px;">
+    <span style="background-image: url('img/enter/icon_download.png');width: 40px;height: 40px;background-position: -12px -12px;"></span>
+    <p class="p1" style="line-height: 36px;margin-left: 8px;font-weight: 600;font-size: 16px;">资源下载</p>
+    <p class="p2" style="line-height: 36px;margin-left: 8px;font-weight: 600;color: #8fa2c2;font-size: 14px;">DOWNLOAD</p>
+</header>
+<section style="    width: 1024px; margin: 0 auto;" class="down-section">
+    <form name="" class="form-default form-enter">
+        <fieldset>
+            <div class="control-group" style="padding-bottom:30px;" id="Chrome32">
+            </div>
+        </fieldset>
+    </form>
+</section>
+<footer>
+    <!-- <a  class="btn"  ng-click="vm.close()">取消</a>
+     <a  class="btn btn-primary"   ng-click="vm.download()">下载</a>-->
+</footer>
+<!--下面是代码任务部分--->
+
+</body>
+</html>
+<script>
+/*    function getCPU(){
+
+        var agent=navigator.userAgent.toLowerCase();
+
+        if(agent.indexOf("win64")>=0||agent.indexOf("wow64")>=0) return "x64";
+
+        return navigator.cpuClass;
+    }
+    if(getCPU()&&getCPU()=='x64'){
+        $("#IE32").css("display","none");
+        $("#Chrome32").css("display","none");
+    }else{
+        $("#IE64").css("display","none");
+        $("#Chrome64").css("display","none");
+    }*/
+</script>
+<style>
+    .font{
+        font-size: 16px
+    }
+    .head{
+        width: auto;
+        display: flex;
+        color: rgb(22, 50, 92);
+        justify-content: center;
+        padding: 8px 0px 8px 0px;
+    }
+    .modal-header {
+        border-bottom: 2px solid rgb(216, 221, 230);
+        padding:0px;
+    }
+    .modal-content{
+        background: #fff;
+        height: 679px;
+        flex-direction: column;
+        font-size: 1.1em;
+        line-height: 1.5em;
+        padding: 1em;
+        background: white;
+    }
+    .modal-body {
+        position: relative;
+        padding: 0px 15px;
+        overflow: auto;
+        height: 580px;
+    }
+    .downLoad{
+        padding: 8px 30px;
+        cursor:pointer;
+    }
+    .noResource{
+        color: rgb(22, 50, 92);
+        font-size: 16px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        font-weight: 600;
+    }
+</style>
+
+<script>
+    replaceLink();
+</script>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>复星投资企业信息披露平台</title>
+
+    <link rel="stylesheet" href="../../bower_components/bootstrap/docs/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../bower_components/ui-select/dist/select.css" />
+    <link rel="stylesheet" href="../../bower_components/select2/select2.css" />
+    <link rel="stylesheet" href="../../bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
+    <link rel="stylesheet" href="../../bower_components/angular-tooltips/dist/angular-tooltips.min.css" />
+    <link rel="stylesheet" href="../../bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="../../bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="../../bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../../bower_components/bootstrap-fileinput/css/fileinput.min.css" />
+    <link rel="stylesheet" href="../../bower_components/fullcalendar/dist/fullcalendar.css" />
+    <link rel="stylesheet" href="../../bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="../../bower_components/textAngular/dist/textAngular.css" />
+    <link rel="stylesheet" href="../../bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="../../bower_components/angular-xeditable/dist/css/xeditable.css" />
+
+    <link rel="stylesheet" href="../styles/A.css">
+    <link rel="stylesheet" href="../styles/NewCivicFont.css">
+    <link rel="stylesheet" href="../styles/animate.css">
+    <link rel="stylesheet" href="../styles/breadcrumb.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/header2.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/international.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/menu2.css">
+    <link rel="stylesheet" href="../styles/projectInfo.css">
+    <link rel="stylesheet" href="../styles/projects.activity.css">
+    <link rel="stylesheet" href="../styles/q50L-my-button.css">
+    <link rel="stylesheet" href="../styles/q50L-my-form.css">
+    <link rel="stylesheet" href="../styles/q50L-my-modal.css">
+    <link rel="stylesheet" href="../styles/q50L-my-table.css">
+    <link rel="stylesheet" href="../styles/q50L-my.css">
+    <link rel="stylesheet" href="../styles/sse_allcss.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style2.css">
+    <link rel="stylesheet" href="../styles/style3.css">
+    <link rel="stylesheet" href="../styles/tab.css">
+    <link rel="stylesheet" href="../styles/tree.css">
+    <link rel="stylesheet" href="../styles/www.css">
+    <link rel="stylesheet" href="../directives/angular-datepicker/angular-datepicker.css">
+    <link rel="stylesheet" href="../directives/angular-ivh-treeview/ivh-treeview.css">
+    <link rel="stylesheet" href="../directives/angular-multi-select-master/isteven-multi-select.css">
+    <link rel="stylesheet" href="../directives/timepick/DateTimePicker.css">
+    <link rel="stylesheet" href="../styles/bike/3w.css">
+    <link rel="stylesheet" href="../styles/bike/Project.css">
+    <link rel="stylesheet" href="../styles/bike/bike.css">
+    <link rel="stylesheet" href="../styles/bike/coverPageBikeStyle.css">
+    <link rel="stylesheet" href="../styles/bike/project.encyclopedia.css">
+    <link rel="stylesheet" href="../styles/bike/search.css">
+    <link rel="stylesheet" href="../styles/matrix/matrix-media.css">
+    <link rel="stylesheet" href="../styles/matrix/matrix-style.css">
+    <link rel="stylesheet" href="../directives/angular.treeview/css/angular.treeview.css">
+    <link rel="stylesheet" href="../directives/jquery/scrollToTop/style.css">
+    <link rel="stylesheet" href="../directives/jquery/simpletooltip/simpletooltip.min.css">
+    <link rel="stylesheet" href="../styles/font-awesome/css/font-awesome.css">
+
+
+    <script src="../i18n/zh.js"></script>
+    <script src="../i18n/en.js"></script>
+    <script src="contextPath.js"></script>
+
+    <script src="jquery-1.8.0.min.js"></script>
+
+    <script language="javascript">
+
+        $(document).ready(function(){
+            $('body').fadeIn();
+            $('.close').click(function(){
+                $(this).closest('.float-tips').fadeOut();
+            });
+        });
+        
+    </script>
+
+
+</head>
+<body style="overflow: hidden; display: none;">
+<div class="wrapper" style="background-image: url(../styles/img/dashboard/sign_bg.jpg);background-size: 100% 100%;">
+    <div class="google-header-bar  centered">
+        <div class="header content clearfix">
+        </div>
+    </div>
+    <div class="main content clearfix">
+        <div class="main-content no-name ">
+            <div ng-if="vm.view==0" class="card signin-card pre-shift no-name" style="position: fixed; top: 0px; right: 0px;  left: 0px; bottom: 0px; margin: auto;" >
+                <div id="cc_iframe_parent"></div>
+                <div class="circle-mask" style="">
+                </div>
+                <form novalidate  id="gaia_loginform" >
+                    <div class="form-panel second " style="margin-top: 55px;">
+                        <div style="text-align: center;">
+                            <div>
+                                <p id="profile-name"></p>
+                                <span dir="ltr" id="email-display"></span>
+                            </div>
+                            <div>
+                                <div id="password-shown">
+                                    <div>
+                                        <h2  class="banner"> 为了获得更好的浏览体验，请下载Chrome浏览器或者Firefox浏览器！</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <input id="signIn" name="signIn" class="rc-button rc-button-submit" type="submit" style="margin-top: 21px;" onclick="window.open('http://fosun-invest.oss-cn-hangzhou.aliyuncs.com/44.0.2403.155_chrome64_installer.rar')" value="下载Chrome浏览器(64位)">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+	//同意保密协议
+	function agreeSecrecyAgreement(){
+		
+		$('#agree2').unbind("click");
+		
+		$.ajax({
+			url:window.ContextPath+"service/ConfidentialityAgreement/secrecyagreementuser/agreeSecrecyAgreement",
+			type:"POST",
+			dataType:'json',
+			complete:function(xhr){
+				eval("var result = "+xhr.responseText);
+	         	if(result && result.data){
+	         		if(result.data.sauId){
+	            		//用户同意协议，成功 
+	         			window.location.href= getViewContextPath() + "#/dashboard-fx";
+	            	}
+	         	}
+			}
+		});
+	}
+	//关闭 保密协议 提示条 
+	function closeSecrecyAgreementTips(){
+	 	$('#SECRECY_AGREEMENT').slideUp('slow');
+	}
+	//关闭保密协议 对话框
+	function closeSecrecyAgreementDialog(){
+		$('#secrecyAgreementContainer').hide();
+	}
+	//弹出保密协议 对话框 
+	function dialogSecrecyAgreementContent(){
+		$('#SECRECY_AGREEMENT').hide();
+		$('#secrecyAgreementContainer').show();
+	};
+	//2017-1-6 判断是否显示 保密协议,在进入系统之前 ！
+	function showSecrecyAgreementTipsOrEnterSystem(url){
+		 $.ajax({
+	         url: window.ContextPath+"service/ConfidentialityAgreement/secrecyagreementuser/isShowSecrecyAgreement",
+	         type:"POST",
+	         dataType:"json",
+	         complete: function(xhr){
+	         	//无论成功失败，最终都会执行次函数 
+	         	 eval("var result = "+xhr.responseText);
+	         	if(result && result.data){
+	         		window.secrecyAgreement= result.data;
+	         	}
+	        	if(window.secrecyAgreement.vcSecrecyContent){
+	        		 //显示保密协议
+	        		 //alert(window.secrecyAgreement.vcSecrecyContent);
+	        		 $("#secrecyAgreementContainer").show();
+	        		 $("#agree2").bind("click", agreeSecrecyAgreement);
+/* 	        		 $("#SECRECY_AGREEMENT").slideDown("slow"); */
+	        		 $("#saContainer_body").html(window.secrecyAgreement.vcSecrecyContent);
+	        	 }else{
+	        		 //进入系统
+	        		 window.location.href= url;
+	        	 }
+	         }
+		 });
+	}
+
+    //当前操作系统位数
+    function getCPU(){
+
+        var agent=navigator.userAgent.toLowerCase();
+
+        if(agent.indexOf("win64")>=0||agent.indexOf("wow64")>=0) return "x64";
+
+        return navigator.cpuClass;
+    }
+    if(getCPU()&&getCPU()=='x64'){
+        $("#Chrome32").css("display","none");
+    }else{
+        $("#Chrome64").css("display","none");
+    }
+    //当前流浏览器版本检测
+    function getBrowserInfo(){
+        var agent = navigator.userAgent.toLowerCase() ;
+        var regStr_ie = /msie [\d.]+;/gi ;  //IE6~IE10的浏览器
+        var regStr_ff = /firefox\/[\d.]+/gi;
+        var regStr_chrome = /chrome\/[\d.]+/gi ;
+        var regStr_saf = /safari\/[\d.]+/gi ;
+//IE
+        if(agent.indexOf("msie") > 0)
+        {
+            return agent.match(regStr_ie) ;
+        }
+//firefox
+        if(agent.indexOf("firefox") > 0)
+        {
+            return agent.match(regStr_ff) ;
+        }
+//Chrome
+        if(agent.indexOf("chrome") > 0)
+        {
+            return agent.match(regStr_chrome) ;
+        }
+//Safari
+        if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
+        {
+            return agent.match(regStr_saf) ;
+        }
+
+        return "";
+    }
+    function IETester(userAgent){
+        var UA =  userAgent || navigator.userAgent;
+        if(/msie/i.test(UA)){
+            return UA.match(/msie (\d+\.\d+)/i)[1];
+        }else if(~UA.toLowerCase().indexOf('trident') && ~UA.indexOf('rv')){
+            return UA.match(/rv:(\d+\.\d+)/)[1];
+        }
+        return false;
+    }
+    /*alert(IETester());*/
+    function getWeboffice(){
+
+        var mimetype = navigator.mimeTypes["application/iwebplugin"];
+        if(mimetype)
+        {
+            var plugin = mimetype.enabledPlugin;
+            if(plugin)
+            {
+                return true;
+            }else{
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function isIE() { //ie?
+        if (!!window.ActiveXObject || "ActiveXObject" in window)
+            return true;
+        else
+            return false;
+    }
+    function　check(){
+
+        var url = getViewContextPath() + "#/dashboard-fx";
+
+        var browser = getBrowserInfo().toString() ;
+        var verinfo = browser.replace(/[^0-9.]/ig,"");
+        if(browser.indexOf('chrome') >=0 ){
+            window._user = window._user || {};
+            var roles = window._user.userRoleCodes;
+
+            // 系统登录后，判断如果当用登录的用户没有角色或者只有G-public（公共角色），系统跳转到一个新的页面（页面内容待定）；否则跳转到真正的投管页面
+            if (!roles || roles.every(function(r) {
+                        return 'G-public' == r;
+                    })) {
+                $('#msg').html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+window.getI18NResourse('N003195'));//您没有投管系统权限
+                $('.float-tips').fadeIn()
+                //by谢彬
+                $('.float-inner .btn').hide();
+            }else {
+                //window.location.href= url;
+                showSecrecyAgreementTipsOrEnterSystem(url);
+            }
+
+        }
+        else if (isIE()) {
+            if(parseInt(IETester())>9){
+                //window.location.href=url;
+            	showSecrecyAgreementTipsOrEnterSystem(url);
+            }else{
+                $('#msg').html("请使用IE9以上版本,本系统在Chrome浏览器上能达到最佳体验，前往下载Chrome浏览器");
+                $('.float-tips').css('display','block');
+                $('.float-tips').addClass('move-in');
+            }
+        }
+        else{
+            $('#msg').html(window.getI18NResourse('N003194'));//"本系统在Chrome浏览器上能达到最佳体验，前往下载Chrome浏览器"
+            $('.float-tips').fadeIn()
+        }
+    }
+    function zxbg() { 
+    	window.open(getViewContextPath() + "#/zxbg");
+    }
+    // var url = getViewContextPath() + "dashboard/euromonitor.html";
+    // $("#EUROMONITOR_ONCLICK").click(function(){
+    // 	window.open(url);
+    // });
+    
+    // $("#EUROMONITORB").attr("href",url);
+</script>

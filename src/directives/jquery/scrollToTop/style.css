@@ -1,0 +1,23 @@
+#toTop {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+/*    right: 5px;
+    width: 64px;
+    height: 64px;*/
+    right: 0px;
+    width: 45px;
+    height: 45px;
+    opacity: 0.4;
+    z-index: 2;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+#toTop:hover {
+    color: #1A232D;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+#toTop span{
+    font-size: 45px;
+}

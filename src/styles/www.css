@@ -1,0 +1,1792 @@
+
+/* 布局 */
+.fosun-container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+.container-fluid {
+    flex: 1 0 auto;
+}
+
+body,html{ font-size: 14px;}
+
+select::-ms-expand {
+    display: none;
+}
+
+html.ngdialog-open, body.ngdialog-open {
+    overflow: auto!important;
+    overflow-x: hidden!important;
+}
+html.overflow-hidden.ngdialog-open,
+body.overflow-hidden.ngdialog-open{
+    overflow: hidden!important;
+}
+.row-fluid.flex {
+    /*不要轻易改这个值 IE CHROME44版本下兼容*/
+    flex:1 1 0px;
+}
+.flex {
+    display: flex;
+    flex: auto;
+}
+
+.fosun-search .btn {
+    padding: 6px 12px;
+}
+.fosun-search .widget-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 24px;
+}
+.fosun-search .widget-content .fosun-breadcrumb {
+    flex: 1 0 100%; font-size: 10px;
+}
+
+.fosun-container .main-panel {
+    flex: auto;
+    position: relative;
+    padding-right: 1px;
+    overflow-x: auto ;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.fosun-container .sub-panel {
+    width: 360px;
+    min-width: 20%;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,.4);
+    overflow: auto;
+    order: 1;
+    position: relative;
+}
+.fosun-container .sub-panel fieldset {
+    padding: 0 10px;
+}
+
+.fosun-container .flex-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.fosun-container .sub-panel .panel-close {
+    position: absolute; right: 4px; top: 22px; cursor: pointer;
+}
+
+.fosun-container .main-table {
+    table-layout: fixed;
+    min-width: 100%;
+    /* 覆盖bootstrap .table{width: 100%;} 必须和min-width:100%相结合使用*/
+    width: 10px;
+}
+
+/* ui-select */
+.ui-select-bootstrap input[type=text] {
+    margin: 0;
+    height: 24px;
+    line-height: 24px;
+}
+.ui-select-bootstrap .ui-select-match {
+    display: flex;
+}
+.ui-select-bootstrap .ui-select-toggle {
+    width: 100%;
+}
+.ui-select-bootstrap .btn-default-focus {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+    text-decoration: none;
+    outline: none;
+    outline-offset: 0;
+    box-shadow: none;
+}
+
+
+/* 表单 */
+.form-default fieldset legend {
+    margin-bottom: 0;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.form-default .control-group.first-control-group {
+    margin-top: 20px;
+}
+.form-default .control-group .control-label {
+    font-size: 16px;
+    color: #666666;
+}
+.form-default .control-group .controls > p {
+    min-height: 41px;
+    height: auto;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+}
+
+.form-default .control-group .controls > p.no-border {
+    border-bottom: none;
+}
+
+
+.form-default.p-border .control-group .controls > p{
+    border-bottom: 1px solid rgb(216, 221, 230);
+}
+
+.form-default .controls {
+    position: relative;
+}
+
+.form-default .row-fluid textarea {
+    min-height: 64px;
+}
+
+/*校验*/
+.input-append, .input-prepend {
+    display: flex;
+    margin-bottom: 0;
+}
+.input-append .add-on,
+.input-prepend .add-on{
+    height: 40px;
+    line-height: 30px;
+    width: 40px;
+}
+
+/* 表格 */
+table.table {
+    table-layout: fixed;
+    min-width: 100%;
+    /* 覆盖bootstrap .table{width: 100%;} 必须和min-width:100%相结合使用*/
+    /* width: 10px; */
+}
+table.table th:hover {
+    background: #F5F7F9;
+}
+table.table th,
+table.table td {
+    white-space: nowrap;
+    vertical-align: middle;
+
+
+}
+
+/* 修复红黄灯等页面，锁定表格头时，表头上方会出现1px空隙。先去掉表格border-top，再在th补上 */
+/*table.table-bordered.table {
+    border-top: none;
+}
+table.table-bordered.table th,
+table.table-bordered.table tbody tr:first-child td{
+    border-top: 1px solid #ddd!important;
+}*/
+
+
+.table th:first-child, .table td:first-child {
+    /*padding-left: 8px;*/
+}
+.table th.lastTH {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 24px;
+}
+
+.table td.lastTD {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 24px;
+}
+
+
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ellipsis2 {
+    white-space: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.table th {
+    padding: 12px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+table.table th input[type=raido],
+table.table th input[type=checkbox],
+table.table td input[type=raido],
+table.table td input[type=checkbox] {
+    margin: -2px 0 0;
+}
+
+table th.st-sort-ascent:before,
+table th.st-sort-descent:before {
+    content: '';
+    display: none;
+}
+table th.st-sort-ascent:after {
+    content: "\f062";
+    margin-left: 4px;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none !important;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
+table th.st-sort-descent:after {
+    content: "\f063";
+    margin-left: 4px;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none !important;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
+
+table th.st-sort-ascent,table th.st-sort-descent {
+    color: #54698D;
+}
+
+table th.st-sort-ascent:hover ,table th.st-sort-descent:hover {
+    color: #0070D2;
+    text-decoration: underline;
+}
+table.table th, table.table td {
+    border-top: none;
+    border-bottom: 1px solid rgb(216, 221, 230);
+}
+
+
+
+table.table th a{
+    border-bottom: 1px solid rgb(216, 221, 230);
+}
+
+/* 可编辑表格 */
+table.editable {
+    table-layout: fixed;
+}
+table.editable td {
+    padding: 6px;
+}
+table.editable td:first-child {
+    padding-left: 6px;
+}
+table.editable td .editable-input {
+    height: 34px;
+}
+.editable-error {
+    color: #b94a48;
+}
+
+/* 弹出框 */
+
+div.ngdialog.ngdialog-theme-default {
+    padding-bottom: 100px;
+    padding-top: 65px;
+}
+
+@media screen and (min-width: 1650px) {
+    div.ngdialog.ngdialog-theme-default {
+        padding-bottom: 160px;
+        padding-top: 160px;
+    }
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-lg.big-dialog .ngdialog-content {
+    width: 1060px;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-lg{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-md,div.ngdialog.ngdialog-theme-default.ngdialog-confirm {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+div.ngdialog.ngdialog-theme-default .ngdialog-content {
+    padding:0 0px;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 620px;
+}
+.ngdialog.ngdialog-theme-default.ngdialog-lg .ngdialog-content{
+    height: 100%;
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-md .ngdialog-content{
+    height: auto;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-confirm .ngdialog-content {
+    width: 565px;
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-confirm .ngdialog-content {
+    height: auto;
+}
+
+div.ngdialog.ngdialog-theme-default .ngdialog-content>header {
+    text-align: left;
+    padding-top: 15px;
+    width: 100%;
+    padding-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size:19px ;
+    font-weight: bold;
+    color: #1e1e1e;
+    margin: 0 auto;
+    line-height: 24px;
+    /*display: inline-table;*/
+    border-bottom: 2px solid rgb(216, 221, 230);
+    background-color: #fff;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    flex: 0 0 74px;
+    max-height: 74px;
+    height: 74px;
+    min-height: 74px;
+    justify-content: center;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-confirm .ngdialog-content>header {
+    text-align: left;
+    padding-top: 24px;
+    width: 100%;
+    padding-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size:19px ;
+    font-weight: bold;
+    color: #1e1e1e;
+    margin: 0 auto;
+    line-height: 24px;
+    /* display: inline-table; */
+    border-bottom: 2px solid rgb(216, 221, 230);
+    background-color: #fff;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    flex: 0 0 74px;
+    max-height: 74px;
+    height: 74px;
+    min-height: 74px;
+    justify-content: center;
+}
+
+div.ngdialog.ngdialog-theme-default .ngdialog-content>header .header-yindao span {
+    font-size:16px ;
+    font-weight: normal;
+    color: #666666;
+}
+
+div.ngdialog.ngdialog-theme-default .ngdialog-content>section {
+    padding: 16px 32px;
+    background-color: #fff;
+    flex: auto;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+div.ngdialog.ngdialog-theme-default .ngdialog-content>footer {
+    border-top: 2px solid rgb(216, 221, 230);
+    padding: 16px 16px;
+    background-color: #FFFFFF;
+    text-align: left;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    flex: 0 0 64px;
+    max-height: 64px;
+    height: 64px;
+    min-height: 64px;
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-confirm .ngdialog-content {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    height: 260px;
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-md .ngdialog-content {
+    width: 565px;
+}
+.ngdialog.ngdialog-theme-default.ngdialog-lg .ngdialog-content {
+    width: 960px;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-md .ngdialog-content>header{
+    font-size:19px ;
+    font-weight: bold;
+    color: #1e1e1e;
+    height: 40px;
+    padding-bottom: 0px;
+    max-height: 40px;
+    min-height: 40px;
+    border-bottom:none;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-confirm .ngdialog-content>section {
+    padding: 16px 32px;
+    background-color: #fff;
+    flex: auto;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-md .ngdialog-content>section {
+    padding: 16px 16px;
+    background-color: #fff;
+    flex: auto;
+    overflow: initial;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-md .ngdialog-content>section form {
+    margin-bottom: 0px;
+}
+
+div.ngdialog.ngdialog-theme-default.ngdialog-md .ngdialog-content>footer{
+    padding-top: 0px;
+    max-height: 50px;
+    height: 50px;
+    min-height: 50px;
+    border-top:none;
+}
+
+/*右边详情*/
+header.flex-header {
+    border-bottom: 1px solid #d8dde6;
+    padding: 24px;
+}
+
+header.flex-header h5 {
+    font-size: 20px;
+    font-weight: 100;
+    margin: 0px;
+}
+
+
+
+section.flex-section {
+    flex: 1;
+    overflow-y: auto;
+}
+
+header.flex-header .btn-group {
+    margin: 24px 0 0;
+
+}
+header.flex-header .btn {
+    padding: 6px 12px;
+}
+
+
+section.flex-section .dl-horizontal dt {
+    text-align: left;
+    font-weight: 100;
+    line-height: 38px;
+}
+
+section.flex-section .dl-horizontal dd {
+    text-align: right;
+    font-weight: 100;
+    line-height: 38px;
+}
+
+section.flex-section .form-default.p-border .control-group .controls > dl {
+    border-bottom: 1px solid rgb(216, 221, 230);
+}
+
+
+section.flex-section .controls.progress-span {
+    border-bottom: 1px solid rgb(216, 221, 230);
+    margin-left: 0;
+}
+
+section.flex-section .controls.progress-span span {
+    line-height: 38px;
+}
+
+/* multi select */
+.form-default .multiSelect > button {
+    width: 100%;
+    text-align: left;
+    background: none;
+
+}
+
+
+
+.form-default .multiSelect .inputFilter {
+    height: 30px;
+}
+
+.form-default .multiSelect .caret ,form .multiSelect .caret {
+    float: right;
+    margin-top: 8px!important;
+}
+
+.up .multiSelect .show {
+    bottom: 40px;
+}
+
+/*  datetime picker */
+[date-picker] {
+    border: 1px solid #ddd;
+    /*    border: none;*/
+    margin: 1px;
+}
+
+.full.forcePageBlock.forceRecordLayout [date-picker] {
+    /*border: 1px solid #ddd;*/
+    border: none;
+    margin: 1px;
+}
+
+/*anguler-toastr*/
+.toast-top-full-width {
+    top: 111px;
+}
+
+
+#toast-container > div {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius:0;
+}
+
+.expand #toast-container > div {
+    left: 200px;
+}
+
+
+.toast-success {
+    background-color: #000000;
+}
+
+.toast {
+    opacity: 0.9 !important;
+}
+
+#toast-container > :hover {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#toast-container.toast-top-full-width > div, #toast-container.toast-bottom-full-width > div {
+    width: 97%;
+    margin: 0;
+}
+
+/*
+操作下拉菜单*/
+.dropdown-menu {
+    min-width: 100px;
+}
+
+/*checkbox*/
+input.fx-checkbox {
+    box-sizing: border-box;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: -.25em;
+    border: 1px solid #999;
+    border-radius: .125rem;
+    background: rgb(255, 255, 255);
+    -webkit-transition: .5s ease all;
+    transition: .5s ease all;
+    outline: none;
+}
+input.fx-checkbox:checked {
+    border-color: rgb(21, 137, 238);
+    box-shadow: 0 0 3px #0070d2;
+    background-color: rgb(21, 137, 238);
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTQyLjYgNzFjLTEuMiAwLTIuNC0wLjUtMy4zLTEuNGwtMTguNy0xOC43Yy0wLjgtMC44LTAuOC0yIDAtMi44bDMuNy0zLjdjMC44LTAuOCAyLTAuOCAyLjggMGwxNS41IDE1LjQgMzAuMy0zMC4zYzAuOC0wLjggMi0wLjggMi44IDBsMy43IDMuN2MwLjggMC44IDAuOCAyIDAgMi44bC0zMy42IDMzLjZjLTAuOSAwLjktMiAxLjQtMy4yIDEuNHoiPjwvcGF0aD48L3N2Zz4=");
+    background-size: cover;
+    border-color: rgb(21, 137, 238);
+    outline: none;
+}
+
+/*checkbox*/
+input.fx-radio {
+    box-sizing: border-box;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: -.25em;
+    border: 1px solid #999;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    -webkit-transition: .5s ease all;
+    transition: .5s ease all;
+    outline: none;
+}
+input.fx-radio:checked {
+    border-color: rgb(21, 137, 238);
+    box-shadow: 0 0 3px #0070d2;
+    background-color: rgb(21, 137, 238);
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTQyLjYgNzFjLTEuMiAwLTIuNC0wLjUtMy4zLTEuNGwtMTguNy0xOC43Yy0wLjgtMC44LTAuOC0yIDAtMi44bDMuNy0zLjdjMC44LTAuOCAyLTAuOCAyLjggMGwxNS41IDE1LjQgMzAuMy0zMC4zYzAuOC0wLjggMi0wLjggMi44IDBsMy43IDMuN2MwLjggMC44IDAuOCAyIDAgMi44bC0zMy42IDMzLjZjLTAuOSAwLjktMiAxLjQtMy4yIDEuNHoiPjwvcGF0aD48L3N2Zz4=");
+    background-size: cover;
+    border-color: rgb(21, 137, 238);
+    outline: none;
+}
+
+
+/*isteven-multi-select.css*/
+.multiSelect .checkboxLayer {
+    position: relative;
+}
+
+/*日历*/
+
+.container-fluid.calendar-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.fc-toolbar {
+    margin-bottom: 0;
+    background: #eee;
+    padding: 32px;
+    height: 30px;
+}
+
+.fc-toolbar h2  {
+    font-size: 16px;
+    line-height: 0px;
+    font-weight: 100;
+}
+
+.fc-toolbar button  {
+    text-shadow: none;
+
+}
+
+.calendar-span.span3 {
+    margin: 0;
+    width: 25.404255%;
+}
+
+.fc-view-container {
+
+}
+
+.calendar-btn {
+    height: 30px;
+    padding: 32px;
+    background: #eee;
+}
+.calendar-span.span3 .details {
+    border-top: 1px solid #ddd;
+}
+
+.calendar-span.span3 .details [date-picker] th {
+    font-weight: 100;
+}
+
+
+
+
+/*团队人员*/
+.form-default .team-member-li {
+    line-height: 36px;
+    padding: 0 10px;
+    float: left;
+    width: auto;
+}
+.form-default .team-member-li:first-child {
+    padding-left: 0;
+}
+
+
+
+.fc-state-default {
+    background: #fff;
+    border: 1px solid rgb(216, 221, 230);
+    color: rgb(0, 112, 210);
+}
+
+
+[date-picker] th:hover, [date-picker] [ng-switch-when="date"] td span:hover {
+
+    transition: 0.8s;
+}
+
+/*
+会议*/
+input[type="text"].no-margin-input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+
+}
+.no-margin-input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+
+}
+
+select.no-margin-input {
+    padding-left: 21px;
+    color: rgb(84, 105, 141);
+}
+
+input[readonly].only-choice {
+    background: #ffffff;
+    cursor: pointer;
+
+}
+
+.meeting-table td[colspan="2"] {
+    font-weight: 600;
+    padding-left: 12px;
+}
+
+.meeting-table td[colspan="2"] i {
+    font-size: 18px;
+    float: right;
+    margin: 2px 6px;
+    color: rgb(0, 36, 219);
+}
+
+.meeting-table td[colspan="3"] {
+    font-weight: 600;
+    padding-left: 12px;
+}
+
+.meeting-table td[colspan="3"] i {
+    font-size: 18px;
+    float: right;
+    margin: 2px 6px;
+    color: rgb(0, 36, 219);
+}
+
+.form-default .control-group.no-border {
+    border: none;
+}
+
+.form-default .row-fluid.no-margin-bottom {
+    margin-bottom: 0;
+}
+table.table.table-bordered.table-left th,
+table.table.table-bordered.table-left td {
+    text-align: left;
+}
+
+table.table.table-suojin td:first-child {
+    padding-left: 50px;
+}
+table.table.table-suojin td[colspan="2"]:first-child {
+    padding-left: 24px;
+}
+
+/*
+tips*/
+
+
+/*
+team-member*/
+.span3.LThreeRNigh {
+    border-right: 1px solid rgb(216, 221, 230);
+    padding: 0 24px 0 36px;
+}
+
+.span3.LThreeRNigh label {
+    margin: 8px 0 16px 0;
+}
+
+/*slick-theme*/
+.slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-top: -10px \9;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+table> .multiSelect.inlineBlock button {
+    border: none;
+    background-color: white;
+    background-image: none;
+}
+
+/* 用户自定义查询条件 */
+div.user-filter-select button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    color: #16325c;
+    padding: 0px;
+}
+
+div.user-filter-select .multiSelect .buttonLabel {
+    font-size: 24px;
+    padding: 0;
+    text-indent: -8px;
+}
+
+div.user-filter-select button:hover {
+    background: transparent;
+}
+
+div.user-filter-select .multiSelect .caret {
+    border-top: 8px solid #16325C;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+
+div.user-filter-select .acol span {
+    line-height: 32px;
+}
+div.user-filter-select .checkBoxContainer {
+    overflow-y: auto!important;
+}
+
+.qqNoBorder {
+    border: none;
+    background: none;
+}
+
+table.table {
+    font-size: 14px;
+}
+
+p.fosun-pagination.ng-binding {
+    font-size: 12px;
+}
+
+p.fosun-pagination.ng-binding input {
+    padding: 0 4px;
+}
+
+.collopse-text {
+    height: 46px;
+    overflow-y: hidden;
+}
+.collopse-text.expand {
+    height: auto;
+}
+/*dropdown-menu*/
+.right-dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.no-outline {
+    outline: none;
+}
+
+.QQfile.downQQfile {
+    padding: 0 59px;
+}
+
+/*tabset*/
+div.projects-type.coverPagePopUp ul {
+    position: fixed;
+    z-index: 20;
+    background: #fff;
+    width: 923px;
+}
+
+/*disabled*/
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+    cursor: default;
+    background-color: #FFFFFF;
+}
+
+/*
+zhaoSlick*/
+.zhaoSlick .slick-track {
+    width: auto;
+}
+
+/*
+caption-table
+带表头的表格样式
+表头加border
+表格去圆角
+*/
+table.table.caption-table caption {
+    border: 1px solid #D8DDE6;
+    padding: 12px;
+    font-weight: 600;
+    margin-top: 24px;
+}
+
+table.table.caption caption:first-child {
+    margin-top: 0;
+}
+
+
+
+table.table.caption-table.table-bordered caption + thead tr:first-child th:first-child,
+table.table.caption-table.table-bordered caption + tbody tr:first-child td:first-child,
+table.table.caption-table.table-bordered colgroup + thead tr:first-child th:first-child,
+table.table.caption-table.table-bordered colgroup + tbody tr:first-child td:first-child {
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+}
+
+table.table.caption-table.table-bordered caption + thead tr:first-child th:last-child,
+table.table.caption-table.table-bordered caption + tbody tr:first-child td:last-child,
+table.table.caption-table.table-bordered colgroup + thead tr:first-child th:last-child,
+table.table.caption-table.table-bordered colgroup + tbody tr:first-child td:last-child {
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+}
+
+table.table.caption-table.table-bordered thead:last-child tr:last-child > th:first-child,
+table.table.caption-table.table-bordered tbody:last-child tr:last-child > td:first-child,
+table.table.caption-table.table-bordered tbody:last-child tr:last-child > th:first-child,
+table.table.caption-table.table-bordered tfoot:last-child tr:last-child > td:first-child,
+table.table.caption-table.table-bordered tfoot:last-child tr:last-child > th:first-child {
+    -webkit-border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+}
+
+table.table.caption-table.table-bordered thead:last-child tr:last-child > th:last-child,
+table.table.caption-table.table-bordered tbody:last-child tr:last-child > td:last-child,
+table.table.caption-table.table-bordered tbody:last-child tr:last-child > th:last-child,
+table.table.caption-table.table-bordered tfoot:last-child tr:last-child > td:last-child,
+table.table.caption-table.table-bordered tfoot:last-child tr:last-child > th:last-child {
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+}
+
+
+/*多选框*/
+
+.form-default .multiSelect .checkboxLayer {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    border: 1px solid #7a9cd3;
+    border-radius: 0px;
+}
+
+.form-default .multiSelect > button:hover {
+    background-image: none;
+}
+
+.form-default .multiSelect .multiSelectItem:hover, .multiSelect .multiSelectGroup:hover {
+    background-image: none !important;
+    color: #fff !important;
+    cursor: pointer;
+    border: none !important;
+    background: #1e90ff;
+
+}
+.form-default .multiSelect .checkBoxContainer {
+    display: block;
+    padding: 0px;
+    overflow: hidden;
+    border: none;
+}
+.form-default .multiSelect .helperContainer {
+    border: none;
+}
+
+
+.form-default .multiSelect .multiSelectItem {
+    display: block;
+    padding: 0px;
+    color: #000;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    border: none;
+    position: relative;
+    min-width: 278px;
+    margin: 0;
+    padding-left: 7px;
+    min-height: 12px;
+    font-size: 16px;
+    line-height: 17px;
+}
+
+.form-default .multiSelect .tickMark {
+    top:0;
+}
+
+div.btn-group button {
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-topright: 0px;
+}
+
+.form-default .multiSelect .checkboxLayer {
+    /*width: 100%;*/
+}
+
+select, select option {
+    font-size: 14px!important;
+
+}
+
+.form-default .multiSelect .multiSelectItem:not(.multiSelectGroup).selected {
+    border-top: none;
+}
+
+.form-default .multiSelect .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 6px 0px 1px 12px !important;
+    vertical-align: middle;
+    border-top: 8px solid #54698d;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: 0 dotted;
+    position: absolute;
+    right: 16px;
+}
+
+.form-default .multiSelect > button {
+    padding: 4px 36px 4px 6px;
+    min-height: 40px !important;
+    border: 1px solid #D8DDE6;
+
+    /*下拉多选不换行*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-default .multiSelect .multiSelectFocus {
+    background-image: none !important;
+    color: #000 !important;
+    cursor: pointer;
+    border: none !important;
+}
+
+
+/*为解决表格问题修改的派生问题*/
+table.table {
+    border-collapse: inherit!important;
+}
+
+table.table-bordered thead:last-child tr:last-child > th:first-child {
+    -webkit-border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+}
+
+table.table-bordered thead:last-child tr:last-child > th:last-child {
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+}
+
+table.table-bordered tbody:first-child tr:first-child > td:first-child {
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+}
+
+table.table-bordered tbody:first-child tr:first-child > td:last-child {
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+}
+
+
+table.table-bordered tbody:first-child tr:last-child > td:first-child {
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+}
+
+table.table-bordered tbody:first-child tr:last-child > td:last-child {
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+}
+
+
+/*
+table.table-bordered thead:first-child tr:first-child > th:first-child,
+table.table-bordered tbody:first-child tr:first-child > td:first-child,
+table.table-bordered tbody:first-child tr:first-child > th:first-child {
+    -webkit-border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+}*/
+
+
+
+
+/*
+table.table-bordered thead:last-child tr:last-child > th:last-child,
+table.table-bordered tbody:last-child tr:last-child > td:last-child,
+table.table-bordered tbody:last-child tr:last-child > th:last-child,
+table.table-bordered tfoot:last-child tr:last-child > td:last-child,
+table.table-bordered tfoot:last-child tr:last-child > th:last-child {
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+}
+
+table.table-bordered thead:first-child tr:first-child > th:last-child,
+table.table-bordered tbody:first-child tr:first-child > td:last-child,
+table.table-bordered tbody:first-child tr:first-child > th:last-child {
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+}
+*/
+
+/*弹出input*/
+
+/*
+.input-append input[class*="span"][type="text"] {
+    border-right: none;
+    cursor: text;
+}
+
+
+
+.input-append input[class*="span"][type="text"]:focus {
+    border-color: #ccc;
+    outline: 0;
+    outline: thin dotted \9;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+.input-append span.add-on {
+    cursor: pointer;
+    background: none;
+}
+*/
+
+
+
+/*.input-append input[class*="span"][type="text"] ~ span {
+    display: none;
+}
+
+.input-append input[class*="span"][type="text"] {
+    cursor: text;
+    border-radius: 4px;
+
+}
+.input-append input[class*="span"][type="text"]:active {
+    border-right-color: rgba(82, 168, 236, 0.8);
+}
+
+
+
+.input-append input[class*="span"][type="text"][view="date"] {
+    background: #ffffff url(./img/www/input-calendar-1.png) right no-repeat;
+}*/
+textarea.ng-invalid:focus,
+input.ng-invalid[type="text"]:focus,
+input.ng-invalid[type="password"]:focus,
+input.ng-invalid[type="datetime"]:focus,
+input.ng-invalid[type="datetime-local"]:focus,
+input.ng-invalid[type="date"]:focus,
+input.ng-invalid[type="month"]:focus,
+input.ng-invalid[type="time"]:focus,
+input.ng-invalid[type="week"]:focus,
+input.ng-invalid[type="number"]:focus,
+input.ng-invalid[type="email"]:focus,
+input.ng-invalid[type="url"]:focus,
+input.ng-invalid[type="search"]:focus,
+input.ng-invalid[type="tel"]:focus,
+input.ng-invalid[type="color"]:focus,
+.uneditable-input:focus,
+select.ng-invalid:focus,
+textarea.ng-invalid:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+select:focus,
+.form-default .multiSelect > button:focus,
+.form-default .multiSelect.inlineBlock.buttonClicked > button:focus {
+    border-color: rgb(21, 137, 238);
+    outline: none;
+    -webkit-box-shadow: 0 0 3px #0070d2;
+    -moz-box-shadow: 0 0 3px #0070d2;
+    box-shadow: 0 0 3px #0070d2;
+}
+.form-default .multiSelect.inlineBlock.buttonClicked > button:focus {
+    border-color: rgb(21, 137, 238)!important;
+    outline: none;
+    -webkit-box-shadow: 0 0 3px #0070d2!important;
+    -moz-box-shadow: 0 0 3px #0070d2!important;
+    box-shadow: 0 0 3px #0070d2!important;
+}
+
+
+td .input-append {
+    position: relative;
+}
+
+.input-append input[class*="span"][type="text"] {
+    border-radius: 4px;
+    cursor: text;
+}
+
+/*校验显示BUG*/
+.controls .input-append span.msg {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+.project-view-tab .input-append span.add-on {
+    z-index: 0;
+    margin-top: 1px;
+}
+.input-append span.add-on {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    background: white;
+    border: none;
+    height: 28px;
+    z-index: 2;
+    margin: 2px;
+}
+
+.input-append span.add-on i {
+    color: #54698d;
+}
+
+.input-append span.add-on i.icon-calendar {
+    font-size: 20px;
+    color: #54698d;
+}
+
+.input-append span.add-on i:before {
+
+}
+
+.input-append span.add-on i:hover {
+    color: #005FB2;
+}
+
+.input-append span.add-on i.icon-calendar:before {
+    font-family: "forceIconFont";
+    content: "\e816";
+    speak: none;
+}
+
+span.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: top;
+    border-top: 8px solid #54698D;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    content: "";
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0 14px;
+   /* background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI3LjYgMjEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI3LjYgMjEiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KICA8Zz4NCiAgICA8ZGVmcz4NCiAgICAgIDxwYXRoIGlkPSJTVkdJRF8xXyIgZD0iTTUuNiA1aDE2LjRjMC40IDAgMC44IDAuNiAwLjQgMWwtOCA5LjhjLTAuMyAwLjMtMC45IDAuMy0xLjIgMGwtOC05LjhDNC44IDUuNiA1LjEgNSA1LjYgNXoiLz4NCiAgICA8L2RlZnM+DQogICAgPGNsaXBQYXRoIGlkPSJTVkdJRF8yXyI+DQogICAgICA8dXNlIHhsaW5rOmhyZWY9IiNTVkdJRF8xXyIgb3ZlcmZsb3c9InZpc2libGUiLz4NCiAgICA8L2NsaXBQYXRoPg0KICAgIDxyZWN0IHg9IjAiIHk9IjAiIGNsaXAtcGF0aD0idXJsKCNTVkdJRF8yXykiIGZpbGw9IiM1NTY5OEQiIHdpZHRoPSIyNy42IiBoZWlnaHQ9IjIxIi8+DQogIDwvZz4NCjwvc3ZnPg0K);*/
+    background-image: url("../styles/img/jiantou.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 30px 15px,100% 100%;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+
+}
+
+textarea.ng-invalid,
+input[type="text"].ng-invalid,
+input[type="password"].ng-invalid,
+input[type="datetime"].ng-invalid,
+input[type="datetime-local"].ng-invalid,
+input[type="date"].ng-invalid,
+input[type="month"].ng-invalid,
+input[type="time"].ng-invalid,
+input[type="week"].ng-invalid,
+input[type="number"].ng-invalid,
+input[type="email"].ng-invalid,
+input[type="url"].ng-invalid,
+input[type="search"].ng-invalid,
+input[type="tel"].ng-invalid,
+input[type="color"].ng-invalid,
+select.ng-invalid,
+.uneditable-input {
+	border: 1px #b94a48 solid !important;
+    /*    box-shadow: rgb(194, 57, 52) 0 0 0 1px inset;*/
+    background-clip: padding-box;
+}
+p.validation-invalid {
+    color: #B94A48;
+    font-size: 12px;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+
+    margin-bottom: 8px;
+
+    border-radius: 4px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px!important;
+}
+
+
+/*
+button*/
+.btn-group > .btn + .dropdown-toggle {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* Style when highlighting a search. */
+.ui-select-highlight {
+    font-weight: bold;
+    color: #000;
+}
+
+/*Angular Treeview*/
+div.treefar div[data-tree-model] li .expanded {
+    z-index: 1;
+    background-image: url(./img/tree/chevronright-light.svg);
+    background-position: center;
+    position: absolute;
+    top: 3px;
+    left: 13px;
+    content: "";
+    width: 10px;
+    height: 10px;
+
+    background-size: 6px 10px;
+    color: rgb(84, 105, 141);
+
+    -webkit-transform-origin: 20% 40%;
+    -ms-transform-origin: 20% 40%;
+    transform-origin: 20% 40%;
+
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+}
+div.treefar div[data-tree-model] li .collapsed {
+    z-index: 1;
+    background-image: url(./img/tree/chevronright-light.svg);
+    background-position: center;
+    position: absolute;
+    top: 11px;
+    left: 4px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-size: 6px 10px;
+    color: rgb(84, 105, 141);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -webkit-transform-origin: 20% 40%;
+    -ms-transform-origin: 20% 40%;
+    transform-origin: 20% 40%;
+
+}
+
+div.treefar div[data-tree-model] li .normal {
+    background-image:none;
+    display: none;
+}
+
+
+div.treefar div[data-tree-model] li span {
+    cursor: pointer;
+    padding: 8px 12px 8px 4px;
+    display: block;
+    margin-left: 10px;
+    position: relative;
+    width: auto;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+div.treefar div[data-tree-model] li span:hover {
+    background-color: #F4F6F9;
+    -webkit-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+}
+
+div.treefar div[data-tree-model] li .selected {
+    background-color: #F4F6F9;
+    font-weight: bold;
+}
+
+
+/*
+div.treefar  div[data-tree-model] li {
+
+    padding: 0;
+}*/
+
+
+.slick-slide.slick-current {
+    cursor: auto;
+}
+
+
+section.confirm-what .st-confirm {
+    text-align: left;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 38px;
+    color: rgb(0, 95, 178);
+}
+
+section.confirm-what .nd-confirm {
+    margin-left: 8px;
+    text-align: left;
+    color: rgb(22, 50, 92);
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+/*ivh-tree*/
+body.fosun ul.ivh-treeview li span.ivh-treeview-twistie-leaf {
+    z-index: 1;
+    background-image: none;
+    background-position: center;
+    position: absolute;
+    top: 3px;
+    left: 13px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-size: 6px 10px;
+    color: rgb(84, 105, 141);
+    -webkit-transform-origin: 20% 40%;
+    -ms-transform-origin: 20% 40%;
+    transform-origin: 20% 40%;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+}
+
+
+body.fosun ul.ivh-treeview li span.ivh-treeview-twistie-expanded {
+    z-index: 1;
+    background-image: url(./img/tree/chevronright-light.svg);
+    background-position: center;
+    position: absolute;
+    top: 7px;
+    left: 1px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-size: 6px 10px;
+    color: rgb(84, 105, 141);
+    -webkit-transform-origin: 20% 40%;
+    -ms-transform-origin: 20% 40%;
+    transform-origin: 20% 40%;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+body.fosun ul.ivh-treeview li.ivh-treeview-node-collapsed span.ivh-treeview-twistie-collapsed {
+    z-index: 1;
+    background-image: url(./img/tree/chevronright-light.svg);
+    background-position: center;
+    position: absolute;
+    top: 11px;
+    left: -6px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-size: 6px 10px;
+    color: rgb(84, 105, 141);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 20% 40%;
+    -ms-transform-origin: 20% 40%;
+    transform-origin: 20% 40%;
+}
+
+body.fosun ul.ivh-treeview li span.ivh-treeview-node-label.ivh-treeview-toggle {
+    font-size: 14px;
+    font-weight: 400;
+    top: -3px;
+    position: relative;
+    line-height: 36px;
+    width: auto;
+
+
+    height: 36px;
+
+    display: -webkit-inline-box;
+}
+
+/*body.fosun ul.ivh-treeview li span.ivh-treeview-node-label.ivh-treeview-toggle:hover {
+    background-color: #F4F6F9;
+    -webkit-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+}*/
+
+body.fosun ul.ivh-treeview li.ivh-treeview-node.ng-isolate-scope.ivh-treeview-node-leaf:hover {
+    background-color: #F4F6F9;
+    -webkit-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+}
+
+
+span.ng-invalid div.ng-isolate-scope {
+    border-color: #b94a48;
+   box-shadow: rgb(194, 57, 52) 0 0 0 1px inset;
+    background-clip: padding-box;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+span.ng-invalid div.ng-isolate-scope button {
+    border: none;
+}
+
+/*
+tree*/
+ul.ztree li a {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ul.ztree {
+    font-size: 14px;
+}
+
+.slick-slider {
+     position: relative;
+     display: block;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+     -webkit-user-select: inherit;
+     -moz-user-select: inherit;
+     -ms-user-select: inherit;
+     user-select: inherit;
+     -webkit-touch-callout: inherit;
+     -khtml-user-select: inherit;
+     -ms-touch-action: pan-y;
+     touch-action: pan-y;
+     -webkit-tap-highlight-color: transparent;
+ }
+
+
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #999999;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999999;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999999;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #999999;
+}
+
+
+
+
+/*解决表格锁头漏字问题*/
+table.table {
+    margin-top: 0px;
+}
+table.table th {
+    border-top: 1px solid rgb(216, 221, 230);
+}
+
+
+
+div.input-append.jx-wrapper {
+    position: relative;
+}
+div.input-append.jx-wrapper:first-child div {
+    right: 0;
+}
+
+
+/*解决IE11选框虚边问题*/
+select, textarea, input {
+    outline: none;
+}
+
+/*解决IE11选框虚边问题*/
+select, textarea, input {
+    outline: none;
+}
+
+.filter-panel form.form-default {
+    overflow: auto;
+    position: absolute;
+    top: 71px;
+    display: grid;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 20px;
+}
+
+.browse-file.bg-select{
+    font-size: 16px;
+    padding: 8px 0;
+    border-radius: 0px;
+    width: 200px;
+    height: 40px;
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    background: url("img/btn_chs_file.png") no-repeat;
+    border: none;
+}
+

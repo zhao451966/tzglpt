@@ -1,0 +1,24 @@
+<p class="fosun-pagination" style="float:right;display: flex; justify-content: flex-start; align-items: center; flex: auto; order: 0;">
+   <!-- {{'N000491' | translate: {pageCount:$$pagination.totalRows, pageNumber: $$totalPage} }}-->
+
+    <!--共 {{$$pagination.totalRows}} 条记录 •
+    共 {{$$totalPage}} 页-->
+
+    <pagination total-items="$$pagination.totalRows" style="margin: 0 1rem; margin-top: 4px;"
+                page="$$pagination.pageNo"
+                items-per-page="$$pageSize"
+                max-size="5"
+                on-select-page="$$pipe()" previous-text="<" next-text=">"></pagination>
+    <!--共 {{$$totalPage}} 页-->
+    {{'N004536' | translate}}{{$$totalPage}}{{'NP01002' | translate}}
+
+    <!--当前第-->
+    <!--{{'NP01001' | translate}}-->
+    <!--<input type="number" min="1" max="{{$$totalPage}}"-->
+               <!--ng-change="$$pipe()"-->
+               <!--ng-model-options="{ updateOn: 'blur' }"-->
+               <!--ng-model="$$pagination.pageNo" />-->
+    <!--页-->
+    <!--{{'NP01002' | translate}}-->
+</p>
+

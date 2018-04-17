@@ -1,0 +1,31 @@
+<form class="form-default" name="form">
+    <h3 class="text-center">
+        <p ng-show="!$editing"
+           ng-click="vm.beginEdit()">{{$$userFilter[0].filterName}}</p>
+
+        <input ng-show="$editing" type="text" class="form-control span10"
+               ng-blur="vm.endEdit()"
+               ng-model="$$userFilter[0].filterName" />
+    </h3>
+
+    <i class="icon icon-arrow-right panel-close"
+       ng-click="$$panel.toggleFilterPanel()"></i>
+    <hr/>
+
+    <fieldset>
+        <div class="control-group" ng-transclude>
+
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-primary span6" ng-if="form.$dirty && !$$userFilter[0].filterNo"
+                    ng-click="vm.addFilter($$userFilter[0], $$filter)">添加至过滤器</button>
+
+            <button class="btn btn-success span6" ng-if="form.$dirty && $$userFilter[0].filterNo"
+                    ng-click="vm.saveFilter($$userFilter[0], $$filter)">修改过滤器</button>
+
+            <button class="btn btn-danger span6" ng-if="$$userFilter[0].filterNo"
+                    ng-click="vm.removeFilter($$userFilter[0].filterNo)">删除过滤器</button>
+        </div>
+    </fieldset>
+</form>

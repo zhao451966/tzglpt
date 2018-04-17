@@ -1,0 +1,73 @@
+<header ng-bind="ngDialogData.title">查询部门</header>
+<section>
+	<form class="form-default">
+         <div style="margin-bottom:20px;" class="row-fluid">
+            <div class="span6">
+                 <div class="controls">
+                     <div class="input-append">
+                         <input placeholder="{{'N000172' | translate}}" class="span12" type="text"
+                                ng-model="vm.unitName">
+                         <span class="add-on">
+                             <i style="cursor: pointer;" ng-click="vm.searchUnitByName()" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+             <div class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-if="1==2" ng-repeat="unit in vm.customSelectedUnits" ng-click="vm.removeUnit(unit, $index)" class="badge icon-remove">{{unit.unitName}}</a>
+             	</div>
+             </div>
+         </div>
+     </form>
+ <div>
+    <table class="table table-hover table-bordered main-table"
+           st-table="vm.units"
+           st-pipe="vm.searchUnitByName"
+           fx-table="dialog.units">
+        <thead>
+	        <tr>
+	            <th style="width: 64px;"></th>
+	            <!-- <th>部门编码</th> -->
+	            <th translate="N000172" style="width:200px;">部门名称</th>
+	            <!-- <th translate="N000170">部门类型</th> -->
+	            <th translate="N001066">上级部门</th>
+	            <!-- <th translate="N000872">描述</th> -->
+	        </tr>
+        </thead>
+        <tbody>
+	        <tr ng-click="vm.toggleSelectUnit(data)"
+	        	st-select-row="data"
+	            st-select-mode="{{::ngDialogData.selectionMode}}"
+	            ng-repeat="data in vm.units" >
+	            <td>
+	                <input type="radio" class="fx-radio"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'single'" />
+	                <input type="checkbox" class="fx-checkbox"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+	            </td>
+<!-- 	            <td class="ellipsis" title="{{data.unitCode}}" ng-bind-html="data.unitCode | highlight:vm.unitName"></td>
+ -->	            <td class="ellipsis" title="{{data.unitName}}" ng-bind-html="data.unitName | highlight:vm.unitName"></td>
+<!-- 	            <td class="ellipsis" title="{{data.unitTypeName}}" ng-bind-html="data.unitTypeName"></td>
+ -->	            <!-- <td class="ellipsis" title="{{data.parentUnitName}}" ng-bind-html="data.parentUnitName"></td> -->
+	            <td class="ellipsis" title="{{data.namePath}}" ng-bind-html="data.namePath | highlight:vm.unitName"></td>
+<!-- 	            <td class="ellipsis" title="{{data.unitDesc}}" ng-bind-html="data.unitDesc"></td>
+ -->	        </tr>
+        </tbody>
+    </table>
+</div>
+</section>
+<footer>
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

@@ -1,0 +1,88 @@
+.projects-activity {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+.projects-activity ul {
+    margin-left: 16px;
+}
+
+.projects-activity li {
+    position: relative;
+    margin-bottom: 2px;
+    padding: 4px 32px 16px;
+    border-left: 4px solid ;
+    cursor: pointer;
+}
+.projects-activity li:hover {
+    background: #f7f7f7;
+    transition: all .8s;
+}
+.projects-activity li.red {
+    border-color: #EB7092
+}
+.projects-activity li.green {
+    border-color: #45C274;
+}
+.projects-activity li.blue {
+    border-color: #42C5CD;
+}
+.projects-activity li.yellow {
+    border-color: #FCB95B;
+}
+.projects-activity li.purple {
+    border-color: #A094ED;
+}
+
+.projects-activity i {
+    position: absolute;
+    left: -18px;
+    top: 0;
+}
+.projects-activity img {
+    width: 32px;
+    height: 32px;
+}
+.projects-activity .red i {
+    background-color: #EB7092;
+}
+.projects-activity .green i {
+    background-color: #45C274;
+}
+.projects-activity .blue i {
+    background-color: #42C5CD;
+}
+.projects-activity .yellow i {
+    background-color: #FCB95B;
+}
+.projects-activity .purple i {
+    background-color: #A094ED;
+}
+
+.projects-activity dd {
+    margin-top: 16px;
+}
+.projects-activity p {
+    line-height: 28px;
+}
+.projects-activity .date {
+    position: absolute;
+    right: 16px;
+    top: 2px;
+    font-size: 12px;
+}
+.projects-activity .time {
+    font-weight: 400;
+    position: absolute;
+    right: 16px;
+    top: 24px;
+    font-size: 12px;
+
+}
+
+.projects-activity .step .date,
+.projects-activity .step .time {
+    color: rgb(194, 57, 52);
+    font-weight: 700;
+}

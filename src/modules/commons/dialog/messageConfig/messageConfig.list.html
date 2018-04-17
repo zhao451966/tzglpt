@@ -1,0 +1,62 @@
+<div class="container-fluid fosun-container">
+    <div class="row-fluid">
+        <div class="widget-box fosun-search">
+            <div class="widget-content">
+                <div fx-breadcrumb translate="N001461">消息模板配置</div>
+        		<div fx-userfilter-select></div>
+            	<div fx-pagination></div>
+                <div fx-filter-button></div>
+<!--                 <button ng-if="Authenticate.checkOpt('SYSMSGCONFIG', 'ADD')" class="btn" ng-click="vm.edit()">新建</button>
+ -->            </div>
+        </div>
+    </div>
+    <div class="row-fluid flex">
+        <div class="sub-panel filter-panel"
+             ng-include="'modules/commons/dialog/messageConfig/messageConfig.filer.html'"
+             ng-show="$$panel.isFilterPanelOpen">
+        </div>
+
+        <div class="row-fluid flex" >
+            <div class="main-panel" style="order: 1;margin-left: 0px;">
+                <table class="table table-hover main-table"
+                	   fx-table="sysMesgConfig"
+                       st-pipe="vm.query"
+                       st-table="vm.items">
+                    <thead>
+                    <tr>
+                        <th width="22%" st-sort="vcOptno" translate="N001539">业务类型编码</th>
+                        <th width="22%" st-sort="optname" translate="N001540">业务类型名称</th>
+                        <th width="22%" st-sort="vcSendtype" translate="N000378">发送方式</th>
+                        <!-- <th width="22%" st-sort="vcSendObjectType" >发送对象类型</th> -->
+                        <th width="22%" st-sort="vcStatus" translate="N001724">状态</th>
+                        <th width="8%"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in vm.items">
+                        <td class="ellipsis">{{item.vcOptno}}</td>
+                        <td class="ellipsis">{{item.optname}}</td>
+                        <td class="ellipsis" title="{{item.vcSendtype}}">{{item.vcSendtype}}</td>
+                        <!-- <td class="ellipsis">{{item.vcSendObjectType}}</td> -->
+                        <td class="ellipsis">{{item.vcStatus}}</td>
+                        <td class="text-right" style="text-align: right">
+                            <div class="btn-group btn-group-sm" fx-btn-group>
+                                <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu pull-right" style="text-align: left">
+                                    <li ng-if="item.vcStatusF=='1'&&Authenticate.checkOpt('SYSMSGCONFIG', 'EDIT')"><a  ng-click="vm.edit(item)" translate="N000113">编辑</a></li>
+                                    
+                                    <li ng-if="item.vcStatusF=='0'&&Authenticate.checkOpt('SYSMSGCONFIG', 'START')" ><a ng-click="vm.setStatus(item)" translate="N000970">启用</a></li>
+                                    <li ng-if="item.vcStatusF=='1'&&Authenticate.checkOpt('SYSMSGCONFIG', 'DISABLE')"><a ng-click="vm.setStatus(item)" translate="N001220">停用</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="footer_outer" ng-include="'modules/commons/footer.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

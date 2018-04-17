@@ -1,0 +1,41 @@
+<header>修改手机号码</header>
+<section>
+            <form  name="userForm" class="form-default">
+                <fieldset>
+                    <div class="control-group">
+
+                        <div class="row-fluid">
+                            <div class="span8">
+                                <label class="control-label text-info required">新手机号码</label>
+                                <div class="controls">
+                                    <input type="text" name="newRegCellPhone" class="span12"  ng-model="vm.item.newRegCellPhone" validator="required" autocomplete="off" placeholder="请输入手机号码"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span8">
+                                <label class="control-label text-info required">手机动态验证码</label>
+                                <div class="controls">
+                                    <input  id="phoneCode"  type="text" name="phoneCode" class="span12"  ng-model="vm.item.phoneCode" validator="required" autocomplete="off" placeholder="请输入验证码"/>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label text-info">&nbsp;</label>
+                                <div class="controls">
+                                    <input id="signIn1" name="signIn1" style="top: 2px;border: 1px solid #ff7418; background: #ff7418;position: absolute;"  class=" rc-button rc-button-submit"  ng-click="vm.sendsms()" type="submit" value="点击获取动态密码">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+</section>
+<footer>
+    <a  class="btn btn-primary" validation-submit="userForm" ng-click="vm.save()">修改</a>
+    <a  class="btn "  ng-click="closeThisDialog()" translate="N000557">关闭</a>
+</footer>
+
+
+
+

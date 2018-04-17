@@ -1,0 +1,5 @@
+<div>
+    <div class="collopse-text" ng-class="{expand: isExpand}">{{text}}</div>
+    <a ng-if="isOverflow && !isExpand" ng-click="toggle(true)">展开</a>
+    <a ng-if="isOverflow && isExpand" ng-click="toggle(false)">收起</a>
+</div>

@@ -1,0 +1,102 @@
+
+<header ng-bind="ngDialogData.title"></header>
+<section>
+    <form name="msgForm" class="form-default">
+    	<fieldset>
+    		<div class="control-group">
+    			<div class="row-fluid">
+    				<div class="span12">
+    					<label class="control-label">邮件</label>
+    					<div class="controls">
+		    				<div class="input-append">
+		                        <input placeholder="请选择邮箱地址" class="span12" type="text" 
+		                        		email-format readonly="readonly"
+		                               ng-model="vm.item.selEmail">
+		                         <span class="add-on">
+		                              <i style="cursor:pointer;" ng-click="vm.searchEmail()" class="icon icon-search"></i>
+		                         </span>
+		                    </div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="row-fluid">
+    				<div class="span12">
+    					<label class="control-label">系统消息</label>
+    					<div class="controls">
+    						<div class="input-append">
+		                        <input placeholder="请输选择用户" class="span12" type="text"
+		                        		user-format readonly="readonly"
+		                               ng-model="vm.item.selusers">
+		                         <span class="add-on">
+		                              <i style="cursor:pointer;" ng-click="vm.queryUser()" class="icon icon-search"></i>
+		                         </span>
+		                    </div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="row-fluid">
+    				<div class="span12">
+    					<div class="controls">
+    						<div class="input-append">
+		                        <input placeholder="请输选择部门" class="span12" type="text" 
+		                        		unit-format readonly="readonly"
+		                               ng-model="vm.item.selunits">
+		                         <span class="add-on">
+		                              <i style="cursor:pointer;" ng-click="vm.queryUnit()" class="icon icon-search"></i>
+		                         </span>
+		                    </div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="row-fluid">
+    				<div class="span12">
+    					<label class="control-label">钉钉群</label>
+    					<div class="controls">
+    						<!-- 选择钉钉群（从活动中的项目中选出钉钉群id） -->
+    						<div class="input-append">
+		                        <input placeholder="请输选择钉钉群" class="span12" type="text"
+		                        		project-ding-format readonly="readonly"
+		                               ng-model="vm.item.dinggroups">
+		                         <span class="add-on">
+		                              <i style="cursor:pointer;" ng-click="vm.queryProjects()" class="icon icon-search"></i>
+		                         </span>
+		                    </div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="row-fluid">
+    				<div class="span12">
+    					<label class="control-label">发送方式</label>
+    					<div class="controls">
+    						<input style="margin: 0px 10px;" type="radio" class="fx-radio" name="sendType" value="1" ng-model="vm.item.sendType"/>
+    						及时发送
+    						<input style="margin: 0px 10px;" type="radio" class="fx-radio" name="sendType" value="2" ng-model="vm.item.sendType"/>
+    						定时发送
+    						<input ng-if="1==2" type="text" name="number" class="span12" placeholder="数字输入框 1~60"
+                                   validator="number,min=1,max=60"
+                                   ng-model="vm.item.minute"  />
+    					</div>
+    				</div>
+    			</div>
+    			
+    			<div class="row-fluid">
+    				<div class="span12">
+    					<label class="control-label required">消息内容</label>
+    					<div class="controls">
+    						<textarea type="text" 
+    							class="span12 texthigher" 
+							 name="sendMsg" 
+							 validator="required,maxlength=2000" 
+							 ng-model="vm.item.sendMsg" ></textarea>
+    					</div>
+    				</div>
+    			</div>
+
+    		</div>
+    	</fieldset>
+    </form>    
+</section>
+<footer>
+	<a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+	<a class="btn btn-primary" validation-submit="msgForm" ng-click="vm.ok()">{{::ngDialogData.okText}}</a>
+</footer>

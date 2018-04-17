@@ -1,0 +1,68 @@
+<header ng-bind="ngDialogData.title">查询角色</header>
+<section>
+	<form class="form-default">
+         <div style="margin:0px;" class="row-fluid">
+            <div class="span6">
+                  <div class="controls">
+                      <div style="margin-bottom:20px;" class="input-append">
+                          <input placeholder="{{'N106006' | translate}}" class="span12" type="text"
+                                 ng-model="vm.searchParam">
+                          <span class="add-on">
+                              <i style="cursor:pointer;" ng-click="vm.searchRole()" class="icon icon-search"></i>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+              <div class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-if="1==2" ng-repeat="role in vm.customSelectedRoles" ng-click="vm.removeRole(role, $index)" class="badge icon-remove">{{role.roleName}}</a>
+             	</div>
+             </div>
+        </div>
+    </form>
+<div>
+    <table class="table table-hover table-bordered main-table"
+           st-table="vm.roles"
+           st-pipe="vm.searchRole"
+           fx-table="dialog.roles">
+        <thead>
+        <tr>
+            <th style="width: 64px;"></th>
+            <th translate="N106007">角色编码</th>
+            <th translate="N000720">角色名称</th>
+            <th translate="N000872">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-click="vm.toggleSelectRole(data)"
+        	st-select-row="data"
+            st-select-mode="{{::ngDialogData.selectionMode}}"
+            ng-repeat="data in vm.roles" >
+            <td>
+                <input type="radio" class="fx-radio"
+                       ng-checked="data.isSelected"
+                       ng-if="ngDialogData.selectionMode == 'single'" />
+                <input type="checkbox" class="fx-checkbox"
+                       ng-checked="data.isSelected"
+                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+            </td>
+            <td class="ellipsis" title="{{data.roleCode}}" ng-bind-html="data.roleCode | highlight:vm.searchParam"></td>
+            <td class="ellipsis" title="{{data.roleName}}" ng-bind-html="data.roleName | highlight:vm.searchParam"></td>
+            <td class="ellipsis" title="{{data.roleDesc}}" ng-bind-html="data.roleDesc"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</section>
+<footer>
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

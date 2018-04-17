@@ -1,0 +1,54 @@
+/**钉钉模板 样式**/
+img{border:0} 
+#dingModel{
+	text-align: center;
+    margin: 0px auto;
+    border:1px #EAE5E5 solid;
+    border-radius: 4px;
+    width: 270px;
+    height: 480px;
+    background-image: url("dingGroup.png");
+}
+#dingModel #head{
+	margin-top: 48px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    width: 100%;
+    border: none;
+    height: 33px;
+    border-radius: 0px;
+}
+#dingModel #title{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    height: 33px;
+    border-radius: 0px;
+}
+
+#dingModel #dingContent{
+	width: 220px;
+	min-height: 125px;
+    max-height: 125px;
+    font-size: 12px;
+}
+
+#dingModel #dingSender,#dingDate{
+	width: 100px;
+	border:none;
+	font-size: 14px;
+    box-shadow: none;
+    color: rgb(22, 50, 92);
+}
+
+#dingModel #dingImageDiv{
+	
+}
+#dingModel #dingImage{
+	border:none;
+	border-radius: 10px;
+	width: 220px;
+    height: 120px;
+}

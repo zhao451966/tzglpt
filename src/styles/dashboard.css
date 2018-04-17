@@ -1,0 +1,471 @@
+
+body#dashboard #header,
+body#dashboard #sidebar,
+body#dashboard #breadcrumb {
+    display: none;
+
+}
+body#dashboard {
+    margin: 0;
+}
+body#dashboard #content {
+    top: 0;
+    margin: 0; padding: 0;
+    width: 100%;
+    background: url(img/dashboard-bg2.png) center center;
+    background-size: cover;
+}
+
+
+body#dashboard #content *{
+    color: #fff;
+    font-size: 14px;
+}
+
+body#dashboard #content .wrapper {
+    width: 700px;
+    margin: 10% auto 0;
+}
+
+body#dashboard #content .wrapper h1{
+    width: 660px; height: 54px; line-height: 54px;
+    text-indent: -9999px;
+    background: url(img/dashboard/fosun0.png) center top no-repeat;
+    margin: 0 auto 46px auto;
+    padding: 0;
+}
+
+body#dashboard #content .wrapper .controls {
+    margin-left: 46px;
+}
+body#dashboard #content .wrapper .controls,
+body#dashboard #content .wrapper .controls *{
+
+}
+
+body#dashboard #content .wrapper .controls {
+    height: 53px;
+    width: 576px;
+    margin: 0 auto;
+}
+
+
+body#dashboard #content .wrapper .controls .search-text,
+body#dashboard #content .wrapper .controls [type=text]
+{
+    float: left;
+    width: 474px; height: 20px; line-height: 20px;
+    font-size: 16px;
+    padding: 10px 0 10px 7px; margin: 0;
+    border: none;
+    background: #F2F2F2;
+    color: #888;
+}
+
+body#dashboard #content .wrapper .controls .typeahead {
+    width: 475px;
+    padding-top: 0;
+    display: block;
+    top: 258px;
+    left: 351px;
+    padding-bottom: 0;
+}
+body#dashboard #content .wrapper .controls .typeahead  a {
+    font-weight: 700;
+}
+body#dashboard #content .wrapper .controls .typeahead  strong {
+    font-weight: 400;
+}
+body#dashboard #content .wrapper .controls .typeahead  a,
+body#dashboard #content .wrapper .controls .typeahead  strong {
+    color: #666;
+}
+
+body#dashboard #content .wrapper .controls .typeahead .active a,
+body#dashboard #content .wrapper .controls .typeahead .active strong {
+    color: #fff;
+}
+
+
+body#dashboard #content .wrapper .controls .search-text .ui-select-toggle
+ {
+     padding: 0;
+     border: none;
+     height: 50px;
+     line-height: 48px;
+     width: 100%;
+     background: #f2f2f2;
+ }
+body#dashboard #content .wrapper .controls .search-text .ui-select-placeholder
+{
+    font-size: 16px;
+    color: #888;
+}
+body#dashboard #content .wrapper .controls .search-text .ui-select-toggle:focus
+
+body#dashboard #content .wrapper .controls [type=text] {
+    margin-left: -10px;
+}
+
+body#dashboard #content .wrapper .controls .ui-select-choices-content {
+    top: 55px;
+    background: #F2F2F2;
+    width: 482px;
+    padding: 0;
+}
+
+body#dashboard #content .wrapper .controls .ui-select-choices-row {
+    color: #888;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+}
+body#dashboard #content .wrapper .controls .ui-select-choices-row *{
+    color: #888;
+}
+body#dashboard #content .wrapper .controls .ui-select-choices-row.active,
+body#dashboard #content .wrapper .controls .ui-select-choices-row.active>a{
+    background: #cfcfcd;
+}
+
+body#dashboard #content .wrapper .controls input[type=button]{
+    width: 92px; height:40px; line-height: 40px;
+    font-size: 16px; letter-spacing: 5px;
+    background: #F9A125;
+    color: #fff;
+    border: none; margin: 0; padding: 0; padding-left: 5px;
+    margin-left: -4px;
+}
+body#dashboard #content .wrapper .controls input[type=button]:hover{
+    background: #F89406;
+    transition: all .5s;
+}
+body#dashboard #content .wrapper .controls .more-search{
+    float: left;
+    position: absolute;
+    top: 239px;
+    right: 297px;
+    height: 53px; line-height: 53px;
+    font-size: 16px;
+    padding: 0 15px;
+    word-spacing: 3px;
+}
+
+body#dashboard #content .wrapper  p {
+    clear: both; text-align: center;
+    padding-top: 4px;
+    height: 24px;
+    line-height: 24px;
+}
+
+body#dashboard #content .wrapper .actions {
+    width: 100%;
+    margin-top: 100px;
+    font-size: 12px;
+}
+
+body#dashboard #content .wrapper .actions {
+    width: 100%;
+    margin-top: 106px;
+}
+
+body#dashboard #content .wrapper .actions li {
+    float: left;
+    display: block;
+    padding: 4px;
+    text-align: center;
+}
+
+body#dashboard header .user-info span {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: #fff;
+    float: left;
+}
+body#dashboard #content header {
+    height: 60px; }
+body#dashboard #content header .header-outer{
+    width: auto;
+    margin: 0 auto;
+    height: 60px;
+}
+body#dashboard #content header .user-info {
+    width: 139px;
+    height: 40px;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    left: 50px;
+    top: 10px;
+}
+
+
+
+body#dashboard #content header .user-info span i {
+    font-size: 24px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 11px;
+    color: #000;
+}
+
+body#dashboard #content header .user-info p {
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+body#dashboard #content header .user-info a {
+    padding-left: 10px;
+}
+body#dashboard #content header .message-controller {
+    width: 48px;
+    height: 48px;
+    float: right;
+    cursor: pointer;
+    position: relative;
+    right: 50px;
+    top: 10px;
+}
+body#dashboard #content header .message-controller.new {
+    cursor: pointer;
+    -webkit-animation: rubberBand 1s;
+    -moz-animation: rubberBand 1s;
+    -ms-animation: rubberBand 1s;
+    animation: rubberBand 1s;
+}
+
+body#dashboard #content header .message-controller .search-info {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: #fff url('./img/messgbox.png') 1px 1px no-repeat;
+    float: left;
+}
+body#dashboard #content header .message-controller.new span {
+    float: right;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: red;
+}
+
+body#dashboard .actions ul {
+    box-sizing: border-box;
+    padding-top: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 520px;
+    border: 2px solid transparent;
+}
+body#dashboard .actions ul.draging {
+    border: 2px dotted #999;
+}
+body#dashboard .actions ul.draging *{
+    cursor: move;
+}
+
+body#dashboard #content .actions ul p {
+    margin: 0;
+    width: 64px;
+    padding: 6px 0 0 0;
+}
+
+body#dashboard .actions ul .icon {
+    width: 64px; height: 64px;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+body#dashboard .actions ul.draging .icon {
+    cursor: move;
+}
+body#dashboard .actions ul .myproject .icon{
+background: url('./img/dashboard/1.png') #f1f0f0 no-repeat;
+}
+body#dashboard .actions ul .docmanage .icon {
+    background: url('./img/dashboard/2.png') #f1f0f0 no-repeat;
+}
+body#dashboard .actions ul .meetingmanage .icon {
+    background: url('./img/dashboard/3.png') #f1f0f0 no-repeat;
+}
+
+body#dashboard .actions ul .meetingadmin .icon {
+    background: url('./img/dashboard/4.png') #f1f0f0 no-repeat;
+}
+
+body#dashboard .actions ul .syssetting .icon {
+    background: url('./img/dashboard/5.png') #f1f0f0 no-repeat;
+}
+
+body#dashboard .actions ul .myproject:hover .icon{
+    transition: all .5s;
+    background: url('./img/dashboard/1.png') #ffd79e no-repeat;
+}
+body#dashboard .actions ul .docmanage:hover .icon {
+    transition: all .5s;
+    background: url('./img/dashboard/2.png') #ffd79e no-repeat;
+}
+body#dashboard .actions ul .meetingmanage:hover .icon {
+    transition: all .5s;
+    background: url('./img/dashboard/3.png') #ffd79e no-repeat;
+}
+
+body#dashboard .actions ul .meetingadmin:hover .icon {
+    transition: all .5s;
+    background: url('./img/dashboard/4.png') #ffd79e no-repeat;
+}
+
+body#dashboard .actions ul .syssetting:hover .icon {
+    transition: all .5s;
+    background: url('./img/dashboard/5.png') #ffd79e no-repeat;
+}
+
+
+/* Slide Messages */
+body#dashboard #content aside {
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 287px;
+    border-left: 1px solid #888E9A;
+    background: rgba(0, 0, 0, .3);
+}
+body#dashboard #content aside.ng-hide-remove {
+    -webkit-animation: bounceInRight 1s;
+    -moz-animation: bounceInRight 1s;
+    -ms-animation: bounceInRight 1s;
+    animation: bounceInRight 1s;
+}
+body#dashboard #content aside.ng-hide-add {
+    -webkit-animation: bounceOutRight 1s;
+    -moz-animation: bounceOutRight 1s;
+    -ms-animation: bounceOutRight 1s;
+    animation: bounceOutRight 1s;
+}
+
+body#dashboard #content aside .clear {
+    display: inline-block;
+    width: 158px; height: 22px; line-height: 22px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 14px auto 0 10px;
+    background: #FE2923;
+}
+
+body#dashboard #content aside .setting {
+    float: right;
+    display: inline-block;
+    width: 100px; height: 22px; line-height: 22px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 14px 10px 0 auto;
+    background: #2692E3;
+}
+
+body#dashboard #content aside .messages {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    overflow: auto;
+}
+
+
+body#dashboard #content aside ul,
+body#dashboard #content aside li {
+    margin: 0; padding: 0;
+    list-style: none;
+}
+
+body#dashboard #content aside li {
+    margin: 14px 10px;
+}
+body#dashboard #content aside li:first-child {
+    margin-top: 0;
+}
+body#dashboard #content aside li.ng-leave    {
+    -webkit-animation: zoomOutRight 1s;
+    -moz-animation: zoomOutRight 1s;
+    -ms-animation: zoomOutRight 1s;
+    animation: zoomOutRight 1s;
+}
+body#dashboard #content aside li.ng-enter,
+body#dashboard #content aside li.ng-move {
+    -webkit-animation: zoomInRight 1s;
+    -moz-animation: zoomInRight 1s;
+    -ms-animation: zoomInRight 1s;
+    animation: zoomInRight 1s;
+}
+
+body#dashboard #content aside .time {
+    font-size: 10px;
+    color: #ADABAE;
+}
+
+body#dashboard #content aside .content {
+    display: inline-block;
+    width: 256px; height: 46px; line-height: 22px;
+    padding: 4px 6px 0 6px;
+    text-align: left;
+    border-radius: 4px;
+    background: #F5F5F5;
+    position: relative;
+    cursor: pointer;
+}
+
+body#dashboard #content aside .content .icon {
+    width: 28px; height: 38px;
+    font-size: 20px;
+    float: left;
+    color: #0F7AFE;
+}
+
+body#dashboard #content aside .content p {
+    color: #2D383E;
+    width: 210px;
+    margin: 0; padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body#dashboard #content aside .content .state {
+    color: #b1b1b1;
+    font-size: 10px;
+}
+
+body#dashboard #content aside .content .close {
+    color: #8b8b8b;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 100;
+}
+
+body#dashboard footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+body#dashboard footer p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/*管理自定义图标*/
+body#dashboard .actions .custom-icon {
+    width: 180px;
+    height: 20px;
+    border-radius: 10px;
+    background: #272b31;
+    border: 1px #97a4af solid;
+    margin: 0 auto;
+    text-align: center;
+    color: #97a4af;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+
+

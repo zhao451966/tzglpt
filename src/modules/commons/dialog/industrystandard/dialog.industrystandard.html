@@ -1,0 +1,65 @@
+
+<header ng-bind="ngDialogData.title"></header>
+<section>
+	<form class="form-default">
+		<fieldset>
+			<div class="control-group">
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="control-label" translate="N001507">行业标准</label>
+						<div class="controls">
+							<select class="span12" ng-model="ngDialogData.industryStandard"
+								ng-options="industryStand.vcStandardName for industryStand in vm.industryStandards"
+								ng-change="vm.industryStandardSelect(ngDialogData.industryStandard.id,'I')">
+								<option value="" translate="N000037">--请选行业标准--</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="control-label" translate="N001796">分类一</label>
+						<div class="controls">
+							<select class="span12" ng-model="ngDialogData.industryCategoryI"
+								ng-options="industryCategI.name for industryCategI in vm.industryCategoryI"
+								ng-change="vm.industryStandardSelect(ngDialogData.industryCategoryI.code,'II')">
+								<option value="" translate="N000037">--请选择行业--</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="control-label" translate="N001797">分类二</label>
+						<div class="controls">
+							<select class="span12" ng-model="ngDialogData.industryCategoryII"
+								ng-options="industryCategII.name for industryCategII in vm.industryCategoryII"
+								ng-change="vm.industryStandardSelect(ngDialogData.industryCategoryII.code,'III')">
+								<option value="" translate="N000037">--请选择行业--</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="control-label" translate="N001798">分类三</label>
+						<div class="controls">
+							<select class="span12"
+								ng-model="ngDialogData.industryCategoryIII"
+								ng-options="industryCategIII.name for industryCategIII in vm.industryCategoryIII">
+								<option value="" translate="N000037">--请选择行业--</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</section>
+<footer>
+	<a class="btn" ng-click="closeThisDialog(vm.cancelText)">{{::ngDialogData.cancelText}}</a>
+	<a class="btn btn-primary" ng-click="vm.ok()">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

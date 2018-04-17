@@ -1,0 +1,29 @@
+<header >
+    <div  ng class="header-title" translate="N004529">
+        重命名
+    </div>
+</header>
+<section>
+    <form id="fileUploadRenameForm" name="fileUploadRenameForm" class="form-default">
+
+
+        <div class="row-fluid" style="margin: 0px;">
+            <div class="span12">
+                <div class="controls">
+                    <textarea style="margin-bottom: 0px;"
+                              type="text" class="span12"
+                              ng-model="vm.item.vcDocName"
+                              name="vcDocName"
+                              validator="required,maxlength=200"
+                              valid-method="blur">
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+<footer>
+    <button class="btn btn-primary" validation-submit="fileUploadRenameForm" ng-click="vm.save()" translate="N001208">提交</button>
+    <button class="btn" ng-click="vm.close()" translate="N000992">取消</button>
+</footer>

@@ -1,0 +1,52 @@
+<header style="line-height: 1;" ng-bind="ngDialogData.title"></header>
+<section>
+    <div class="row-fluid flex">
+        <div class="main-panel hundredTable">
+	    <table class="table table-hover table-bordered main-table"
+	    	   st-table="vm.users"
+	    	   st-pipe="vm.searchUserByName"
+	           fx-table="dialog.users">
+	        <thead>
+	        <tr>
+	            <th style="width: 64px;"></th>
+	            <th translate="N106770">会议类型</th>
+	            <th translate="N106771">最终会议时间</th>
+	            <th translate="N106772">会议结果</th>
+	            <th translate="N106773">申请人</th>
+	        </tr>
+	        </thead>
+	        <tbody>
+	        <tr ng-click="vm.toggleSelectUser(data)"
+	        	st-select-row="data"
+	            st-select-mode="{{::ngDialogData.selectionMode}}"
+	            ng-repeat="data in vm.users" >
+	            <td>
+	                <input type="radio" 
+	                	   class="fx-radio"
+	                	   name="redio"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'single'" />
+	                <input type="checkbox" class="fx-checkbox"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+	            </td>
+	            <td class="ellipsis" title="{{data.meetingType}}" ng-bind-html="data.meetingType | highlight:vm.name"></td>
+	            <td class="ellipsis" title="{{data.finalMeetingEndTime}}" ng-bind-html="data.finalMeetingEndTime"></td>
+	            <td class="ellipsis" title="{{data.meetResult}}" ng-bind-html="data.meetResult | highlight:vm.name"></td>
+	            <td class="ellipsis" title="{{data.crename}}" ng-bind-html="data.crename | highlight:vm.name"></td>
+	        </tr>
+	        </tbody>
+	    </table>
+	    </div>
+	   </div>
+</section>
+<footer>
+	<!-- 分页控件 -->
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog()">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>

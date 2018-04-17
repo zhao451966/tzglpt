@@ -1,0 +1,50 @@
+<header>修改帐号</header>
+<section>
+            <form  name="userForm" class="form-default">
+                <fieldset>
+                    <div class="control-group">
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info">原帐号</label>
+                                <div class="controls">
+                                    {{vm.item.loginName}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info required">申请修改新帐号</label>
+                                <div class="controls">
+                                    <input type="text" name="newLoginName" class="span12"  ng-model="vm.item.newLoginName" validator="required,maxlength=50" autocomplete="off" placeholder="请输入邮箱"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <label class="control-label text-info required">申请原因</label>
+                                <div class="controls">
+                                    <textarea style="margin-bottom: 0px;"
+                                              type="text" class="span12"
+                                              ng-model="vm.item.changeAccountReason"
+                                              name="changeAccountReason"
+                                              validator="required,maxlength=200"
+                                              valid-method="blur">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+</section>
+<footer>
+    <a  class="btn btn-primary" validation-submit="userForm" ng-click="vm.save()">申请</a>
+    <a  class="btn "  ng-click="closeThisDialog()" translate="N000557">关闭</a>
+</footer>
+
+
+
+

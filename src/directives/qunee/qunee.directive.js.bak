@@ -1,0 +1,142 @@
+(function() {
+    'use strict';
+
+    angular
+        .module('demo.core')
+        .directive('fxQunee', FxQunee);
+
+    /* @ngInject */
+    function FxQunee() {
+        var directive = {
+            restrict: 'A',
+            link: linkFunction
+        };
+
+        return directive;
+
+        //////////////////////////////
+
+        function SimpleEdgeUI(edge, graph){
+            Q.doSuperConstructor(this, SimpleEdgeUI, arguments);
+        }
+
+        // 节点
+        var nodes;
+        var graph;
+
+        function createDatas() {
+            var root = createNode("Q");
+            var node = createNode("Q1");
+            createEdge(root, node);
+            var i = 0;
+            var count = Q.isTouchSupport ? 3 : 5;
+            while (i++ < count) {
+                var node = createNode("Q-" + i, 0, 0);
+                createEdge(root, node);
+                var j = 0;
+                while (j++ < count) {
+                    var node2 = createNode("Q-" + i + "-" + j, 0, 0);
+                    createEdge(node, node2);
+                    var jj = 0;
+                    while (jj++ < count) {
+                        var node3 = createNode("Q-" + i + "-" + j + "-" + jj, 0, 0);
+                        createEdge(node2, node3);
+                    }
+                }
+            }
+
+            var q1 = graph.getElementByName('Q-1');
+            var q21 = graph.getElementByName('Q-2-1');
+            var q3 = graph.getElementByName('Q-3');
+            createEdge(q1, q21, false);
+            createEdge(q3, q21, false);
+        }
+
+        function createDatas2 () {
+            var root = createNode("润和");
+
+            var names = ["方元", "贺健", "春峰"];
+
+            for (var i=0; i<names.length; i++) {
+                var node = createNode(names[i]);
+                createEdge(root, node);
+            }
+        }
+
+        function createNode(name, x, y) {
+//    var node = graph.createNode("", x, y);
+//    node.image = randomIcon();
+//    node.size = {width: 20};
+            var node = graph.createText(name, x, y);
+            node.setStyle(Q.Styles.LABEL_BACKGROUND_COLOR, "#00F");
+            node.setStyle(Q.Styles.LABEL_COLOR, "#FFF");
+            node.setStyle(Q.Styles.LABEL_PADDING, new Q.Insets(3, 5));
+            nodes.push(node);
+            return node;
+        }
+
+        function createEdge(from, to, layoutable){
+            var edge = graph.createEdge(from, to);
+            edge.setStyle(Q.Styles.ARROW_TO, false);
+            edge.uiClass = SimpleEdgeUI;
+            if(layoutable === false){
+                edge.layoutable = false;
+                edge.setStyle(Q.Styles.EDGE_COLOR, '#F00');
+            }
+            return edge;
+        }
+
+
+        function linkFunction(scope, canvas, attrs) {
+            if (!window.Q) return;
+
+            nodes = [];
+            graph = new Q.Graph(canvas[0]);
+            graph.scale = 1;
+
+            SimpleEdgeUI.prototype = {
+                validatePoints: function() {
+                    this.shape.invalidateData();
+                    var edge = this.data, path = this.path;
+                    path.clear();
+                    var fromAgent = edge.fromAgent;
+                    var toAgent = edge.toAgent;
+                    if(!fromAgent || !toAgent || fromAgent == toAgent){
+                        return;
+                    }
+                    var fromUI = this.graph.getUI(fromAgent);
+                    var toUI = this.graph.getUI(toAgent);
+                    var fromBounds = fromUI.bodyBounds;
+                    var toBounds = toUI.bodyBounds;
+                    var x1 = fromAgent.x,
+                        y1 = fromAgent.y,
+                        x2 = toAgent.x,
+                        y2 = toAgent.y;
+                    var p1 = fromBounds.getIntersectionPoint(x1, y1, x2, y2);
+                    var p2 = toBounds.getIntersectionPoint(x2, y2, x1, y1);
+                    path.moveTo(p1.x, p1.y);
+                    path.lineTo(p2.x, p2.y);
+                }
+            }
+            Q.extend(SimpleEdgeUI, Q.EdgeUI);
+
+            createDatas2();
+
+            var layout = new Q.SpringLayouter(graph, 200);
+            graph.interactionDispatcher.addListener(function(evt){
+                if(evt.kind == Q.InteractionEvent.ELEMENT_MOVING){
+                    layout.start();
+                }
+            })
+
+            var default_repulsion = 90;
+            var default_attractive = 0.1;
+            var default_elastic = 5;
+            layout.repulsion = default_repulsion;
+            layout.attractive = default_attractive;
+            layout.elastic = default_elastic;
+
+            layout.start();
+        }
+    }
+})();

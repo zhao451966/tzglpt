@@ -1,0 +1,61 @@
+.form-default legend {
+    margin-bottom: 0;
+    border-bottom: none;
+    font-weight: 100;
+    color: rgb(22, 50, 92);
+    font-size: 18px;
+    line-height: 22px;
+
+}
+
+.form-default .control-group {
+    margin-top:0;
+
+}
+
+.form-default label.control-label.text-info {
+    font-weight: 100;
+    font-size: 16px;
+    color: #6c6c6c;
+}
+.control-label.required:after {
+    content: "*";
+    padding-left: 2px;
+    color: rgb(194, 57, 52);
+}
+
+/*zzw0423*/
+.form-default .row-fluid {
+    margin: 8px 0;
+}
+
+
+
+.form-default fieldset {
+    padding: 0 0px;
+
+}
+.modal-backdrop {
+    background-color: rgb(168, 183, 199);
+}
+
+.modal {
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none ;
+
+}
+
+
+.form-default .span6 {
+    width: 47.5%;
+    margin-left: 5%;
+
+}
+
+.form-default p.ng-binding {
+    color: rgb(22, 50, 92);
+    height: 40px;
+   /* line-height: 40px;*/
+}

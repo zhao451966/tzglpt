@@ -1,0 +1,155 @@
+<div class="container-fluid fosun-container">
+    <div class="row-fluid">
+        <div class="widget-box fosun-search">
+            <div class="widget-content">
+
+                <!-- 指令中添加显示内容，该指令只做样式的统一，至于显示内容由开发自己决定 -->
+                <p fx-breadcrumb>项目列表</p>
+
+                <div fx-userfilter-select></div>
+
+                <div fx-pagination></div>
+
+                <button class="btn btn-primary" ng-click="vm.baobiao()">报表</button>
+
+
+                <button class="btn btn-primary" ng-click="vm.getUser()">Get User</button>
+
+                <div fx-uploader="vm.options" on-complete="vm.onComplete"></div>
+
+                <!-- "刷新按钮": ng-click="vm.query()" 修改成控制器中实际查询列表方法 -->
+                <button class="btn" ng-click="vm.save()" title="刷新">
+                    <i class="icon icon-refresh"></i>
+                </button>
+
+                <div fx-filter-button></div>
+                
+				<button class="btn" ng-click="vm.weboffice()">weboffice</button>
+                <button class="btn" ng-click="vm.iweboffice2009()">IWeboffice2009</button>
+				
+				<button class="btn btn-primary" ng-click="vm.messageSender()">消息发送</button>
+				<button class="btn btn-primary" ng-click="vm.messageConfig()">消息配置</button>
+				
+				<button class="btn btn-primary" ng-click="vm.applyFlow('commit')">提交</button>
+				<button class="btn btn-primary" ng-click="vm.applyFlow('revoke')">撤回</button>
+				<button class="btn btn-primary" ng-click="vm.applyFlow('review')">复核</button>
+
+ 				<button class="btn" ng-click="vm.oaWorkFlow({proId:'JTCF011200010',email:'qiuy@fosun.com'})">创建项目OA流程</button>
+ 				<a class="btn btn-primary" href="http://uatoa.fosun.com/workflow/request/ViewRequest.jsp?requestid=410376" target="_blank">查看项目OA流程</a>
+                <button class="btn" ng-click="vm.oasc()">项目OA文件上传</button>
+
+				<!--
+					businessdesc：业务名称
+					state：当前流程状态 
+					businessid:业务主键值
+					processId： 流程配置ID
+					projectId: 项目id
+					pageurl: 业务单据 url
+				 -->				
+				流程：
+				 <div apply-flow class="btn-group"
+				 	 processid="'100006'"
+				 	 projectid="'4028484855bf4c220155c4ffee4101d2'"
+				 	 pageurl="'xxx/xxx/xxx'"
+				     businessdesc="'项目退出'" 
+				     state="'1'" 
+				     callback="vm.flowCallback(msg)"
+				     businessid="'4028484855bf4c220155c424ce9d015e'" >
+						<!--<li><a>新建</a></li>-->
+						<!--<li><a>编辑</a></li>-->
+						<!--<li><a>删除</a></li>-->
+				</div>
+				
+                <button class="btn" ui-sref="root.sample.chart">统计图Echarts</button>
+
+                <button class="btn" ng-click="vm.ImageView()">图片查看</button>
+                
+                <button class="btn" ng-click="vm.openDialog()">通用弹出窗口组件</button>
+
+                <!-- G-SYSADMIN -->
+                <!--ng-if="Authenticate.checkRole('G-SYSADMIN')"-->
+                <button class="btn" ng-if="Authenticate.checkRole(['G-SYSADMIN', 'G-TEST'])"
+                        ng-click="vm.one2Many()" translate="one2many">一对多保存</button>
+
+                <!-- USER_SETTING-show -->
+                <!--ng-if="Authenticate.checkOpt('USER_SETTING', 'show')"-->
+                <button class="btn"
+                        ng-click="vm.add()" translate="normal-plugin">常用组件</button>
+
+                <!-- fileupload -->
+                <button class="btn"
+                        ng-click="vm.fileUpload()" translate="file-upload">附件上传</button>
+                <!-- fileupload -->
+                <!--<button class="btn"-->
+                        <!--ng-click="vm.doc()" translate="doc">文档列表</button>-->
+                <!-- fileupload -->
+                <button class="btn"
+                        ng-click="vm.applyFlowView()" translate="applyFlowView">流程跟踪查看</button>
+                <button class="btn"
+                        ng-click="vm.applyFlowViewyw()" translate="applyFlowViewyw">业务流程跟踪查看</button>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid flex">
+
+        <!-- 列表页面过滤器子面板 -->
+        <div class="sub-panel filter-panel"
+             ng-include="'modules/demo/list/children/list.filter.html'"
+             ng-show="$$panel.isFilterPanelOpen">
+        </div>
+
+        <!-- 列表页面统计图表子面板 -->
+        <div class="sub-panel chart-panel"
+             ng-include="'modules/demo/list/children/list.chart.html'"
+             ng-show="$$panel.isChartPanelOpen">
+        </div>
+
+        <div class="main-panel">
+
+            <div fx-ueditor content="vm.content"></div>
+
+
+            <table class="table table-hover main-table"
+                   fx-table="list"
+                   st-pipe="vm.query"
+                   st-table="vm.items">
+                <thead>
+                <tr>
+                    <th st-sort="vcProName" translate="xmmc">项目名称</th>
+                    <th st-sort="vcProNo" translate="xmbh">项目编号</th>
+                    <th st-sort="vcProShort" translate="xmjc">项目简称</th>
+                    <th st-sort="userName" translate="zfzr">项目主负责人</th>
+                    <th st-sort="deptName" translate="glpt">管理平台</th>
+                    <th st-sort="vcProStatus" translate="xmjd">项目阶段</th>
+                    <th st-sort="vcProIsstop" translate="xmzt">项目状态</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in vm.items">
+                    <td class="ellipsis"><a ui-sref="root.projects.bigview({id: item.id})">{{item.vcProName}}</a></td>
+                    <td>{{item.vcProNo}}</td>
+                    <td>{{item.vcProShort}}</td>
+                    <td>{{item.userName}}</td>
+                    <td>{{item.deptName}}</td>
+                    <td>{{item.vcProStatus}}</td>
+                    <td>{{item.vcProIsstop}}</td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a ng-click="vm.edit(item)" translate="edit">编辑</a></li>
+                                <li><a ng-click="vm.remove(item)" translate="delete">删除</a></li>
+                                <li><a ng-click="vm.close(item)" translate="close">关闭</a></li>
+                                <li><a ng-click="vm.restore(item)" translate="revert">恢复</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

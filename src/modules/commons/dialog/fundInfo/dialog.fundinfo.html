@@ -1,0 +1,74 @@
+<header ng-bind="ngDialogData.title"></header>
+<section>
+	<form class="form-default">
+         <div style="margin-bottom:20px;" class="row-fluid">
+            <div class="span6">
+                 <div class="controls">
+                     <div class="input-append">
+                         <input placeholder="{{'N000260' | translate}}/{{'N000675' | translate}}" class="span12" type="text"
+                                ng-model="vm.vcFundName">
+                         <span class="add-on">
+                             <i style="cursor: pointer;" ng-click="vm.query()" class="icon icon-search"></i>
+                         </span>
+                     </div>
+                 </div>
+             </div>
+             <div class="span6">
+             	<div class="controls" style="display: flex;flex-wrap: wrap;">
+              		<a ng-if="1==2" ng-repeat="planFundDept in vm.customSelectedFundInfos" ng-click="vm.removePlanFundDept(planFundDept, $index)" class="badge icon-remove">{{planFundDept.vcDeptName}}</a>
+             	</div>
+             </div>
+         </div>
+     </form>
+ <div>
+    <table class="table table-hover table-bordered main-table"
+    		fx-table="dialog.fundinfos"
+            st-pipe="vm.query"
+            st-table="vm.fundInfos"
+           >
+         <thead>
+	        <tr>
+	        	<th style="width:64px;"></th>
+	            <th translate="N000260">出资实体全称</th>
+	            <th translate="N000258">出资实体简称</th>
+	            <th translate="N001205">所在地</th>
+	            <th translate="N000256">出资实体本位币</th>
+	        </tr>
+        </thead> 
+        <tbody>
+	        <tr 
+	            ng-repeat="data in vm.fundInfos"
+	        	ng-click="vm.toggleSelectFundInfo(data)"
+	        	st-select-row="data"
+	            st-select-mode="{{::ngDialogData.selectionMode}}"
+	             >
+	            <td>
+	                <input name="redio" type="radio" class="fx-radio"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'single'" />
+	                <input type="checkbox" class="fx-checkbox"
+	                       ng-checked="data.isSelected"
+	                       ng-if="ngDialogData.selectionMode == 'multiple'" />
+	            </td>
+                <td class="ellipsis" title="{{data.vcFundName}}" ng-bind-html="data.vcFundName | highlight:vm.vcFundName"></td>
+                <td class="ellipsis" title="{{data.vcFundShortName}}" ng-bind-html="data.vcFundShortName | highlight:vm.vcFundName"></td>
+                <td class="ellipsis" title="{{data.vcArea}}" ng-bind-html="data.vcArea | highlight:vm.vcFundName"></td>
+                <td class="ellipsis" title="{{data.vcAlia}}" ng-bind-html="data.vcAlia | highlight:vm.vcFundName"></td>
+	        </tr>
+        </tbody>
+    </table>
+</div>
+</section>
+<footer>
+	<!-- 分页控件 -->
+	<div style="float:left;">
+		<div fx-pagination></div>
+	</div>
+    <a class="btn" ng-click="closeThisDialog(vm.cancelText)">{{::ngDialogData.cancelText}}</a>
+    <a class="btn btn-primary"
+       ng-click="vm.ok()"
+       ng-disabled="!$$selectedRows.length">{{::ngDialogData.okText}}</a>
+</footer>
+
+
+

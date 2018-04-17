@@ -1,0 +1,186 @@
+<style>
+    .modal-body {
+         max-height: none;
+         overflow-x: hidden;
+         height: 100%;
+         flex: auto;
+    }
+   h4{
+        font-family: inherit;
+        padding: 0 0;
+        font-weight: bold;
+        line-height: 20px;
+        height: 21px;
+        color: inherit;
+        text-rendering: optimizelegibility;
+        border-left:0;
+    }
+    .modal-header {
+        text-align: left;
+        font-size: 14px;
+    }
+    .footer-modal {
+        border-top:1px solid #e5e5e5;
+        max-height: 56px;
+        height: 56px;
+        min-height: 56px;
+        width: 100%;
+        padding-top:10px;
+        flex: 0 0 56px;
+    }
+    .ngPdfDialog-content {
+        background: none;
+    }
+    .col-sm-11 {
+        width: 99.6%;
+    }
+    .col-sm-8 {
+        width: 66.66666667%;
+    }
+    .col-sm-4 {
+        width: 33.33333333%;
+    }
+    .col-sm-1 {
+        width: 0.4%;
+        position:relative;
+        min-height:1px;
+        padding-left:5px;
+        margin-right: -10px;
+    }
+    dl{
+        margin-bottom: 0;
+    }
+</style>
+<html>
+<head></head>
+<body>
+<div class="modal-dialog modal-fullwidth">
+    <div class="modal-content">
+        <div class="modal-header">
+            <!--<button type="button" class="close close_sselist" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">关闭</span></button>-->
+            <div style="float: right;font-size: 30px;padding-right: 10px;" class="ngPdfDialog-close"></div>
+            <!--<h2 class="con_title"><div class="icon icon_pdf"></div></h2>-->
+            <h4 class="modal-title">{{vm.nowFile.vcDocName}}</h4>
+            <p class="pdf-modal-date"><!--N004534=报告时间-->{{'N004534' | translate}}：
+                <span ng-if="vm.nowFile.vcDocTypeid=='001'&&vm.nowFile.vcReportDateFirst=='003'"
+                      translate="N004526"
+                      translate-values="{vcReportDateSec:vm.nowFile.vcReportDateSec}">
+                    {{vm.nowFile.vcReportDateSec}}年报
+                </span>
+                <span ng-if="vm.nowFile.vcDocTypeid=='001'&&vm.nowFile.vcReportDateFirst=='004'"
+                      translate="N004527"
+                      translate-values="{vcReportDateSec:vm.nowFile.vcReportDateSec,vcReportDateThird:vm.nowFile.vcReportDateThird}">
+                    {{vm.nowFile.vcReportDateSec}}年第{{vm.nowFile.vcReportDateThird}}季报告
+                </span>
+                <span ng-if="vm.nowFile.vcDocTypeid=='001'&&vm.nowFile.vcReportDateFirst=='005'"
+                      translate="N004528"
+                      translate-values="{vcReportDateSec:vm.nowFile.vcReportDateSec,vcReportDateThird:vm.nowFile.vcReportDateThird}">
+                    {{vm.nowFile.vcReportDateSec}}年{{vm.nowFile.vcReportDateThird}}月报告
+                </span>
+                <span ng-if="vm.nowFile.vcDocTypeid=='002'">{{vm.nowFile.vcReportDateThird|mFormat:'YYYY年MM月DD日'}}</span>
+            </p>
+            <p ng-if="vm.showFlag" class="pdf-modal-date" style="padding-left: 0055px;">{{'N004535' | translate}}：{{vm.nowFile.createdate|mFormat:'YYYY/MM/DD HH:mm:ss'}}</p>
+        </div>
+        <div id="modal-body" class="modal-body" ng-init="init()">
+            <!--<div id="row" class="row" style="height: 100%">-->
+                <div id="PDF" class="col-sm-8" style="height: 100%;padding-top: 10px">
+                    <div class="con_tips_area has_icon">
+                        <div class="con_subdate"></div>
+                        <div class="con_subtips">
+                            <strong></strong>
+                        </div>
+                    </div>
+                    <iframe id="pdfFream" name="pdfFream"
+                            style="width: 100%;height:100%;overflow: hidden;"
+                            ng-src="{{vm.pluginHtml}}">
+                    </iframe>
+                    <!--<div class="download_and_feedback" style="float:left;">
+                        <button type="button" class="close close_pdf" data-dismiss="modal" aria-label="Close"><a class="btn btn-primary pdfclose" aria-hidden="true">关 闭</a></button>
+                        <a href="http://static.sse.com.cn/disclosure/listedinfo/announcement/c/2017-04-1005/60005920_2017041005_4.pdf" download="" class="btn btn-primary pdfdownloadlink">点击下载</a>
+                    </div>-->
+                </div>
+                <div id="INF" class="col-sm-4" style="height: 100%">
+                    <div class="con_prvdate" style="height: 100%">
+                        <div ng-click="vm.clickToggleBar(vm.visible)" class="toggleBar">
+                            <div id="togglebtn" class="togglebtn open"></div>
+                        </div>
+                        <div style="padding-top: 10px"></div>
+                        <div class="conp_block_1" ng-show="vm.visible">
+                            <table class="dt_table_1" style="height: 58px">
+                                <tbody>
+                                <tr>
+                                    <td class="tdleft"><h4 class="title ellipsis" title="{{vm.nowFile.companyName}}">{{vm.nowFile.companyName}}</h4></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="dt_table_2">
+                                <tbody>
+                                <tr>
+                                    <td class="tdleft">
+                                        <div class="title"></div>
+                                        <div class="nums">
+                                            <span class="num1"></span>
+                                            <span class="num2"></span>
+                                        </div></td>
+                                    <td class="tdright">
+                                        <div class="title"></div>
+                                        <div class="nums">
+                                            <span class="num1"></span>
+                                            <span class="num2"></span>
+                                        </div></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="conp_block_2" ng-show="vm.visible">
+                            <div class="sse_title_common_wrap">
+                                <div class="sse_title_common">
+                                    <h2><!--N004533=已披露文件-->{{'N004533' | translate}}<a class="hidden-xs" ng-click="vm.close()" target="_blank"><i class="sseicon-icon_more"></i></a></h2>
+                                </div>
+                            </div>
+                            <div class="sse_list_1" setclickfunction="true">
+                                <dl ng-repeat="item in vm.items">
+                                    <dd data-time="2017-04-14">
+                                        <a ng-click="vm.changePdf(item)" title="{{item.vcDocName}}">{{item.vcDocName}}</a>
+                                        <a ng-click="vm.changePdf(item)" class="hidden-xs"></a>
+                                        <span>{{item.createdate|mFormat:'YYYY/MM/DD HH:mm:ss'}}</span>
+                                        <span>
+                                            <span ng-if="item.vcDocTypeid=='001'&&item.vcReportDateFirst=='003'"
+                                                  translate="N004526"
+                                                  translate-values="{vcReportDateSec:item.vcReportDateSec}">
+                                                {{item.vcReportDateSec}}年报
+                                            </span>
+                                            <span ng-if="item.vcDocTypeid=='001'&&item.vcReportDateFirst=='004'"
+                                                  translate="N004527"
+                                                  translate-values="{vcReportDateSec:item.vcReportDateSec,vcReportDateThird:item.vcReportDateThird}">
+                                                {{item.vcReportDateSec}}年第{{item.vcReportDateThird}}季报告
+                                            </span>
+                                            <span ng-if="item.vcDocTypeid=='001'&&item.vcReportDateFirst=='005'"
+                                                  translate="N004528"
+                                                  translate-values="{vcReportDateSec:item.vcReportDateSec,vcReportDateThird:item.vcReportDateThird}">
+                                                {{item.vcReportDateSec}}年{{item.vcReportDateThird}}月报告
+                                            </span>
+                                            <span ng-if="item.vcDocTypeid=='002'">{{item.vcReportDateThird|mFormat:'YYYY年MM月DD日'}}</span>
+                                        </span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--</div>-->
+        </div>
+        <div class="footer-modal">
+            <div style="padding-left: 10px;">
+                <a class="btn btn-primary" ng-click="vm.getOldDoc()" translate="N004567">点击下载</a>
+                <a class="btn" ng-click="closeThisDialog()" translate="N000557">关 闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $("#pdfFream").height($("#modal-body").height()-10);
+    $("#INF").height($("#modal-body").height());
+</script>

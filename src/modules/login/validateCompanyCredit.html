@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title></title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="google-header-bar  centered">
+			<div class="header content clearfix">
+			</div>
+		</div>
+		<div class="main content clearfix">
+			<div class="main-content no-name ">
+				<div class="card signin-card pre-shift no-name" style="height: 268px;position: fixed; top: 0px; right: 0px;  left: 0px; bottom: 0px; margin: auto;" >
+					<div id="cc_iframe_parent"></div>
+					<div class="circle-mask" style="">
+					</div>
+					<form novalidate  id="gaia_loginform">
+						<div class="form-panel second " >
+							<div style="text-align: center;">
+								<div>
+									<p id="profile-name"></p>
+									<span dir="ltr" id="email-display"></span>
+								</div>
+								<div>
+								   <div id="password-shown">
+								    <div>
+								        <h2  class="banner" >请输入手机动态密码</h2>
+										<P style="font-size: 14px;color: #262626; margin: 5px 0 15px;font-weight: bold; text-align: left;" > 手机号 : {{vm.UserinfoRegister.telephone}}</P>			
+									</div>
+									<div>
+										<span >
+											<label class="hidden-label" for="Passwd">手机动态密码</label> <input style="width: 63% ;float:left;margin-top: 0px;"
+												id="username" name="username" type="username" placeholder="手机动态密码" ng-model="vm.UserinfoRegister.sjs"
+												class=""> 
+												<input id="signIn1" name="signIn1" style="width: 28%;margin-top: -30px; border: 1px solid #ff7418; background: #ff7418;position: absolute;top: 138px;left: 280px;"  class=" rc-button rc-button-submit"  ng-click="vm.sendsms()" type="submit" value="点击获取动态密码">
+										  </span>
+									</div>
+									</div>
+								</div>
+								<input id="next" name="signIn" class="rc-button rc-button-submit" style="margin-top: 21px;" ng-click="vm.validateCompanyCredit(vm.UserinfoRegister)"  type="submit" value="{{'N005115' | translate}}">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

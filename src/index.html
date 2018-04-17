@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html ng-app="fosun" ng-class="{'overflow-hidden': OVERFLOW == 'hidden'}">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>复星投资企业信息披露平台</title>
+    <link rel="shortcut icon"type="image/x-icon" href="styles/img/icon/32.ico"media="screen" />
+    <script src="dashboard/contextPath.js"></script>
+
+  <!--[if lt IE 10]>
+    <script>
+      //window.location.href ="http://10.160.180.87:82/src/dashboard/index.html";
+      //这个以发布时信披地址为准
+      window.location.href ="https://appuat.fosun.com/BatchPlatform/dashboard/index.html";
+      sleep(100);
+    </script>
+  <![endif]-->
+
+  <script>
+    var href = window.location.href;
+    if (href && href.indexOf('#') < 0) {
+      window.location.href = getViewContextPath() + "#/login";
+      sleep(100);
+    }
+  </script>
+
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/docs/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/ui-select/dist/select.css" />
+    <link rel="stylesheet" href="../bower_components/select2/select2.css" />
+    <link rel="stylesheet" href="../bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
+    <link rel="stylesheet" href="../bower_components/angular-tooltips/dist/angular-tooltips.min.css" />
+    <link rel="stylesheet" href="../bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap-fileinput/css/fileinput.min.css" />
+    <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.css" />
+    <link rel="stylesheet" href="../bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css" />
+    <link rel="stylesheet" href="../bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="../bower_components/angular-xeditable/dist/css/xeditable.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:css styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/A.css">
+    <link rel="stylesheet" href="styles/NewCivicFont.css">
+    <link rel="stylesheet" href="styles/animate.css">
+    <link rel="stylesheet" href="styles/breadcrumb.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/header2.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/international.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/menu2.css">
+    <link rel="stylesheet" href="styles/projectInfo.css">
+    <link rel="stylesheet" href="styles/projects.activity.css">
+    <link rel="stylesheet" href="styles/q50L-my-button.css">
+    <link rel="stylesheet" href="styles/q50L-my-form.css">
+    <link rel="stylesheet" href="styles/q50L-my-modal.css">
+    <link rel="stylesheet" href="styles/q50L-my-table.css">
+    <link rel="stylesheet" href="styles/q50L-my.css">
+    <link rel="stylesheet" href="styles/sse_allcss.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style2.css">
+    <link rel="stylesheet" href="styles/style3.css">
+    <link rel="stylesheet" href="styles/tab.css">
+    <link rel="stylesheet" href="styles/tree.css">
+    <link rel="stylesheet" href="styles/www.css">
+    <link rel="stylesheet" href="directives/angular-datepicker/angular-datepicker.css">
+    <link rel="stylesheet" href="directives/angular-ivh-treeview/ivh-treeview.css">
+    <link rel="stylesheet" href="directives/angular-multi-select-master/isteven-multi-select.css">
+    <link rel="stylesheet" href="directives/timepick/DateTimePicker.css">
+    <link rel="stylesheet" href="styles/bike/3w.css">
+    <link rel="stylesheet" href="styles/bike/Project.css">
+    <link rel="stylesheet" href="styles/bike/bike.css">
+    <link rel="stylesheet" href="styles/bike/coverPageBikeStyle.css">
+    <link rel="stylesheet" href="styles/bike/project.encyclopedia.css">
+    <link rel="stylesheet" href="styles/bike/search.css">
+    <link rel="stylesheet" href="styles/matrix/matrix-media.css">
+    <link rel="stylesheet" href="styles/matrix/matrix-style.css">
+    <link rel="stylesheet" href="directives/angular.treeview/css/angular.treeview.css">
+    <link rel="stylesheet" href="directives/jquery/simpletooltip/simpletooltip.min.css">
+    <link rel="stylesheet" href="modules/commons/ngDialog/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="modules/commons/ngDialog/ngDialog.css">
+    <link rel="stylesheet" href="modules/commons/ngPdfDialog/ngPdfDialog-theme-default.css">
+    <link rel="stylesheet" href="modules/commons/ngPdfDialog/ngPdfDialog.css">
+    <link rel="stylesheet" href="modules/commons/pagination/pagination.directive.css">
+    <link rel="stylesheet" href="modules/commons/stream/uploader.css">
+    <link rel="stylesheet" href="modules/demo/imgview/imgview.css">
+    <link rel="stylesheet" href="modules/file-upload/style/file-upload.css">
+    <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="directives/jquery/scrollToTop/style.css">
+    <link rel="stylesheet" href="modules/commons/dialog/messageConfig/messgeConfig.css">
+    <link rel="stylesheet" href="modules/commons/dialog/style/dialog.css">
+    <link rel="stylesheet" href="modules/commons/dialog/user/deptuser.css">
+    <link rel="stylesheet" href="modules/commons/weboffice/generic/web/viewer.css">
+    <link rel="stylesheet" href="modules/commons/zTree_v3-master/css/zTreeStyle/zTreeStyle.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body class="fosun" style="overflow-x: hidden;" ng-class="{expand: menuExpand, 'overflow-hidden': OVERFLOW == 'hidden'}" ng-controller="NoopController">
+
+<!-- 加载等待 -->
+<div id="loader-wrapper" style="display: none">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+
+<div id="request-loader">
+    <div class="loader"></div>
+</div>
+
+<div class="wrapper">
+
+<div id="header" ui-view="header"></div>
+
+<div id="sidebar" ui-view="menu" ng-nicescroll nice-option="menuNiceScrollOptions"></div>
+
+<!--<div id="breadcrumb" ui-view="breadcrumb" ng-class="{expand: menuExpand}"></div>-->
+
+<div id="content" ui-view="main" ng-class="{expand: menuExpand}"></div>
+
+
+<div class="loading-indicator"></div>
+
+</div>
+
+<a ng-if="false" href="#top" id="toTop" time="500" fx-scroll-to-top >
+    <span class="icon-circle-arrow-up"></span>
+</a>
+
+<!-- build:js js/lib.js -->
+<!-- bower:js -->
+<script src="../bower_components/jquery/jquery.js"></script>
+<script src="../bower_components/bootstrap/docs/assets/js/bootstrap.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/lodash/lodash.js"></script>
+<script src="../bower_components/restangular/dist/restangular.js"></script>
+<script src="../bower_components/angular-smart-table/dist/smart-table.js"></script>
+<script src="../bower_components/angular-validation/dist/angular-validation.js"></script>
+<script src="../bower_components/angular-validation/dist/angular-validation-rule.js"></script>
+<script src="../bower_components/angular-translate/angular-translate.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-scroll/angular-scroll.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="../bower_components/angular-ui-sortable/sortable.js"></script>
+<script src="../bower_components/ui-select/dist/select.js"></script>
+<script src="../bower_components/select2/select2.js"></script>
+<script src="../bower_components/angular-ui-select2/src/select2.js"></script>
+<script src="../bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+<script src="../bower_components/angular-ui-event/dist/event.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../bower_components/angular-bootstrap-checkbox/angular-bootstrap-checkbox.js"></script>
+<script src="../bower_components/angular-tooltips/dist/angular-tooltips.min.js"></script>
+<script src="../bower_components/Chart.js/Chart.js"></script>
+<script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+<script src="../bower_components/slick-carousel/slick/slick.js"></script>
+<script src="../bower_components/angular-slick/dist/slick.js"></script>
+<script src="../bower_components/hamsterjs/hamster.js"></script>
+<script src="../bower_components/angular-mousewheel/mousewheel.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/fullcalendar/dist/fullcalendar.js"></script>
+<script src="../bower_components/angular-ui-calendar/src/calendar.js"></script>
+<script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="../bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="../bower_components/rangy/rangy-core.js"></script>
+<script src="../bower_components/rangy/rangy-classapplier.js"></script>
+<script src="../bower_components/rangy/rangy-highlighter.js"></script>
+<script src="../bower_components/rangy/rangy-selectionsaverestore.js"></script>
+<script src="../bower_components/rangy/rangy-serializer.js"></script>
+<script src="../bower_components/rangy/rangy-textrange.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+<script src="../bower_components/textAngular/dist/textAngularSetup.js"></script>
+<script src="../bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+<script src="../bower_components/pdfjs-dist/build/pdf.js"></script>
+<script src="../bower_components/pdfjs-dist/build/pdf.worker.js"></script>
+<script src="../bower_components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
+<script src="../bower_components/angular-ueditor/dist/angular-ueditor.min.js"></script>
+<script src="../bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+<script src="../bower_components/angular-nicescroll/angular-nicescroll.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- plugins:js start -->
+<script src="../bower_components/bootstrap-fileinput/js/plugins/canvas-to-blob.min.js"></script>
+<script src="../bower_components/bootstrap-fileinput/js/fileinput.js"></script>
+<script src="../bower_components/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
+<script src="ueditor/angular-ueditor.js"></script>
+<script src="ueditor/ueditor.config.js"></script>
+<script src="ueditor/ueditor.all.js"> </script>
+<script src="i18n/zh.js"></script>
+<script src="i18n/en.js"></script>
+<!-- plugins:js end -->
+
+<!-- build:js js/app.js -->
+<!-- inject:js -->
+<script src="modules/demo/demo.module.js"></script>
+<script src="modules/demo/list/children/list.filter.ctrl.js"></script>
+<script src="modules/commons/zTree_v3-master/js/jquery.ztree.zcore.min.js"></script>
+<script src="modules/commons/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+<script src="core/core.module.js"></script>
+<script src="modules/commons/dialog/userinfoOrg/userinfoOrg.exchange.service.js"></script>
+<script src="modules/commons/dialog/userinfoOrg/userinfoOrg.exchange.ctrl.js"></script>
+<script src="modules/commons/dialog/useremail/dialog.user.email.service.js"></script>
+<script src="modules/commons/dialog/useremail/dialog.user.email.ctrl.js"></script>
+<script src="modules/commons/dialog/userUnitTree/userUnitTree.exchange.service.js"></script>
+<script src="modules/commons/dialog/userUnitTree/userUnitTree.exchange.ctrl.js"></script>
+<script src="modules/commons/dialog/userIUnitTree/userIUnitTree.exchange.service.js"></script>
+<script src="modules/commons/dialog/userIUnitTree/userIUnitTree.exchange.ctrl.js"></script>
+<script src="modules/commons/dialog/user/dialog.user.service.js"></script>
+<script src="modules/commons/dialog/user/dialog.user.glpt.service.js"></script>
+<script src="modules/commons/dialog/user/dialog.user.glpt.ctrl.js"></script>
+<script src="modules/commons/dialog/user/dialog.user.fxt.service.js"></script>
+<script src="modules/commons/dialog/user/dialog.user.fxt.ctrl.js"></script>
+<script src="modules/commons/dialog/user/dialog.user.ctrl.js"></script>
+<script src="modules/commons/dialog/user/dialog.deptuser.service.js"></script>
+<script src="modules/commons/dialog/user/dialog.deptuser.ctrl.js"></script>
+<script src="modules/commons/dialog/unit/dialog.unituser.service.js"></script>
+<script src="modules/commons/dialog/unit/dialog.unituser.ctrl.js"></script>
+<script src="modules/commons/dialog/unit/dialog.unit.service.js"></script>
+<script src="modules/commons/dialog/unit/dialog.unit.ctrl.js"></script>
+<script src="modules/commons/dialog/unit/dialog.glpt.service.js"></script>
+<script src="modules/commons/dialog/unit/dialog.glpt.ctrl.js"></script>
+<script src="modules/commons/dialog/target/dialog.target.service.js"></script>
+<script src="modules/commons/dialog/target/dialog.target.select.ctrl.js"></script>
+<script src="modules/commons/dialog/selDeptByUser/dialog.unit.by.user.service.js"></script>
+<script src="modules/commons/dialog/selDeptByUser/dialog.unit.by.user.ctrl.js"></script>
+<script src="modules/commons/dialog/role/dialog.role.service.js"></script>
+<script src="modules/commons/dialog/role/dialog.role.ctrl.js"></script>
+<script src="modules/commons/dialog/rUnit/dialog.unit.service.js"></script>
+<script src="modules/commons/dialog/rUnit/dialog.unit.ctrl.js"></script>
+<script src="modules/commons/dialog/projectDingGroup/dialog.project.ding.service.js"></script>
+<script src="modules/commons/dialog/projectDingGroup/dialog.project.ding.select.ctrl.js"></script>
+<script src="modules/commons/dialog/project/dialog.project.service.js"></script>
+<script src="modules/commons/dialog/project/dialog.project.select.ctrl.js"></script>
+<script src="modules/commons/dialog/prdtrd/dialog.prdtrd.service.js"></script>
+<script src="modules/commons/dialog/prdtrd/dialog.prdtrd.ctrl.js"></script>
+<script src="modules/commons/dialog/prdtrd/dialog.pbdmgz.ctrl.js"></script>
+<script src="modules/commons/dialog/newUnit/dialog.newunituser.service.js"></script>
+<script src="modules/commons/dialog/newUnit/dialog.newunituser.ctrl.js"></script>
+<script src="modules/commons/dialog/planFundDept/dialog.planFundDept.service.js"></script>
+<script src="modules/commons/dialog/planFundDept/dialog.planFundDept.ctrl.js"></script>
+<script src="modules/commons/dialog/messageSender/message.sender.service.js"></script>
+<script src="modules/commons/dialog/messageSender/message.sender.ctrl.js"></script>
+<script src="modules/commons/dialog/messageConfig/message.config.module.js"></script>
+<script src="modules/commons/dialog/messageConfig/messageConfig.list.ctrl.js"></script>
+<script src="modules/commons/dialog/messageConfig/message.config.service.js"></script>
+<script src="modules/commons/dialog/messageConfig/message.config.route.js"></script>
+<script src="modules/commons/dialog/messageConfig/message.config.ctrl.js"></script>
+<script src="modules/commons/dialog/meet/dialog.meet.service.js"></script>
+<script src="modules/commons/dialog/meet/dialog.meet.ctrl.js"></script>
+<script src="modules/commons/dialog/labelUser/dialog.user.lable.service.js"></script>
+<script src="modules/commons/dialog/labelUser/dialog.user.lable.ctrl.js"></script>
+<script src="modules/commons/dialog/investCashRelation/dialog.cash.relation.service.js"></script>
+<script src="modules/commons/dialog/investCashRelation/dialog.cash.relation.ctrl.js"></script>
+<script src="modules/commons/dialog/industrystandard/dialog.industrystandard.service.js"></script>
+<script src="modules/commons/dialog/industrystandard/dialog.industrystandard.ctrl.js"></script>
+<script src="modules/commons/dialog/fundInfo/dialog.fundinfo.service.js"></script>
+<script src="modules/commons/dialog/fundInfo/dialog.fundinfo.ctrl.js"></script>
+<script src="modules/commons/dialog/fiuser/dialog.fiuser.service.js"></script>
+<script src="modules/commons/dialog/fiuser/dialog.fiuser.ctrl.js"></script>
+<script src="modules/commons/dialog/fiunit/dialog.fiunit.service.js"></script>
+<script src="modules/commons/dialog/fiunit/dialog.fiunit.ctrl.js"></script>
+<script src="modules/commons/dialog/exchange/dialog.exchange.service.js"></script>
+<script src="modules/commons/dialog/exchange/dialog.exchange.ctrl.js"></script>
+<script src="modules/commons/dialog/enterprise/dialog.enterprise.service.js"></script>
+<script src="modules/commons/dialog/enterprise/dialog.enterprise.ctrl.js"></script>
+<script src="modules/commons/dialog/dueUser/dialog.dueuser.service.js"></script>
+<script src="modules/commons/dialog/dueUser/dialog.dueuser.ctrl.js"></script>
+<script src="modules/commons/dialog/doc/dialog.doc.service.js"></script>
+<script src="modules/commons/dialog/doc/dialog.doc.ctrl.js"></script>
+<script src="modules/commons/dialog/contributeTargetCopy/dialog.target.service.js"></script>
+<script src="modules/commons/dialog/contributeTargetCopy/dialog.target.select.ctrl.js"></script>
+<script src="modules/commons/dialog/company/dialog.company.service.js"></script>
+<script src="modules/commons/dialog/company/dialog.company.ctrl.js"></script>
+<script src="modules/commons/dialog/address/dialog.address.service.js"></script>
+<script src="modules/commons/dialog/address/dialog.address.ctrl.js"></script>
+<script src="modules/commons/api/userunit.service.js"></script>
+<script src="modules/commons/api/userrole.service.js"></script>
+<script src="modules/commons/api/userinfo.service.js"></script>
+<script src="modules/commons/api/upload.service.js"></script>
+<script src="modules/commons/api/filter.service.js"></script>
+<script src="modules/commons/api/cache.service.js"></script>
+<script src="directives/jquery/scrollToTop/jquery.scrollToTop.js"></script>
+<script src="test/e2e/mocks/e2e.module.js"></script>
+<script src="test/e2e/mocks/e2e.user.js"></script>
+<script src="test/e2e/mocks/e2e.projects.js"></script>
+<script src="test/e2e/mocks/e2e.phone.js"></script>
+<script src="test/e2e/mocks/e2e.data.js"></script>
+<script src="test/e2e/mocks/e2e.config.js"></script>
+<script src="modules/demo/list/list.ctrl.js"></script>
+<script src="modules/demo/list/chart.ctrl.js"></script>
+<script src="modules/file-sys/file.module.js"></script>
+<script src="modules/demo/imgview/imgview.service.js"></script>
+<script src="modules/demo/imgview/imgview.module.js"></script>
+<script src="modules/demo/imgview/imgview.ctrl.js"></script>
+<script src="modules/demo/form/workFlow.js"></script>
+<script src="modules/demo/form/statpage.js"></script>
+<script src="modules/demo/form/sc.js"></script>
+<script src="modules/demo/form/one2many.ctrl.js"></script>
+<script src="modules/demo/form/add.ctrl.js"></script>
+<script src="modules/demo/dialog/dialog.ctrl.js"></script>
+<script src="modules/commons/weboffice/specialPdf.ctrl.js"></script>
+<script src="modules/commons/weboffice/genericPdf.ctrl.js"></script>
+<script src="modules/commons/userfilter/userfilter.select.directive.js"></script>
+<script src="modules/commons/userfilter/userfilter.directive.js"></script>
+<script src="modules/commons/userfilter/meetingfilter.select.directive.js"></script>
+<script src="modules/commons/userfilter/filter.directive.js"></script>
+<script src="modules/commons/ueditor/ueditor.directive.js"></script>
+<script src="modules/commons/stream/uploader.js"></script>
+<script src="modules/commons/stream/uploader.directive.js"></script>
+<script src="modules/commons/stream/uploader-continue.directive.js"></script>
+<script src="modules/commons/stream/jsonp.js"></script>
+<script src="modules/commons/pagination/pagination.directive.js"></script>
+<script src="modules/commons/ngPdfDialog/ngPdfDialog.js"></script>
+<script src="modules/commons/ngDialog/ngDialog.js"></script>
+<script src="modules/commons/menu/menu.directive.js"></script>
+<script src="modules/commons/like/like.directive.js"></script>
+<script src="modules/commons/iweboffice2009/iWebOffice2009.ie.js"></script>
+<script src="modules/commons/iweboffice2009/iWebOffice2009.help.js"></script>
+<script src="modules/commons/iweboffice2009/iWebOffice2009.chrome.js"></script>
+<script src="modules/commons/filters/year.filter.js"></script>
+<script src="modules/commons/filters/withoutp.filter.js"></script>
+<script src="modules/commons/filters/quarter.filter.js"></script>
+<script src="modules/commons/filters/morelist.filter.js"></script>
+<script src="modules/commons/filters/month.filter.js"></script>
+<script src="modules/commons/filters/filetype.filter.js"></script>
+<script src="modules/commons/filters/filesize.filter.js"></script>
+<script src="modules/commons/filters/comma.filter.js"></script>
+<script src="modules/commons/filters/boardtips.filter.js"></script>
+<script src="modules/commons/echarts/shine.js"></script>
+<script src="modules/commons/echarts/shine-pie.js"></script>
+<script src="modules/commons/echarts/macarons.js"></script>
+<script src="modules/commons/echarts/gray.js"></script>
+<script src="modules/commons/echarts/echarts.min.js"></script>
+<script src="modules/commons/echarts/echarts-all.js"></script>
+<script src="modules/commons/echarts/angular-echarts.js"></script>
+<script src="modules/commons/collopseText/collopseText.directive.js"></script>
+<script src="directives/jquery/simpletooltip/simpletooltip.min.js"></script>
+<script src="modules/login/login.module.js"></script>
+<script src="modules/login/xplogin.ctrl.js"></script>
+<script src="modules/login/validateRegEmail.ctrl.js"></script>
+<script src="modules/login/validateCompanyCredit.ctrl.js"></script>
+<script src="modules/login/sendSucceed.ctrl.js"></script>
+<script src="modules/login/send.ctrl.js"></script>
+<script src="modules/login/register.ctrl.js"></script>
+<script src="modules/login/login.service.js"></script>
+<script src="modules/login/login.route.js"></script>
+<script src="modules/login/login.ctrl.js"></script>
+<script src="modules/login/fosunlogin.ctrl.js"></script>
+<script src="modules/login/fosunChangePwd.ctrl.js"></script>
+<script src="modules/login/enterpriseAssociateUser.ctrl.js"></script>
+<script src="modules/login/changePwd.ctrl.js"></script>
+<script src="modules/login/changePhone.ctrl.js"></script>
+<script src="modules/login/changeCompany.ctrl.js"></script>
+<script src="modules/login/changeAccount.ctrl.js"></script>
+<script src="modules/login/base64.js"></script>
+<script src="modules/login/backPassword.ctrl.js"></script>
+<script src="modules/file-upload/file.upload.ctrl.js"></script>
+<script src="modules/file-upload/file.service.js"></script>
+<script src="modules/file-upload/file.rename.ctrl.js"></script>
+<script src="modules/file-sys/file.time.ctrl.js"></script>
+<script src="modules/file-sys/file.route.js"></script>
+<script src="modules/file-sys/file.rename.ctrl.js"></script>
+<script src="modules/file-sys/file.list.js"></script>
+<script src="modules/file-sys/file.fund.list.js"></script>
+<script src="modules/demo/demo.service.js"></script>
+<script src="modules/demo/demo.route.js"></script>
+<script src="modules/commons/utils.service.js"></script>
+<script src="modules/commons/project.directive.js"></script>
+<script src="modules/commons/noop.ctrl.js"></script>
+<script src="modules/commons/hidden.directive.js"></script>
+<script src="modules/commons/header.ctrl.js"></script>
+<script src="modules/commons/fixed.header.directive.js"></script>
+<script src="modules/commons/file.service.js"></script>
+<script src="modules/commons/datetime.directive.js"></script>
+<script src="modules/commons/confirm.service.js"></script>
+<script src="modules/commons/btnGroup.directive.js"></script>
+<script src="modules/commons/breadcrumb.directive.js"></script>
+<script src="modules/commons/autoscroll.directive.js"></script>
+<script src="helper/xirr/helper.xirr.js"></script>
+<script src="helper/router/router.module.js"></script>
+<script src="helper/router/router.provider.js"></script>
+<script src="helper/logger/logger.module.js"></script>
+<script src="helper/logger/logger.service.js"></script>
+<script src="directives/select/select.users.directive.js"></script>
+<script src="directives/select/select.units.directive.js"></script>
+<script src="directives/select/select.directive.js"></script>
+<script src="directives/select/select.dictionary.directive.js"></script>
+<script src="directives/timepick/DateTimepicker.js.directive.js"></script>
+<script src="directives/timepick/DateTimePicker.js"></script>
+<script src="directives/pagination/pagination.directive.js"></script>
+<script src="directives/format/userIUnitTree.format.directive.js"></script>
+<script src="directives/format/user.format.directive.js"></script>
+<script src="directives/format/user.email.format.directive.js"></script>
+<script src="directives/format/unit.format.directive.js"></script>
+<script src="directives/format/target.format.directive.js"></script>
+<script src="directives/format/role.format.directive.js"></script>
+<script src="directives/format/project.format.directive.js"></script>
+<script src="directives/format/project.ding.format.directive.js"></script>
+<script src="directives/format/planFundDept.format.directive.js"></script>
+<script src="directives/format/meet.format.directive.js"></script>
+<script src="directives/format/fundInfo.format.directive.js"></script>
+<script src="directives/format/exchanges.format.directive.js"></script>
+<script src="directives/format/company.format.directive.js"></script>
+<script src="directives/filter/filter.button.directive.js"></script>
+<script src="directives/dialog/dialog.enterprise.directive.js"></script>
+<script src="directives/angular.treeview/angular.treeview.js"></script>
+<script src="directives/angular-multi-select-master/isteven-multi-select.js"></script>
+<script src="directives/angular-ivh-treeview/ivh-treeview.js"></script>
+<script src="directives/angular-datepicker/angular-datepicker.js"></script>
+<script src="core/aes/crypto-js.js"></script>
+<script src="i18n/zh.js"></script>
+<script src="i18n/en.js"></script>
+<script src="directives/table.manual.directive.js"></script>
+<script src="directives/table.fixhead.directive.js"></script>
+<script src="directives/table.directive.js"></script>
+<script src="directives/submit.directive.js"></script>
+<script src="directives/scrollToTop.directive.js"></script>
+<script src="directives/particles.js"></script>
+<script src="directives/onChangeTabFocusInput.directive.js"></script>
+<script src="directives/mustache.js"></script>
+<script src="directives/layoutW.directive.js"></script>
+<script src="directives/layoutH.directive.js"></script>
+<script src="directives/imgview.directive.js"></script>
+<script src="directives/form.directive.js"></script>
+<script src="directives/fixed.directive.js"></script>
+<script src="directives/applyFlow.directive.js"></script>
+<script src="core/core.route.js"></script>
+<script src="core/authenticate.service.js"></script>
+<script src="config/validator.config.js"></script>
+<script src="config/translate.config.js"></script>
+<script src="config/toastr.config.js"></script>
+<script src="config/smartTable.config.js"></script>
+<script src="config/sceDelegate.config.js"></script>
+<script src="config/router.config.js"></script>
+<script src="config/restangular.config.js"></script>
+<script src="config/pdfDialog.config.js"></script>
+<script src="config/http.config.js"></script>
+<script src="config/dialog.config.js"></script>
+<script src="app.js"></script>
+<!-- endinject -->
+
+<!-- inject:templates:js -->
+<!-- endinject -->
+
+<!-- endbuild -->
+
+
+</body>
+</html>

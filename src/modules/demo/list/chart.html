@@ -1,0 +1,41 @@
+<div class="container-fluid" style="overflow: auto;">
+    <div class="row-fluid">
+        <div class="span6" style="height: 240px;">
+            <line-chart config="config" data="data"></line-chart>
+        </div>
+
+        <div class="span6" style="height: 240px;">
+            <line-chart config="config" data="multiple"></line-chart>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span6" style="height: 240px;">
+            <bar-chart config="barConfig" data="data"></bar-chart>
+        </div>
+
+        <div class="span6" style="height: 240px;">
+            <bar-chart config="barConfig" data="multiple"></bar-chart>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span6" style="height: 240px;">
+            <area-chart config="barConfig" data="data"></area-chart>
+        </div>
+
+        <div class="span6" style="height: 240px;">
+            <area-chart config="barConfig" data="multiple"></area-chart>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span6">
+            <pie-chart config="pieConfig" data="multiple"></pie-chart>
+        </div>
+
+        <div class="span6" style="height: 480px;">
+            <donut-chart config="gaugeConfig" data="data"></donut-chart>
+        </div>
+    </div>
+</div>

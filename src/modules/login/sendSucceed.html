@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+	<div class="outer">
+		<div class="remind-content">
+			<div class="remind-title"></div>
+			<p class="greatings">尊敬的用户：</p>
+			<p>您好，请使用邮箱地址：{{vm.UserinfoRegister.vcLoginName}}与下方6位初始密码，完成复星投资企业信息披露平台用户注册，此邮件为系统自动发送，请勿回复。</p>
+			<span>{{vm.UserinfoRegister.vcEnablePassword}}</span>
+			<div class="remind-btn" ng-click="vm.sendSucceed()" >前往完善您的账号信息</div>
+			<p class="regards">此致</p>
+			<p>复星投资企业信息披露平台团队敬上</p>
+		</div>
+	</div>
+</body>
+</html>

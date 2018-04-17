@@ -1,0 +1,50 @@
+<h3 class="text-center" translate="N001033">筛选器</h3>
+<i class="icon icon-arrow-right panel-close"
+   ng-click="$$panel.toggleFilterPanel()"></i>
+<hr/>
+<form class="form-default" fx-form="$$filter">
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label" translate="N001535">业务编码</label>
+            <div class="controls">
+                <input type="text" class="span12" placeholder="{{'N001535' | translate}}"
+                       ng-model="$$filter.vcOptno"/>
+            </div>
+            <label class="control-label" translate="N001541">业务名称</label>
+            <div class="controls">
+                <input type="text" class="span12" placeholder="{{'N001541' | translate}}"
+                       ng-model="$$filter.optname"/>
+            </div>
+<!--             <label class="control-label">状态</label>
+            <div class="controls">
+            	<label class="checkbox inline ng-binding ng-scope">
+                	<input type="radio" name="enableStatus" class="fx-radio" value="1"ng-model="$$filter.vcStatus"/>启用
+                </label>
+	            <label class="checkbox inline ng-binding ng-scope">
+	            	<input type="radio" name="enableStatus" class="fx-radio" value="0" ng-model="$$filter.vcStatus"/>停用
+                </label>
+            </div> -->
+            <label class="control-label" translate="N001724">状态</label>
+            <div class="controls">
+                <select ng-model="$$filter.vcStatus" class="span12">
+                    <option value="" translate="N000037">——请选择——</option>
+                    <option value="0" translate="N001220">停用</option>
+                    <option value="1" translate="N000970">启用</option>
+                </select>
+            </div>
+            
+            <label class="control-label" translate="N000378">发送方式</label>
+            <div class="controls">
+            	<select class="span12" ng-model="$$filter.vcMsgType">
+            		 <option value="" translate="N000037">——请选择——</option>
+<!-- 						<option value="1">内部消息</option>
+ -->					<option value="2" translate="N001607">邮件</option>
+						<!-- <option value="3">钉钉群</option> -->
+						<option value="4" translate="N000450">复星一家</option>
+						<option value="5" translate="N000472">个人</option>
+						<!-- <option value="6">投管移动端</option> -->
+            	</select>
+            </div>
+        </div>
+    </fieldset>
+</form>

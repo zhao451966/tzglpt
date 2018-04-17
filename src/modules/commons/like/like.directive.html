@@ -1,0 +1,19 @@
+<div class="btn fl"
+        style="margin-left: 24px" ng-mouseenter="hover = true"
+        ng-mouseleave="hover = false" ng-class="{qqNoBorder: liked}">
+    <p ng-if="liked" ng-click="unlike()">
+        <span ng-if="!hover">
+            <i class="pfocus icon icon-ok"></i>
+            {{'N004173' | translate}}
+        </span>
+        <span ng-if="hover">
+            <i class="pfocus icon icon-remove"></i>
+            {{'N004174' | translate}}
+        </span>
+    </p>
+
+    <p ng-if="!liked" ng-click="like()">
+        <i class="pfocus icon icon-plus"></i>
+        {{'N001710' | translate}}
+    </p>
+</div>

@@ -1,0 +1,56 @@
+
+<header id="imgView" style="width:100%;">
+<div style="width:100%;">
+	<div class="icon left">
+		<img ng-src="{{vm.file.fileType | fileType}}" />
+	</div>
+	<div class="imgname left" style="width:20%"> &nbsp;{{vm.file.fileName}} </div>
+	<div style="width:auto;padding-left: 200px;" class="imgname left">
+ 		<!-- chrome 浏览器 -->
+<!--  		<a ng-if="vm.WebOffice.inited==false"  ng-click="vm.showHelp()" >不能正确显示？</a> 
+ --> 		<a target="_blank" href="modules/commons/iweboffice2009/iWebOffice.help.html" >Chrome不能正确显示？</a> 
+	</div>
+	<div class="iconDiv right" title="关闭" ng-click="vm.close()">
+		<img class="icon16" src="styles/img/remove_120.png" />
+	</div>
+	<div ng-if="vm.file.filePermision.down" class="iconDiv right" title="下载" ng-click="vm.download()">
+		<img class="icon16" src="styles/img/download_120.png" />
+	</div>
+	<div ng-if="vm.file.filePermision.view" class="iconDiv right" title="打印" onclick="javascript:webform.WebOffice.WebOpenPrint();" >
+		<img class="icon16" src="styles/img/print.png" />
+	</div>
+	<div ng-if="vm.file.filePermision.remove" class="iconDiv right" title="删除" ng-click="vm.deleteFile()">
+		<img class="icon16" src="styles/img/delete_120.png" />
+	</div>
+		<!-- 隐藏 -->
+<!-- 	<div ng-if="1==2" class="iconDiv right" title="上传" >
+		<img class="icon16" src="styles/img/upload_120.png" />
+		<div fx-uploader="vm.options" fx-uploader on-complete="vm.onComplete" ></div>
+	</div> -->
+</div>
+</header>
+<section id="iweboffice2009" >
+	<form name="webform" method="post" >
+		<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+			<tr>
+				<td height="100%" valign="top">
+					<!-- firefox,chrome -->	
+					 <object 
+					 	 progid="iWebOffice2009.HandWriteCtrl" 
+						id='WebOffice'  name='WebOffice'
+						type="application/iwebplugin" 
+						OnExecuteScripted="OnExecuteScripted"
+						OnMenuClick="OnMenuClick" 
+						OnToolsClick="OnToolsClick"
+						Copyright="复星集团[专用];V5.0S0xGAAEAAAAAAAAAEAAAABoBAAAgAQAALAAAAKfN6TBtMuqiZXte3U021lZE5xFMQPeDZ5llhy/SyMPMDhcS7P9FqdTnSHWUTiglp4STyp5MkuQX50OlwK1gHpzcK/y4jV2IJ/jkrwY9xNLsCpgRvppZot1GPE8pa5aqo1tQ5YzjGejr7VTro0rNArdSw/CzRsXMHoQF6ZCNKR8Cw9cQRTikm8uKZRyTgMlDuCAEa9OpS0Fm5hy32kJUVu9MWQoQuzctIXDLQdHEmwDdGz8o+eEXuHxx0/ffS9gaQsmnJkCg5FSF4XkJFzZ85xaQHNScnzmeuc9MbX5ASWQlFu+25BBmWPm7SkITAbuQPRI58BbnPYK/KTwq8Fd8UpoZLL+zCBjT5PDv/V9qO38/C4N+iAKyfSb6i4JqrXihwc7UVO6/9NbKE9SnSvUzi50="
+					></object>
+				</td>
+			</tr>
+		</table>
+	</form>
+</section>
+<script type="text/javascript" >
+	$(function() {
+		window.Load();
+	});
+</script>

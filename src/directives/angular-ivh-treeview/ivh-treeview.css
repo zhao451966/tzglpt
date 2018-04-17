@@ -1,0 +1,77 @@
+/**
+ * Treeview styles
+ *
+ * @private
+ * @package ivh.treeview
+ * @copyright 2014 iVantage Health Analytics, Inc.
+ */
+ul.ivh-treeview li.ivh-treeview-node-collapsed ul.ivh-treeview {
+  display: none;
+}
+ul.ivh-treeview .ivh-treeview-twistie-leaf,
+ul.ivh-treeview .ivh-treeview-twistie-collapsed {
+  display: none;
+}
+ul.ivh-treeview .ivh-treeview-node-collapsed .ivh-treeview-twistie-collapsed {
+  display: inline;
+}
+ul.ivh-treeview .ivh-treeview-node-collapsed .ivh-treeview-twistie-expanded {
+  display: none;
+}
+ul.ivh-treeview li.ivh-treeview-node-leaf .ivh-treeview-twistie-leaf {
+  display: inline;
+}
+ul.ivh-treeview li.ivh-treeview-node-leaf .ivh-treeview-twistie-expanded,
+ul.ivh-treeview li.ivh-treeview-node-leaf .ivh-treeview-twistie-collapsed {
+  display: none;
+}
+
+
+
+ul.ivh-treeview li {
+  position: relative;
+  padding: 0 0 0 20px;
+  line-height: 20px;
+}
+
+ul.ivh-treeview li.ivh-treeview-node-collapsed span.ivh-treeview-twistie-collapsed {
+  padding: 1px 10px;
+  background-image: url("img/folder-closed.png");
+  background-repeat: no-repeat;
+}
+
+ul.ivh-treeview li span.ivh-treeview-twistie-expanded {
+  padding: 1px 10px;
+  background-image: url("img/folder.png");
+  background-repeat: no-repeat;
+}
+
+ul.ivh-treeview li span.ivh-treeview-twistie-leaf {
+  padding: 1px 10px;
+  background-image: url("img/file.png");
+  background-repeat: no-repeat;
+}
+
+ul.ivh-treeview li i, ul.ivh-treeview li span {
+  cursor: pointer;
+}
+
+ul.ivh-treeview li .selected {
+  background-color: #aaddff;
+  font-weight: bold;
+  padding: 1px 5px;
+}
+
+
+ul.ivh-treeview li span.ng-isolate-scope input.ivh-treeview-checkbox {
+  margin: 0;
+  top: -3px;
+  position: relative;
+}
+
+
+ul.ivh-treeview li span.ivh-treeview-node-label.ivh-treeview-toggle {
+  font-size: 13px;
+  top: -3px;
+  position: relative;
+}
